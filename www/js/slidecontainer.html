@@ -1,0 +1,3676 @@
+
+<ion-slides options="options" slider="data.slider" style="padding-top:350px">
+    <ion-slide-page><location></location></ion-slide-page>
+    <ion-slide-page>
+        <h2 class="slide-question-txt">Please enter your full name.</h2>
+        <div class="row slide-one-textbox-div">
+            <input type="text" placeholder="Full name" ng-model="intake.client.name" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev" ng-click="createXMLDocument()">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 class="slide-question-txt">Please enter your phone number.</h2>
+        <div class="row slide-one-textbox-div">
+            <input type="text" placeholder="Phone number" ng-model="intake.client.phone" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 class="slide-question-txt">What is your birth date?</h2>
+        <div class="row slide-one-textbox-div">
+            <input type="date" placeholder="Birth Date" ng-model="intake.client.birthDate" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 class="slide-question-txt">Please enter your address.</h2>
+        <div class="row slide-one-textbox-div">
+            <input type="text" placeholder="Address" ng-model="intake.client.address" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 class="slide-question-txt">Please enter your Social Security Number.</h2>
+        <div class="row slide-one-textbox-div">
+            <input type="text" placeholder="Social Security Number" ng-model="intake.client.socialSecurityNumber" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 class="slide-question-txt">Please enter your Email.</h2>
+        <div class="row slide-one-textbox-div">
+            <input type="email" placeholder="Email" ng-model="intake.client.email" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 class="slide-question-txt">Please enter your City.</h2>
+        <div class="row slide-one-textbox-div">
+            <input type="text" placeholder="City" ng-model="intake.client.city" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 class="slide-question-txt">Please enter your State.</h2>
+        <div class="row slide-one-textbox-div">
+            <input type="text" placeholder="State" ng-model="intake.client.state" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 class="slide-question-txt">Please enter your Zip Code.</h2>
+        <div class="row slide-one-textbox-div">
+            <input type="text" placeholder="Zip Code" ng-model="intake.client.zipCode" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 class="slide-question-txt">Please enter your Cell Phone.</h2>
+        <div class="row slide-one-textbox-div">
+            <input type="text" placeholder="Cell Phone" ng-model="intake.client.cellPhone" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 class="slide-question-txt">How many children are in your household?</h2>
+        <div class="row slide-one-textbox-div">
+            <input ng-model="intake.numberOfChildren" type="number" placeholder="# of children" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page ng-if="hasChildren()">
+        <h2 class="slide-question-txt">Do you receive child support for any child?</h2>
+        <div class="row slide-two-button-div">
+            <div class="col col-50">
+                <div class="slide-select-button" ng-click="receiveChildSupport('yes')">
+                    <p>Yes</p>
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-select-button" ng-click="receiveChildSupport('no')">
+                    <p>No</p>
+                </div>
+            </div>
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page ng-if="hasChildren()">
+        <h2 class="slide-question-txt">How many children do you receive child support for?</h2>
+        <div class="row slide-one-textbox-div">
+            <input type="number" placeholder="# of children" ng-model="intake.numberOfChildrenReceivingSupport" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 class="slide-question-txt">What is your income before taxes?</h2>
+        <div class="row slide-one-textbox-div">
+            <input type="number" placeholder="$" ng-model="intake.client.income" />
+        </div>
+        <div class="row slide-two-radio-div">
+            <div class="col col-50">
+                <ion-radio ng-model="intake.client.incomeType" ng-value="Hourly">Hourly</ion-radio>
+            </div>
+            <div class="col col-50">
+                <ion-radio ng-model="intake.client.incomeType" ng-value="Annually">Annually</ion-radio>
+            </div>
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 class="slide-question-txt">Do you have a spouse?</h2>
+        <div class="row slide-two-button-div">
+            <div class="col col-50">
+                <div class="slide-select-button" ng-click="haveSpouse('yes')">
+                    <p>Yes</p>
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-select-button" ng-click="haveSpouse('no')">
+                    <p>No</p>
+                </div>
+            </div>
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide()">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+
+  <!--START OF SECOND STEP-->
+    <ion-slide-page ng-if="showSpouseArea()">
+    <h2 class="slide-question-txt">Please enter your spouse's full name.</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="Full name" ng-model="intake.spouse.name"  />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="showSpouseArea()">
+    <h2 class="slide-question-txt">Please enter your spouse's phone number.</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="Phone number" ng-model="intake.spouse.phoneNumber" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="showSpouseArea()">
+    <h2 class="slide-question-txt">What is your spouse's birth date?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="date" placeholder="Birth Date" ng-model="intake.spouse.birthDate" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="showSpouseArea()">
+    <h2 class="slide-question-txt">Does your spouse share the same address?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasSameAddress(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasSameAddress(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="showSpouseArea() && !intake.spouse.shareAddress">
+    <h2 class="slide-question-txt">Please enter your spouse's address.</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="address" ng-model="intake.spouse.address"/>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="showSpouseArea()">
+    <h2 class="slide-question-txt">Please enter your spouse's Social Security Number.</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="Social Security Number" ng-model="intake.spouse.socialSecurityNumber"/>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="showSpouseArea()">
+    <h2 class="slide-question-txt">Please enter your spouse's Email.</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="email" placeholder="Email" ng-model="intake.spouse.email" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="showSpouseArea() && !intake.spouse.shareAddress">
+    <h2 class="slide-question-txt">Please enter your spouse's City.</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="City" ng-model="intake.spouse.city" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="showSpouseArea() && !intake.spouse.shareAddress">
+    <h2 class="slide-question-txt">Please enter your spouse's State.</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="State" ng-model="intake.spouse.state" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="showSpouseArea() && !intake.spouse.shareAddress">
+    <h2 class="slide-question-txt">Please enter your spouse's Zip Code.</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="Zip Code" ng-model="intake.spouse.zipCode" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="showSpouseArea()">
+    <h2 class="slide-question-txt">Please enter your spouse's Cell Phone.</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="Cell Phone" ng-model="intake.spouse.cellPhone" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="showSpouseArea()">
+    <h2 class="slide-question-txt">What is your spouse's income before taxes?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="number" placeholder="$" ng-model="intake.spouse.income" />
+    </div>
+    <div class="row slide-two-radio-div">
+      <div class="col col-50">
+        <ion-radio ng-model="intake.spouse.incomeType" ng-value="Hourly">Hourly</ion-radio>
+      </div>
+      <div class="col col-50">
+        <ion-radio ng-model="intake.spouse.incomeType" ng-value="Annually">Annually</ion-radio>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <!--STEP 3 START-->
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Have you or your spouse ever filed bankruptcy before?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setFiledBankruptcy(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setFiledBankruptcy(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasFiledBankruptcy()">
+    <h2 class="slide-question-txt">When was the bankruptcy filed?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="date" placeholder="Filing Date" ng-model="intake.whenWasBankruptcyFiled" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Have you paid or given any money to friends or family?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setHasPaidFriends(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setHasPaidFriends(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasPaidFriends()">
+    <h2 class="slide-question-txt">Who was this money given to?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="full name" ng-model="intake.whoWasMoneyGivenTo" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasPaidFriends()">
+    <h2 class="slide-question-txt">How much money was given?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.howMuchMoneyWasGiven" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Are you on a deed to a property that belongs to a third party?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setOnThirdPartyDeed(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setOnThirdPartyDeed(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="isOnThirdPartyDeed()">
+    <h2 class="slide-question-txt">Who owns the property?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="full name" ng-model="intake.whoOwnsProperty" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="isOnThirdPartyDeed()">
+    <h2 class="slide-question-txt">How much is the property worth?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.howMuchIsPropertyWorth" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">How many automobiles do you own?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="number" ng-model="intake.numberOfVehicles" placeholder="# of automobiles" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <!--Vehicle 1-->
+  <ion-slide-page ng-if="hasVehicles(1)">
+    <h2 class="slide-question-txt">What is the year of automobile #1?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="year" ng-model="intake.Automobiles[0].year" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(1)">
+    <h2 class="slide-question-txt">What is the make of automobile #1?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="make" ng-model="intake.Automobiles[0].make" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(1)">
+    <h2 class="slide-question-txt">What is the model of automobile #1?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="model" ng-model="intake.Automobiles[0].model" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(1)">
+    <h2 class="slide-question-txt">What is the mileage of automobile #1?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="mileage" ng-model="intake.Automobiles[0].mileage" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(1)">
+    <h2 class="slide-question-txt">Is automobile #1 financed or leased?</h2>
+    <div class="row slide-two-radio-div">
+      <div class="col col-50">
+        <ion-radio ng-model="intake.Automobiles[0].payType" ng-value="Financed">Financed</ion-radio>
+      </div>
+      <div class="col col-50">
+        <ion-radio ng-model="intake.Automobiles[0].payType" ng-value="Leased">Leased</ion-radio>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(1)">
+    <h2 class="slide-question-txt">What is the current amount that is owed for automobile #1?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.Automobiles[0].currentAmountOwed" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(1)">
+    <h2 class="slide-question-txt">What is the payment amount for automobile #1?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.Automobiles[0].paymentAmount" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <!--2-->
+  <ion-slide-page ng-if="hasVehicles(2)">
+      <h2 class="slide-question-txt">What is the year of automobile #2?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="year" ng-model="intake.Automobiles[1].year" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(2)">
+      <h2 class="slide-question-txt">What is the make of automobile #2?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="make" ng-model="intake.Automobiles[1].make" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(2)">
+      <h2 class="slide-question-txt">What is the model of automobile #2?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="model" ng-model="intake.Automobiles[1].model" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(2)">
+      <h2 class="slide-question-txt">What is the mileage of automobile #2?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="mileage" ng-model="intake.Automobiles[1].mileage" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(2)">
+      <h2 class="slide-question-txt">Is automobile #2 financed or leased?</h2>
+      <div class="row slide-two-radio-div">
+          <div class="col col-50">
+              <ion-radio ng-model="intake.Automobiles[1].payType" ng-value="Financed">Financed</ion-radio>
+          </div>
+          <div class="col col-50">
+              <ion-radio ng-model="intake.Automobiles[1].payType" ng-value="Leased">Leased</ion-radio>
+          </div>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(2)">
+      <h2 class="slide-question-txt">What is the current amount that is owed for automobile #2?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.Automobiles[1].currentAmountOwed" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(2)">
+      <h2 class="slide-question-txt">What is the payment amount for automobile #2?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.Automobiles[1].paymentAmount" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <!--3-->
+  <ion-slide-page ng-if="hasVehicles(3)">
+      <h2 class="slide-question-txt">What is the year of automobile #3?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="year" ng-model="intake.Automobiles[2].year" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(3)">
+      <h2 class="slide-question-txt">What is the make of automobile #3?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="make" ng-model="intake.Automobiles[2].make" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(3)">
+      <h2 class="slide-question-txt">What is the model of automobile #3?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="model" ng-model="intake.Automobiles[2].model" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(3)">
+      <h2 class="slide-question-txt">What is the mileage of automobile #3?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="mileage" ng-model="intake.Automobiles[2].mileage" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(3)">
+      <h2 class="slide-question-txt">Is automobile #3 financed or leased?</h2>
+      <div class="row slide-two-radio-div">
+          <div class="col col-50">
+              <ion-radio ng-model="intake.Automobiles[2].payType" ng-value="Financed">Financed</ion-radio>
+          </div>
+          <div class="col col-50">
+              <ion-radio ng-model="intake.Automobiles[2].payType" ng-value="Leased">Leased</ion-radio>
+          </div>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(3)">
+      <h2 class="slide-question-txt">What is the current amount that is owed for automobile #3?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.Automobiles[2].currentAmountOwed" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(3)">
+      <h2 class="slide-question-txt">What is the payment amount for automobile #3?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.Automobiles[2].paymentAmount" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <!--4-->
+  <ion-slide-page ng-if="hasVehicles(4)">
+      <h2 class="slide-question-txt">What is the year of automobile #4?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="year" ng-model="intake.Automobiles[3].year" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(4)">
+      <h2 class="slide-question-txt">What is the make of automobile #4?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="make" ng-model="intake.Automobiles[3].make" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(4)">
+      <h2 class="slide-question-txt">What is the model of automobile #4?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="model" ng-model="intake.Automobiles[3].model" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(4)">
+      <h2 class="slide-question-txt">What is the mileage of automobile #4?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="mileage" ng-model="intake.Automobiles[3].mileage" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(4)">
+      <h2 class="slide-question-txt">Is automobile #4 financed or leased?</h2>
+      <div class="row slide-two-radio-div">
+          <div class="col col-50">
+              <ion-radio ng-model="intake.Automobiles[3].payType" ng-value="Financed">Financed</ion-radio>
+          </div>
+          <div class="col col-50">
+              <ion-radio ng-model="intake.Automobiles[3].payType" ng-value="Leased">Leased</ion-radio>
+          </div>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(4)">
+      <h2 class="slide-question-txt">What is the current amount that is owed for automobile #4?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.Automobiles[3].currentAmountOwed" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(4)">
+      <h2 class="slide-question-txt">What is the payment amount for automobile #4?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.Automobiles[3].paymentAmount" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <!--5-->
+  <ion-slide-page ng-if="hasVehicles(5)">
+      <h2 class="slide-question-txt">What is the year of automobile #5?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="year" ng-model="intake.Automobiles[4].year" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(5)">
+      <h2 class="slide-question-txt">What is the make of automobile #5?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="make" ng-model="intake.Automobiles[4].make" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(5)">
+      <h2 class="slide-question-txt">What is the model of automobile #5?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="model" ng-model="intake.Automobiles[4].model" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(5)">
+      <h2 class="slide-question-txt">What is the mileage of automobile #5?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="mileage" ng-model="intake.Automobiles[4].mileage" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(5)">
+      <h2 class="slide-question-txt">Is automobile #5 financed or leased?</h2>
+      <div class="row slide-two-radio-div">
+          <div class="col col-50">
+              <ion-radio ng-model="intake.Automobiles[4].payType" ng-value="Financed">Financed</ion-radio>
+          </div>
+          <div class="col col-50">
+              <ion-radio ng-model="intake.Automobiles[4].payType" ng-value="Leased">Leased</ion-radio>
+          </div>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(5)">
+      <h2 class="slide-question-txt">What is the current amount that is owed for automobile #5?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.Automobiles[4].currentAmountOwed" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(5)">
+      <h2 class="slide-question-txt">What is the payment amount for automobile #5?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.Automobiles[4].paymentAmount" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <!--6-->
+  <ion-slide-page ng-if="hasVehicles(6)">
+      <h2 class="slide-question-txt">What is the year of automobile #6?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="year" ng-model="intake.Automobiles[5].year"/>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(6)">
+      <h2 class="slide-question-txt">What is the make of automobile #6?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="make" ng-model="intake.Automobiles[5].make" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(6)">
+      <h2 class="slide-question-txt">What is the model of automobile #6?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="model" ng-model="intake.Automobiles[5].model" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(6)">
+      <h2 class="slide-question-txt">What is the mileage of automobile #6?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="mileage" ng-model="intake.Automobiles[5].mileage" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(6)">
+      <h2 class="slide-question-txt">Is automobile #6 financed or leased?</h2>
+      <div class="row slide-two-radio-div">
+          <div class="col col-50">
+              <ion-radio ng-model="intake.Automobiles[5].payType" ng-value="Financed">Financed</ion-radio>
+          </div>
+          <div class="col col-50">
+              <ion-radio ng-model="intake.Automobiles[5].payType" ng-value="Leased">Leased</ion-radio>
+          </div>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(6)">
+      <h2 class="slide-question-txt">What is the current amount that is owed for automobile #6?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.Automobiles[5].currentAmountOwed" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(6)">
+      <h2 class="slide-question-txt">What is the payment amount for automobile #6?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.Automobiles[5].paymentAmount" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <!--7-->
+  <ion-slide-page ng-if="hasVehicles(7)">
+      <h2 class="slide-question-txt">What is the year of automobile #7?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="year" ng-model="intake.Automobiles[6].year" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(7)">
+      <h2 class="slide-question-txt">What is the make of automobile #7?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="make" ng-model="intake.Automobiles[6].make" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(7)">
+      <h2 class="slide-question-txt">What is the model of automobile #7?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="model" ng-model="intake.Automobiles[6].model" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(7)">
+      <h2 class="slide-question-txt">What is the mileage of automobile #7?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="mileage" ng-model="intake.Automobiles[6].mileage" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(7)">
+      <h2 class="slide-question-txt">Is automobile #7 financed or leased?</h2>
+      <div class="row slide-two-radio-div">
+          <div class="col col-50">
+              <ion-radio ng-model="intake.Automobiles[6].payType" ng-value="Financed">Financed</ion-radio>
+          </div>
+          <div class="col col-50">
+              <ion-radio ng-model="intake.Automobiles[6].payType" ng-value="Leased">Leased</ion-radio>
+          </div>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(7)">
+      <h2 class="slide-question-txt">What is the current amount that is owed for automobile #7?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.Automobiles[6].currentAmountOwed" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasVehicles(7)">
+      <h2 class="slide-question-txt">What is the payment amount for automobile #7?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.Automobiles[6].paymentAmount" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <!--Vehicle END-->
+  <!--Real Estate START-->
+  <ion-slide-page>
+    <h2 class="slide-question-txt">How many real estate properties do you own?</h2>
+    <div class="row slide-one-textbox-div">
+        <input type="text" ng-model="intake.numberOfProperties" placeholder="$" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <!--Property #1-->
+  <ion-slide-page ng-if="hasProperties(1)">
+    <h2 class="slide-question-txt">What is the total balance of the mortgage for property #1?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.realEstate[0].firstMortgageBalance" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(1)">
+    <h2 class="slide-question-txt">What is the monthly payment for property #1?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.realEstate[0].firstMortgagePayment" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(1)">
+    <h2 class="slide-question-txt">Does property #1 have a second mortgage?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setSecondMortgage(1,true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setSecondMortgage(1,false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(1) && hasSecondMortgage(1)">
+    <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #1?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.realEstate[0].secondMortgageBalance" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(1) && hasSecondMortgage(1)">
+    <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #1?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.realEstate[0].secondMortgageMonthlyPayment" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <!--PROPERTY 1 END-->
+  <!--Property #2-->
+  <ion-slide-page ng-if="hasProperties(2)">
+      <h2 class="slide-question-txt">What is the total balance of the mortgage for property #2?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[1].firstMortgageBalance" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(2)">
+      <h2 class="slide-question-txt">What is the monthly payment for property #2?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[1].firstMortgagePayment" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(2)">
+      <h2 class="slide-question-txt">Does property #2 have a second mortgage?</h2>
+      <div class="row slide-two-button-div">
+          <div class="col col-50">
+              <div class="slide-select-button" ng-click="setSecondMortgage(2,true)">
+                  <p>Yes</p>
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-select-button" ng-click="setSecondMortgage(2,false)">
+                  <p>No</p>
+              </div>
+          </div>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(2) && hasSecondMortgage(2)">
+      <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #2?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[1].secondMortgageBalance" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(2) && hasSecondMortgage(2)">
+      <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #2?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[1].secondMortgageMonthlyPayment" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <!--PROPERTY 2 END-->
+  <!--Property #3-->
+  <ion-slide-page ng-if="hasProperties(3)">
+      <h2 class="slide-question-txt">What is the total balance of the mortgage for property #3?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[2].firstMortgageBalance" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(3)">
+      <h2 class="slide-question-txt">What is the monthly payment for property #3?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[2].firstMortgagePayment" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(3)">
+      <h2 class="slide-question-txt">Does property #3 have a second mortgage?</h2>
+      <div class="row slide-two-button-div">
+          <div class="col col-50">
+              <div class="slide-select-button" ng-click="setSecondMortgage(3,true)">
+                  <p>Yes</p>
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-select-button" ng-click="setSecondMortgage(3,false)">
+                  <p>No</p>
+              </div>
+          </div>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(3) && hasSecondMortgage(3)">
+      <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #3?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[2].secondMortgageBalance" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(3) && hasSecondMortgage(3)">
+      <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #3?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[2].secondMortgageMonthlyPayment"/>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <!--PROPERTY 3 END-->
+  <!--Property #4-->
+  <ion-slide-page ng-if="hasProperties(4)">
+      <h2 class="slide-question-txt">What is the total balance of the mortgage for property #4?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[3].firstMortgageBalance" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(4)">
+      <h2 class="slide-question-txt">What is the monthly payment for property #4?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[3].firstMortgagePayment" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(4)">
+      <h2 class="slide-question-txt">Does property #4 have a second mortgage?</h2>
+      <div class="row slide-two-button-div">
+          <div class="col col-50">
+              <div class="slide-select-button" ng-click="setSecondMortgage(4,true)">
+                  <p>Yes</p>
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-select-button" ng-click="setSecondMortgage(4,false)">
+                  <p>No</p>
+              </div>
+          </div>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(4) && hasSecondMortgage(4)">
+      <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #4?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[3].secondMortgageBalance" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(4) && hasSecondMortgage(4)">
+      <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #4?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[3].secondMortgageMonthlyPayment" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <!--PROPERTY 4 END-->
+  <!--Property #5-->
+  <ion-slide-page ng-if="hasProperties(5)">
+      <h2 class="slide-question-txt">What is the total balance of the mortgage for property #5?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[4].firstMortgageBalance" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(5)">
+      <h2 class="slide-question-txt">What is the monthly payment for property #5?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[4].firstMortgagePayment" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(5)">
+      <h2 class="slide-question-txt">Does property #5 have a second mortgage?</h2>
+      <div class="row slide-two-button-div">
+          <div class="col col-50">
+              <div class="slide-select-button" ng-click="setSecondMortgage(5,true)">
+                  <p>Yes</p>
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-select-button" ng-click="setSecondMortgage(5,false)">
+                  <p>No</p>
+              </div>
+          </div>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(5) && hasSecondMortgage(5)">
+      <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #5?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[4].secondMortgageBalance" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(5) && hasSecondMortgage(5)">
+      <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #5?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[4].secondMortgageMonthlyPayment" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <!--PROPERTY 5 END-->
+  <!--Property #6-->
+  <ion-slide-page ng-if="hasProperties(6)">
+      <h2 class="slide-question-txt">What is the total balance of the mortgage for property #6?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[5].firstMortgageBalance" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(6)">
+      <h2 class="slide-question-txt">What is the monthly payment for property #6?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[5].firstMortgagePayment" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(6)">
+      <h2 class="slide-question-txt">Does property #6 have a second mortgage?</h2>
+      <div class="row slide-two-button-div">
+          <div class="col col-50">
+              <div class="slide-select-button" ng-click="setSecondMortgage(6,true)">
+                  <p>Yes</p>
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-select-button" ng-click="setSecondMortgage(6,false)">
+                  <p>No</p>
+              </div>
+          </div>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(6) && hasSecondMortgage(6)">
+      <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #6?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[5].secondMortgageBalance" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(6) && hasSecondMortgage(6)">
+      <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #6?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[5].secondMortgageMonthlyPayment" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <!--PROPERTY 6 END-->
+  <!--Property #7-->
+  <ion-slide-page ng-if="hasProperties(7)">
+      <h2 class="slide-question-txt">What is the total balance of the mortgage for property #7?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[6].firstMortgageBalance" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(7)">
+      <h2 class="slide-question-txt">What is the monthly payment for property #7?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[6].firstMortgagePayment" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(7)">
+      <h2 class="slide-question-txt">Does property #7 have a second mortgage?</h2>
+      <div class="row slide-two-button-div">
+          <div class="col col-50">
+              <div class="slide-select-button" ng-click="setSecondMortgage(7,true)">
+                  <p>Yes</p>
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-select-button" ng-click="setSecondMortgage(7,false)">
+                  <p>No</p>
+              </div>
+          </div>
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(7) && hasSecondMortgage(7)">
+      <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #7?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[6].secondMortgageBalance" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <ion-slide-page ng-if="hasProperties(7) && hasSecondMortgage(7)">
+      <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #7?</h2>
+      <div class="row slide-one-textbox-div">
+          <input type="text" placeholder="$" ng-model="intake.realEstate[6].secondMortgageMonthlyPayment" />
+      </div>
+      <div class="row next-prev-button-row">
+          <div class="col col-50">
+              <div class="slide-nav-button prev">
+                  <p>Prev</p>
+                  <img class="flip-img" src="img/icons8-right-50.png" />
+              </div>
+          </div>
+          <div class="col col-50">
+              <div class="slide-nav-button next" ng-click="nextSlide()">
+                  <p>Next</p>
+                  <img src="img/icons8-right-50.png" />
+              </div>
+          </div>
+      </div>
+  </ion-slide-page>
+  <!--PROPERTY 7 END-->
+  <!--Real Estate END-->
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Are you renting?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setIsRenting(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setIsRenting(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">How much is your rent?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.rentAmount" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Are you living with friends or family?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setIsLivingWithFamily('yes')">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setIsLivingWithFamily('no')">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Do you have any medical debt?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setHasMedicalDebt(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="setHasMedicalDebt(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">How much $ is in your checking account(s)?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.checkingAccountBalance" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">How much $ is in your savings account(s)?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.savingsAccountBalance" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">How much $ is in joint bank account(s) with family members?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.jointAccountsWithFamilyBalance" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">How much $ in stocks and/or bonds do you own?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.stocksOrBondsValue" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">What is the total value of your 401(k) and/or retirement accounts?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.retirement401kBalance" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">What is the total value of your household furniture?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.householdFurnitureValue" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">What is the total value of tools that you own?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.toolValue" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">What is the total value of collections/jewelry do you own?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.collectionAndJewelryValue" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">What is the total value of any remaining assets that you own?</h2>
+    <div class="row slide-one-textbox-div">
+      <input type="text" placeholder="$" ng-model="intake.otherMajorAssetValue" />
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <!--STEP 4 START-->
+  <ion-slide-page>
+    <h2 class="slide-question-txt">How did you hear about us?</h2>
+    <div class="row slide-two-radio-div">
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="Orange County Bar Association">Orange County Bar Association</ion-radio>
+      </div>
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="Yellow Pages">Yellow Pages (YP.com)</ion-radio>
+      </div>
+    </div>
+    <div class="row slide-two-radio-div">
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="Facebook">Facebook</ion-radio>
+      </div>
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="Avvo.com">Avvo.com</ion-radio>
+      </div>
+    </div>
+    <div class="row slide-two-radio-div">
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="Business Card">Business Card</ion-radio>
+      </div>
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="Attorney Referral">Attorney Referral</ion-radio>
+      </div>
+    </div>
+    <div class="row slide-two-radio-div">
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="The Florida Bar">The Florida Bar</ion-radio>
+      </div>
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="Internet">Internet - Yahoo/Google</ion-radio>
+      </div>
+    </div>
+    <div class="row slide-two-radio-div">
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="Referral">Referral</ion-radio>
+      </div>
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="Mailed Advertising">Advertising letter mailed to you</ion-radio>
+      </div>
+    </div>
+    <div class="row slide-two-radio-div">
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="Word of Mouth">Word of Mouth</ion-radio>
+      </div>
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="Lynx Bus">Lynx Bus</ion-radio>
+      </div>
+    </div>
+    <div class="row slide-two-radio-div">
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="Radio">Radio</ion-radio>
+      </div>
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="Billboards">Billboards</ion-radio>
+      </div>
+    </div>
+    <div class="row slide-two-radio-div">
+      <div class="col col-50">
+        <ion-radio ng-model="intake.heardFrom" ng-value="TV">TV spot</ion-radio>
+      </div>
+      <div class="col col-50">
+        <!--<ion-radio ng-model="heardFrom" ng-value="Yellow Pages">Yellow Pages (YP.com)</ion-radio>-->
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Were you just served at your house with foreclosure papers?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="servedForeclosurePapers(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="servedForeclosurePapers(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Were you just served at your house with a debt lawsuit?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="servedDebtLawsuit(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="servedDebtLawsuit(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">What is the biggest concern that you would like us to address?</h2>
+    <div class="row slide-one-textbox-div">
+      <textarea rows="4" cols="50" ng-model="intake.biggestConcern">
+      </textarea>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Do you have possession or title to any real or personal property that really belongs to someone else?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasAnothersProperty(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasAnothersProperty(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Have you <b>sold or transferred</b> any assets in the past 2 years</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasSoldAssets(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasSoldAssets(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Have you paid any family memeber on a debt you owe them in the past year?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasPaidDebtToFamily(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasPaidDebtToFamily(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Is any creditor garnishing your wages now?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="isWagesGarnished(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="isWagesGarnished(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Have you filed all of your tax returns?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasFiledTaxReturns(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasFiledTaxReturns(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Has your house, car or other asset been foreclosed or repossessed?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasAssetBeenForeclosed(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasAssetBeenForeclosed(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Are you behind on a car or house payment?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="isBehindOnCarPayment(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="isBehindOnCarPayment(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Have you made any large purchases in the past 90 days?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasMadeLargePurchase(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button"ng-click="hasMadeLargePurchase(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Have you taken any cash advances from credit cards in the past 90 days?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasTakenCashAdvance(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasTakenCashAdvance(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Have you paid any other lawyer for advice about your debts or filing bankruptcy in the past year?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasPaidOtherLawyers(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasPaidOtherLawyers(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Have you been an officer or partner in a business in the past 6 years?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasBeenOfficerOfCompany(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasBeenOfficerOfCompany(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Has anyone died and left you an inheritance that you have not received yet?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasInheritanceNotReceived(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasInheritanceNotReceived(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Do you owe any money on account of marital settlement agreement or judgment of divorce?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasMaritalAgreement(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasMaritalAgreement(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt">Are you entitled to a tax refund that you haven't received?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasTaxRefundNotReceived(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50" ng-click="hasTaxRefundNotReceived(false)">
+        <div class="slide-select-button">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt"> Are you suing anyone? Do you have a claim against anyone, for an accident, injury, debt or employment claim that you might sui on later?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="isSuing(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="isSuing(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt"> Have you lived in Florida the past two years?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasLivedInFlorida(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasLivedInFlorida(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt"> Do you bank at a credit union and also owe money to that credit union (loans, credit cards, etc.) or know of any cross-collateralization issues?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasDebtToCreditUnion(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasDebtToCreditUnion(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt"> Have you taken loans or withdrawals from retirement savings in the last 6 months?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasTakenOutLoans(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasTakenOutLoans(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt"> Are you still using credit cards?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="isUsingCreditCards(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="isUsingCreditCards(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt"> Have you lived in your mortgaged home for less than 4 years?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasLivedInHouse4Years(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="hasLivedInHouse4Years(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+  <ion-slide-page>
+    <h2 class="slide-question-txt"> Are you ready for a fresh start?</h2>
+    <div class="row slide-two-button-div">
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="isReadyForFreshStart(true)">
+          <p>Yes</p>
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-select-button" ng-click="isReadyForFreshStart(false)">
+          <p>No</p>
+        </div>
+      </div>
+    </div>
+    <div class="row next-prev-button-row">
+      <div class="col col-50">
+        <div class="slide-nav-button prev">
+          <p>Prev</p>
+          <img class="flip-img" src="img/icons8-right-50.png" />
+        </div>
+      </div>
+      <div class="col col-50">
+        <div class="slide-nav-button next" ng-click="nextSlide()">
+          <p>Next</p>
+          <img src="img/icons8-right-50.png" />
+        </div>
+      </div>
+    </div>
+  </ion-slide-page>
+</ion-slides>
