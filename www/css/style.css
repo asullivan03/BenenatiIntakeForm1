@@ -82,3 +82,11 @@ ion-slide-page{
     font-weight: 300;
     color: #7C7C7C;
 }
+
+.circle-border-selected{
+    border:2px solid #5392cf;
+}
+
+.circle-border-not-selected{
+    border:2px solid #C7C7C7;
+}

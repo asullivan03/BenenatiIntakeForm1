@@ -181,7 +181,7 @@
                 'hasLivedInHouse4Years':false,
                 'isReadyForFreshStart':false
             };
-
+            $scope.currentStep = 1;
             $scope.createXMLDocument = function(){
               var doc = document.implementation.createDocument("","",null);
               var nameElem = doc.createElement("fullName");
@@ -302,11 +302,168 @@
               $scope.intake.servedDebtLawsuit = val;
             }
 
-            $scope.nextSlide = function () {
+            $scope.currentHeight=0;
+            $scope.currentSection = 1;
+            $scope.currentStep = 0;
+            $scope.calcVal = 0;
+            $scope.lastPropertyStep = 0;
+            $scope.lastVehicleStep = 0;
+           $scope.setSelectedCircle = function(){
+              for(var i = 1; i < 7; i++){
+                if($scope.currentSection != i){
+                  document.getElementById('selected-circle'+i).classList.remove("circle-border-not-selected");
+                  document.getElementById('selected-circle'+i).classList.remove("circle-border-selected");
+                  document.getElementById('selected-circle'+i).classList.add("circle-border-not-selected");
+                }
+                else{
+                  document.getElementById('selected-circle'+i).classList.remove("circle-border-selected");
+                  document.getElementById('selected-circle'+i).classList.remove("circle-border-not-selected");
+                  document.getElementById('selected-circle'+i).classList.add("circle-border-selected");
+                }
+              }
+           }
+
+           $scope.nextSlide = function (section,step,val) {
+                if(section == 2 && step == 20 && !$scope.intake.isOnThirdPartyDeed){
+                    //set current progress bar
+                    document.getElementById('progressBar'+$scope.currentSection).style.height = '100px';
+                    $scope.currentSection=3;
+                    $scope.currentStep=1;
+                    $scope.currentHeight =0;
+                    document.getElementById('selected-num-circle'+$scope.currentSection).style.backgroundColor="#5392cf";
+                    $scope.setSelectedCircle();
+                }
+                else if(section == 3 && step == 2){
+                  if($scope.intake.numberOfVehicles != 0){
+                    $scope.calcVal = 25 / ($scope.intake.numberOfVehicles*7);
+                    $scope.currentStep = step;
+                  }
+                  else
+                  {
+                    $scope.currentHeight = 25;
+                    $scope.currentStep = 51;
+                  }
+                }
+                else if(section == 3 && step == 52){
+                  if($scope.intake.numberOfProperties != 0){
+                    $scope.calcVal = 25/($scope.intake.numberOfProperties*5);
+                    $scope.currentStep = step;
+                  }
+                  else
+                  {
+                    $scope.currentHeight = 50;
+                    $scope.calcVal = 50/13;
+                    $scope.currentStep = 87;
+                  }
+                }
+                else if(section == 3 && step == 51){
+                  document.getElementById('progressBar'+$scope.currentSection).style.height = '25px';
+                  $scope.currentHeight = 25;
+                  $scope.currentStep = step;
+                }
+                else if(section == 3 && ((step == 57 || step == 62 || step == 67 || step  == 72 || step == 77 || step == 82 && $scope.numberOfProperties == ((step-2)/5)-10) ||
+                ((step == 55 || step == 60 || step == 65 || step == 70 || step == 75 || step == 80) && $scope.intake.realEstate[(step/5)-11].hasSecondMortgage == false))){
+                    $scope.currentHeight = 50;
+                    $scope.currentStep = 87;
+                    $scope.calcVal = 50/13;
+                    $scope.lastPropertyStep = step;
+                }
+                else if(section == 3 && (step == 9 || step == 16 || step == 23 || step == 30 || step == 37 || step == 44)){
+                  if((step-2)/7 == $scope.intake.numberOfVehicles){
+                    $scope.currentHeight = 25;
+                    $scope.currentStep = 51;
+                    $scope.lastVehicleStep = step;
+                  }
+                  else{
+                    var stepDiff = step - $scope.currentStep;
+                    $scope.currentStep = step;
+                    var incrementVal = $scope.calcVal*stepDiff;
+                    $scope.currentHeight += incrementVal;
+                  }
+                }
+                else if(section > $scope.currentSection){
+                  //Set current progress bar to full
+                  document.getElementById('progressBar'+$scope.currentSection).style.height = '100px';
+                  //Switch section
+                  $scope.currentSection = section;
+                  $scope.currentStep = step;
+                  $scope.currentHeight = 0;
+                  //todo
+                  document.getElementById('selected-num-circle'+$scope.currentSection).style.backgroundColor="#5392cf";
+                  $scope.setSelectedCircle();
+                }
+                else if(section == 3){
+                  var stepDiff = step - $scope.currentStep;
+                  $scope.currentStep = step;
+                  var incrementVal = $scope.calcVal*stepDiff;
+                  $scope.currentHeight += incrementVal;
+                }
+                else if(section == $scope.currentSection){
+                  var stepDiff = step - $scope.currentStep;
+                  $scope.currentStep = step;
+                  var incrementVal = val*stepDiff;
+                  $scope.currentHeight += incrementVal;
+                }
+                document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
                 $scope.slider._slideNext();
             }
 
-            $scope.previousSlide = function () {
+            $scope.previousSlide = function (section,step,val) {
+                if(section == 3 && step ==86){
+                  if($scope.intake.numberOfProperties != 0){
+                    $scope.currentStep = $scope.lastPropertyStep;
+                    $scope.calcVal = 25/($scope.intake.numberOfProperties*5);
+                    $scope.currentHeight = 50-$scope.calcVal;
+                  }
+                  else{
+                    $scope.currentHeight = 25;
+                    $scope.currentStep = 51;
+                    $scope.calcVal = 0;
+                  }
+                }
+                else if(section == 3 && step ==50){
+                  if($scope.intake.numberOfVehicles != 0){
+                    $scope.currentStep = $scope.lastVehicleStep;
+                    $scope.calcVal = 25 / ($scope.intake.numberOfVehicles*7);
+                    $scope.currentHeight = 25-$scope.calcVal;
+                  }
+                  else{
+                    $scope.currentStep = 1;
+                    $scope.calcVal = 0;
+                    $scope.currentHeight = 0;
+                  }
+                }
+                else if(section == 3 && step == 99){
+                  $scope.calcVal = 50/13;
+                  document.getElementById('progressBar'+$scope.currentSection).style.height = '0px';
+                  $scope.currentHeight = 100 - $scope.calcVal;
+                  $scope.currentStep = step;
+                  document.getElementById('selected-num-circle'+$scope.currentSection).style.backgroundColor="#C7C7C7";
+                  $scope.currentSection = section;
+                  $scope.setSelectedCircle();
+                }
+                else if(section == $scope.currentSection){
+                  var stepDiff = $scope.currentStep - step;
+                  $scope.currentStep = step;
+                  var decrementVal;
+                  if($scope.currentSection != 3){
+                    decrementVal = val * stepDiff;
+                  }
+                  else{
+                    decrementVal = $scope.calcVal * stepDiff;
+                  }
+                  $scope.currentHeight -= decrementVal;
+                }
+                else if(section < $scope.currentSection){
+                    document.getElementById('progressBar'+$scope.currentSection).style.height = '0px';
+                    $scope.currentHeight =100-val;
+                    $scope.currentStep = step;  
+                    document.getElementById('selected-num-circle'+$scope.currentSection).style.backgroundColor="#C7C7C7";
+                    $scope.currentSection = section;
+                    $scope.setSelectedCircle();
+                }
+
+                document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
                 $scope.slider._slidePrev();
             }
 

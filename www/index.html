@@ -39,56 +39,66 @@
     <script src="js/locationSlide/location.directive.js"></script>
     <script src="js/client/client.directive.js"></script>
   </head>
-  <body ng-app="starter" style="height:100%;width:100%;">
+  <body ng-app="starter" class="platform-ios" style="height:100%;width:100%;">
       <div class="row" style="height:100vh;">
         <div class="col col-20" style="height:100%;margin-top:77px;">
           <div class="row" style="position:relative;">
-            <div style="height:75px; width:75px; border-radius:50px;margin-left:auto; margin-right:auto;position:relative;border:2px solid #5392cf;">
+            <div id="selected-circle1" class="circle-border-selected" style="height:75px; width:75px; border-radius:50px;margin-left:auto; margin-right:auto;position:relative;">
             </div>
-            <div style="background-color:#5392cf;border-radius:50%;height:50px;width:50px;position:absolute;text-align:center;right: 52px;top: 17px;">
+            <div id="selected-num-circle1"style="background-color:#5392cf;border-radius:50%;height:50px;width:50px;position:absolute;text-align:center;right: 52px;top: 17px;">
               <p style="font-size:24pt;color:white; position: relative;top: 14px;">1</p>
             </div>
           </div>
-          <div class="row">
+          <div class="row" style="position:relative">
             <div style="height:100px;width:2px;margin-left:auto;margin-right:auto;background-color:#C7C7C7;">
+            </div>
+            <div id="progressBar1" style="height: 0px;width:2px;margin-left:auto;margin-right:auto;background-color:#5392cf;position:absolute;left: 76px;">
+                
             </div>
           </div>
           <div class="row" style="position:relative;">
-            <div style="height:75px; width:75px; border-radius:50px;margin-left:auto; margin-right:auto;position:relative;border:2px solid #C7C7C7;">
+            <div id="selected-circle2" class="circle-border-not-selected" style="height:75px; width:75px; border-radius:50px;margin-left:auto; margin-right:auto;position:relative;">
             </div>
-            <div style="background-color:#C7C7C7;border-radius:50%;height:50px;width:50px;position:absolute;text-align:center;right: 52px;top: 13px;">
+            <div id="selected-num-circle2" style="background-color:#C7C7C7;border-radius:50%;height:50px;width:50px;position:absolute;text-align:center;right: 52px;top: 13px;">
               <p style="font-size:24pt;color:white; position: relative;top: 14px;">2</p>
             </div>
           </div>
-          <div class="row">
+          <div class="row" style="position:relative">
             <div style="height:100px;width:2px;margin-left:auto;margin-right:auto;background-color:#C7C7C7;">
             </div>
-          </div><div class="row" style="position:relative;">
-            <div style="height:75px; width:75px; border-radius:50px;margin-left:auto; margin-right:auto;position:relative;border:2px solid #C7C7C7;">
+            <div id="progressBar2" style="height: 0px;width:2px;margin-left:auto;margin-right:auto;background-color:#5392cf;position:absolute;left: 76px;">
             </div>
-            <div style="background-color:#C7C7C7;border-radius:50%;height:50px;width:50px;position:absolute;text-align:center;right: 52px;top: 13px;">
+          </div>
+          <div class="row" style="position:relative;">
+            <div id="selected-circle3" class="circle-border-not-selected" style="height:75px; width:75px; border-radius:50px;margin-left:auto; margin-right:auto;position:relative;">
+            </div>
+            <div id="selected-num-circle3" style="background-color:#C7C7C7;border-radius:50%;height:50px;width:50px;position:absolute;text-align:center;right: 52px;top: 13px;">
               <p style="font-size:24pt;color:white; position: relative;top: 14px;">3</p>
             </div>          
           </div>
-          <div class="row">
+          <div class="row" style="position:relative;">
             <div style="height:100px;width:2px;margin-left:auto;margin-right:auto;background-color:#C7C7C7;">
             </div>
+            <div id="progressBar3" style="height: 0px;width:2px;margin-left:auto;margin-right:auto;background-color:#5392cf;position:absolute;left: 76px;">
+          </div>
           </div>
           <div class="row" style="position:relative;">
-            <div style="height:75px; width:75px; border-radius:50px;margin-left:auto; margin-right:auto;position:relative;border:2px solid #C7C7C7;">
+            <div id="selected-circle4" class="circle-border-not-selected" style="height:75px; width:75px; border-radius:50px;margin-left:auto; margin-right:auto;position:relative;">
             </div>
-            <div style="background-color:#C7C7C7;border-radius:50%;height:50px;width:50px;position:absolute;text-align:center;right: 52px;top: 13px;">
+            <div id="selected-num-circle4" style="background-color:#C7C7C7;border-radius:50%;height:50px;width:50px;position:absolute;text-align:center;right: 52px;top: 13px;">
               <p style="font-size:24pt;color:white; position: relative;top: 14px;">4</p>
             </div>
           </div>
-          <div class="row">
+          <div class="row" style="position:relative;">
             <div style="height:100px;width:2px;margin-left:auto;margin-right:auto;background-color:#C7C7C7;">
+            </div>
+            <div id="progressBar4" style="height: 0px;width:2px;margin-left:auto;margin-right:auto;background-color:#5392cf;position:absolute;left: 76px;">
             </div>
           </div>
           <div class="row" style="position:relative;">
-            <div style="height:75px; width:75px; border-radius:50px;margin-left:auto; margin-right:auto;position:relative;border:2px solid #C7C7C7;">
+            <div class="circle-border-not-selected" id="selected-circle5" style="height:75px; width:75px; border-radius:50px;margin-left:auto; margin-right:auto;position:relative;">
             </div>
-            <div style="background-color:#C7C7C7;border-radius:50%;height:50px;width:50px;position:absolute;text-align:center;right: 52px;top: 13px;">
+            <div id="selected-num-circle5" style="background-color:#C7C7C7;border-radius:50%;height:50px;width:50px;position:absolute;text-align:center;right: 52px;top: 13px;">
               <p style="font-size:24pt;color:white; position: relative;top: 14px;">5</p>
             </div>
           </div>
@@ -97,9 +107,9 @@
             </div>
           </div>
           <div class="row" style="position:relative;">
-            <div style="height:75px; width:75px; border-radius:50px;margin-left:auto; margin-right:auto;position:relative;border:2px solid #C7C7C7;">
+              <div class="circle-border-not-selected" id="selected-circle6" style="height:75px; width:75px; border-radius:50px;margin-left:auto; margin-right:auto;position:relative;">
             </div>
-            <div style="background-color:#C7C7C7;border-radius:50%;height:50px;width:50px;position:absolute;text-align:center;right: 52px;top: 13px;">
+            <div id="selected-num-circle6" style="background-color:#C7C7C7;border-radius:50%;height:50px;width:50px;position:absolute;text-align:center;right: 52px;top: 13px;">
               <p style="font-size:24pt;color:white; position: relative;top: 14px;">6</p>
             </div>
           </div>
