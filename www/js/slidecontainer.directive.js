@@ -106,6 +106,8 @@
                 speed: 500
             };
 
+            $scope.sectionNames = ['Client Information','Spouse Information','Assets','Client Information'];
+
             $scope.intake = {
                 'location': null,
                 'client':{'name':'','phone':'','birthDate':'','address':'','socialSecurityNumber':'','email':'','city':'','state':'','zipCode':'','cellPhone':'','income':'', 'incomeType':'','hasSpouse':null},
@@ -319,6 +321,12 @@
                   document.getElementById('selected-circle'+i).classList.remove("circle-border-selected");
                   document.getElementById('selected-circle'+i).classList.remove("circle-border-not-selected");
                   document.getElementById('selected-circle'+i).classList.add("circle-border-selected");
+                  if(i < 5){
+                    document.getElementById('main-header-txt').innerHTML = $scope.sectionNames[i-1];
+                  }
+                  else{
+                    document.getElementById('main-header-txt').innerHTML = '';
+                  }
                 }
               }
            }
@@ -404,6 +412,7 @@
                   var incrementVal = val*stepDiff;
                   $scope.currentHeight += incrementVal;
                 }
+                /*document.getElementById('main-step-txt').innerHTML = 'Step '+ step;*/
                 document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
                 $scope.slider._slideNext();
             }
@@ -462,7 +471,7 @@
                     $scope.currentSection = section;
                     $scope.setSelectedCircle();
                 }
-
+                /*document.getElementById('main-step-txt').innerHTML = 'Step '+ step;*/
                 document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
                 $scope.slider._slidePrev();
             }
