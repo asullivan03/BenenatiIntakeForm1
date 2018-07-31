@@ -2,9 +2,9 @@
 <ion-slides options="options" slider="data.slider" style="padding-top:350px">
     <ion-slide-page><location></location></ion-slide-page>
     <ion-slide-page>
-        <h2 class="slide-question-txt">Please enter your full name.</h2>
+        <h2 class="slide-question-txt">Please enter your Full Name:</h2>
         <div class="row slide-one-textbox-div">
-            <input type="text" placeholder="Full name" ng-model="intake.client.name" />
+            <input type="text" placeholder="Full Name" ng-model="intake.client.name" />
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
@@ -22,9 +22,9 @@
         </div>
     </ion-slide-page>
     <ion-slide-page>
-        <h2 class="slide-question-txt">Please enter your phone number.</h2>
+        <h2 class="slide-question-txt">Please enter your Phone Number:</h2>
         <div class="row slide-one-textbox-div">
-            <input type="text" placeholder="Phone number" ng-model="intake.client.phone" />
+            <input type="tel" placeholder="Phone Number" ng-model="intake.client.phone" />
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
@@ -42,7 +42,7 @@
         </div>
     </ion-slide-page>
     <ion-slide-page>
-        <h2 class="slide-question-txt">What is your birth date?</h2>
+        <h2 class="slide-question-txt">Please enter your Birth Date:</h2>
         <div class="row slide-one-textbox-div">
             <input type="date" placeholder="Birth Date" ng-model="intake.client.birthDate" />
         </div>
@@ -62,9 +62,9 @@
         </div>
     </ion-slide-page>
     <ion-slide-page>
-        <h2 class="slide-question-txt">Please enter your address.</h2>
+        <h2 class="slide-question-txt">Please enter your Address:</h2>
         <div class="row slide-one-textbox-div">
-            <input type="text" placeholder="Address" ng-model="intake.client.address" />
+            <textarea rows="4" cols="50" placeholder="Address" ng-model="intake.client.address" ></textarea>
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
@@ -82,9 +82,9 @@
         </div>
     </ion-slide-page>
     <ion-slide-page>
-        <h2 class="slide-question-txt">Please enter your Social Security Number.</h2>
+        <h2 class="slide-question-txt">Please enter your Social Security Number:</h2>
         <div class="row slide-one-textbox-div">
-            <input type="text" placeholder="Social Security Number" ng-model="intake.client.socialSecurityNumber" />
+            <input type="tel" placeholder="Social Security Number" ng-model="intake.client.socialSecurityNumber" />
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
@@ -102,7 +102,7 @@
         </div>
     </ion-slide-page>
     <ion-slide-page>
-        <h2 class="slide-question-txt">Please enter your Email.</h2>
+        <h2 class="slide-question-txt">Please enter your Email:</h2>
         <div class="row slide-one-textbox-div">
             <input type="email" placeholder="Email" ng-model="intake.client.email" />
         </div>
@@ -122,7 +122,7 @@
         </div>
     </ion-slide-page>
     <ion-slide-page>
-        <h2 class="slide-question-txt">Please enter your City.</h2>
+        <h2 class="slide-question-txt">Please enter your City:</h2>
         <div class="row slide-one-textbox-div">
             <input type="text" placeholder="City" ng-model="intake.client.city" />
         </div>
@@ -142,7 +142,7 @@
         </div>
     </ion-slide-page>
     <ion-slide-page>
-        <h2 class="slide-question-txt">Please enter your State.</h2>
+        <h2 class="slide-question-txt">Please enter your State:</h2>
         <div class="row slide-one-textbox-div">
             <input type="text" placeholder="State" ng-model="intake.client.state" />
         </div>
@@ -162,9 +162,9 @@
         </div>
     </ion-slide-page>
     <ion-slide-page>
-        <h2 class="slide-question-txt">Please enter your Zip Code.</h2>
+        <h2 class="slide-question-txt">Please enter your Zip Code:</h2>
         <div class="row slide-one-textbox-div">
-            <input type="text" placeholder="Zip Code" ng-model="intake.client.zipCode" />
+            <input type="tel" placeholder="Zip Code" ng-model="intake.client.zipCode" />
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
@@ -182,9 +182,9 @@
         </div>
     </ion-slide-page>
     <ion-slide-page>
-        <h2 class="slide-question-txt">Please enter your Cell Phone.</h2>
+        <h2 class="slide-question-txt">Please enter your Cell Phone:</h2>
         <div class="row slide-one-textbox-div">
-            <input type="text" placeholder="Cell Phone" ng-model="intake.client.cellPhone" />
+            <input type="tel" placeholder="Cell Phone" ng-model="intake.client.cellPhone" />
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
@@ -225,12 +225,12 @@
         <h2 class="slide-question-txt">Do you receive child support for any child?</h2>
         <div class="row slide-two-button-div">
             <div class="col col-50">
-                <div class="slide-select-button" ng-click="receiveChildSupport('yes')">
+                <div ng-class="{'slide-select-button': !recieveChildSupportYesSelected, 'slide-selected-button': recieveChildSupportYesSelected}" ng-click="receiveChildSupport('yes')">
                     <p>Yes</p>
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-select-button" ng-click="receiveChildSupport('no')">
+                <div ng-class="{'slide-select-button': !recieveChildSupportNoSelected, 'slide-selected-button': recieveChildSupportNoSelected}" ng-click="receiveChildSupport('no')">
                     <p>No</p>
                 </div>
             </div>
@@ -250,7 +250,7 @@
             </div>
         </div>
     </ion-slide-page>
-    <ion-slide-page ng-if="hasChildren()">
+    <ion-slide-page ng-if="hasChildren() && intake.receiveChildSupport == 'yes'">
         <h2 class="slide-question-txt">How many children do you receive child support for?</h2>
         <div class="row slide-one-textbox-div">
             <input type="number" placeholder="# of children" ng-model="intake.numberOfChildrenReceivingSupport" />
@@ -275,14 +275,16 @@
         <div class="row slide-one-textbox-div">
             <input type="number" placeholder="$" ng-model="intake.client.income" />
         </div>
-        <div class="row slide-two-radio-div">
-            <div class="col col-50">
-                <ion-radio ng-model="intake.client.incomeType" ng-value="Hourly">Hourly</ion-radio>
-            </div>
-            <div class="col col-50">
-                <ion-radio ng-model="intake.client.incomeType" ng-value="Annually">Annually</ion-radio>
-            </div>
-        </div>
+        <ion-list ng-model="intake.client.incomeType" class="row slide-two-radio-div">
+			<div class="row">
+				<div class="col col-50">
+					<ion-radio value="Hourly">Hourly</ion-radio>
+				</div>
+				<div class="col col-50">
+					<ion-radio value="Annually">Annually</ion-radio>	
+				</div>
+			</div>
+        </ion-list>
         <div class="row next-prev-button-row">
             <div class="col col-50">
                 <div class="slide-nav-button prev" ng-click="previousSlide(1,13,7.2)">
@@ -302,12 +304,12 @@
         <h2 class="slide-question-txt">Do you have a spouse?</h2>
         <div class="row slide-two-button-div">
             <div class="col col-50">
-                <div class="slide-select-button" ng-click="haveSpouse('yes')">
+                <div ng-class="{'slide-select-button': !spouseYesSelected, 'slide-selected-button': spouseYesSelected}" ng-click="haveSpouse('yes')">
                     <p>Yes</p>
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-select-button" ng-click="haveSpouse('no')">
+                <div ng-class="{'slide-select-button': !spouseNoSelected, 'slide-selected-button': spouseNoSelected}" ng-click="haveSpouse('no')">
                     <p>No</p>
                 </div>
             </div>
@@ -330,7 +332,7 @@
 
   <!--START OF SECOND STEP-->
     <ion-slide-page ng-if="showSpouseArea()">
-    <h2 class="slide-question-txt">Please enter your spouse's full name.</h2>
+		<h2 class="slide-question-txt">Please enter your spouse's full name:</h2>
     <div class="row slide-one-textbox-div">
       <input type="text" placeholder="Full name" ng-model="intake.spouse.name"  />
     </div>
@@ -350,9 +352,9 @@
     </div>
   </ion-slide-page>
   <ion-slide-page ng-if="showSpouseArea()">
-    <h2 class="slide-question-txt">Please enter your spouse's phone number.</h2>
+	  <h2 class="slide-question-txt">Please enter your spouse's phone number:</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="Phone number" ng-model="intake.spouse.phoneNumber" />
+      <input type="tel" placeholder="Phone number" ng-model="intake.spouse.phoneNumber" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -393,12 +395,12 @@
     <h2 class="slide-question-txt">Does your spouse share the same address?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasSameAddress(true)">
+        <div ng-class="{'slide-select-button': !sameAddressYesSelected, 'slide-selected-button': sameAddressYesSelected}" ng-click="hasSameAddress(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasSameAddress(false)">
+        <div ng-class="{'slide-select-button': !sameAddressNoSelected, 'slide-selected-button': sameAddressNoSelected}" ng-click="hasSameAddress(false)">
           <p>No</p>
         </div>
       </div>
@@ -419,9 +421,9 @@
     </div>
   </ion-slide-page>
   <ion-slide-page ng-if="showSpouseArea() && !intake.spouse.shareAddress">
-    <h2 class="slide-question-txt">Please enter your spouse's address.</h2>
+	  <h2 class="slide-question-txt">Please enter your spouse's address:</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="address" ng-model="intake.spouse.address"/>
+      <textarea rows="4" cols="50" placeholder="address" ng-model="intake.spouse.address"></textarea>
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -439,9 +441,9 @@
     </div>
   </ion-slide-page>
   <ion-slide-page ng-if="showSpouseArea()">
-    <h2 class="slide-question-txt">Please enter your spouse's Social Security Number.</h2>
+	  <h2 class="slide-question-txt">Please enter your spouse's Social Security Number:</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="Social Security Number" ng-model="intake.spouse.socialSecurityNumber"/>
+      <input type="tel" placeholder="Social Security Number" ng-model="intake.spouse.socialSecurityNumber"/>
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -459,7 +461,7 @@
     </div>
   </ion-slide-page>
   <ion-slide-page ng-if="showSpouseArea()">
-    <h2 class="slide-question-txt">Please enter your spouse's Email.</h2>
+	  <h2 class="slide-question-txt">Please enter your spouse's Email:</h2>
     <div class="row slide-one-textbox-div">
       <input type="email" placeholder="Email" ng-model="intake.spouse.email" />
     </div>
@@ -479,7 +481,7 @@
     </div>
   </ion-slide-page>
   <ion-slide-page ng-if="showSpouseArea() && !intake.spouse.shareAddress">
-    <h2 class="slide-question-txt">Please enter your spouse's City.</h2>
+	  <h2 class="slide-question-txt">Please enter your spouse's City:</h2>
     <div class="row slide-one-textbox-div">
       <input type="text" placeholder="City" ng-model="intake.spouse.city" />
     </div>
@@ -499,7 +501,7 @@
     </div>
   </ion-slide-page>
   <ion-slide-page ng-if="showSpouseArea() && !intake.spouse.shareAddress">
-    <h2 class="slide-question-txt">Please enter your spouse's State.</h2>
+	  <h2 class="slide-question-txt">Please enter your spouse's State:</h2>
     <div class="row slide-one-textbox-div">
       <input type="text" placeholder="State" ng-model="intake.spouse.state" />
     </div>
@@ -519,9 +521,9 @@
     </div>
   </ion-slide-page>
   <ion-slide-page ng-if="showSpouseArea() && !intake.spouse.shareAddress">
-    <h2 class="slide-question-txt">Please enter your spouse's Zip Code.</h2>
+	  <h2 class="slide-question-txt">Please enter your spouse's Zip Code:</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="Zip Code" ng-model="intake.spouse.zipCode" />
+      <input type="tel" placeholder="Zip Code" ng-model="intake.spouse.zipCode" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -539,9 +541,9 @@
     </div>
   </ion-slide-page>
   <ion-slide-page ng-if="showSpouseArea()">
-    <h2 class="slide-question-txt">Please enter your spouse's Cell Phone.</h2>
+	  <h2 class="slide-question-txt">Please enter your spouse's Cell Phone:</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="Cell Phone" ng-model="intake.spouse.cellPhone" />
+      <input type="tel" placeholder="Cell Phone" ng-model="intake.spouse.cellPhone" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -591,12 +593,12 @@
     <h2 class="slide-question-txt">Have you or your spouse ever filed bankruptcy before?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setFiledBankruptcy(true)">
+        <div ng-class="{'slide-select-button': !filedYesSelected, 'slide-selected-button': filedYesSelected}" ng-click="setFiledBankruptcy(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setFiledBankruptcy(false)">
+        <div ng-class="{'slide-select-button': !filedNoSelected, 'slide-selected-button': filedNoSelected}" ng-click="setFiledBankruptcy(false)">
           <p>No</p>
         </div>
       </div>
@@ -640,12 +642,12 @@
     <h2 class="slide-question-txt">Have you paid or given any money to friends or family?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setHasPaidFriends(true)">
+        <div ng-class="{'slide-select-button': !paidFriendsYesSelected, 'slide-selected-button': paidFriendsYesSelected}" ng-click="setHasPaidFriends(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setHasPaidFriends(false)">
+        <div ng-class="{'slide-select-button': !paidFriendsNoSelected, 'slide-selected-button': paidFriendsNoSelected}" ng-click="setHasPaidFriends(false)">
           <p>No</p>
         </div>
       </div>
@@ -709,12 +711,12 @@
     <h2 class="slide-question-txt">Are you on a deed to a property that belongs to a third party?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setOnThirdPartyDeed(true)">
+        <div ng-class="{'slide-select-button': !deedYesSelected, 'slide-selected-button': deedYesSelected}" ng-click="setOnThirdPartyDeed(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setOnThirdPartyDeed(false)">
+        <div ng-class="{'slide-select-button': !deedNoSelected, 'slide-selected-button': deedNoSelected}" ng-click="setOnThirdPartyDeed(false)">
           <p>No</p>
         </div>
       </div>
@@ -757,7 +759,7 @@
   <ion-slide-page ng-if="isOnThirdPartyDeed()">
     <h2 class="slide-question-txt">How much is the property worth?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.howMuchIsPropertyWorth" />
+      <input type="number" placeholder="$" ng-model="intake.howMuchIsPropertyWorth" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -798,7 +800,7 @@
   <ion-slide-page ng-if="hasVehicles(1)">
     <h2 class="slide-question-txt">What is the year of automobile #1?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="year" ng-model="intake.Automobiles[0].year" />
+      <input type="number" placeholder="year" ng-model="intake.Automobiles[0].year" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -858,7 +860,7 @@
   <ion-slide-page ng-if="hasVehicles(1)">
     <h2 class="slide-question-txt">What is the mileage of automobile #1?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="mileage" ng-model="intake.Automobiles[0].mileage" />
+      <input type="number" placeholder="mileage" ng-model="intake.Automobiles[0].mileage" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -903,7 +905,7 @@
   <ion-slide-page ng-if="hasVehicles(1)">
     <h2 class="slide-question-txt">What is the current amount that is owed for automobile #1?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.Automobiles[0].currentAmountOwed" />
+      <input type="number" placeholder="$" ng-model="intake.Automobiles[0].currentAmountOwed" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -923,7 +925,7 @@
   <ion-slide-page ng-if="hasVehicles(1)">
     <h2 class="slide-question-txt">What is the payment amount for automobile #1?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.Automobiles[0].paymentAmount" />
+      <input type="number" placeholder="$" ng-model="intake.Automobiles[0].paymentAmount" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -944,7 +946,7 @@
   <ion-slide-page ng-if="hasVehicles(2)">
       <h2 class="slide-question-txt">What is the year of automobile #2?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="year" ng-model="intake.Automobiles[1].year" />
+          <input type="number" placeholder="year" ng-model="intake.Automobiles[1].year" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1004,7 +1006,7 @@
   <ion-slide-page ng-if="hasVehicles(2)">
       <h2 class="slide-question-txt">What is the mileage of automobile #2?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="mileage" ng-model="intake.Automobiles[1].mileage" />
+          <input type="number" placeholder="mileage" ng-model="intake.Automobiles[1].mileage" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1049,7 +1051,7 @@
   <ion-slide-page ng-if="hasVehicles(2)">
       <h2 class="slide-question-txt">What is the current amount that is owed for automobile #2?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.Automobiles[1].currentAmountOwed" />
+          <input type="number" placeholder="$" ng-model="intake.Automobiles[1].currentAmountOwed" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1069,7 +1071,7 @@
   <ion-slide-page ng-if="hasVehicles(2)">
       <h2 class="slide-question-txt">What is the payment amount for automobile #2?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.Automobiles[1].paymentAmount" />
+          <input type="number" placeholder="$" ng-model="intake.Automobiles[1].paymentAmount" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1090,7 +1092,7 @@
   <ion-slide-page ng-if="hasVehicles(3)">
       <h2 class="slide-question-txt">What is the year of automobile #3?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="year" ng-model="intake.Automobiles[2].year" />
+          <input type="number" placeholder="year" ng-model="intake.Automobiles[2].year" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1150,7 +1152,7 @@
   <ion-slide-page ng-if="hasVehicles(3)">
       <h2 class="slide-question-txt">What is the mileage of automobile #3?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="mileage" ng-model="intake.Automobiles[2].mileage" />
+          <input type="number" placeholder="mileage" ng-model="intake.Automobiles[2].mileage" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1195,7 +1197,7 @@
   <ion-slide-page ng-if="hasVehicles(3)">
       <h2 class="slide-question-txt">What is the current amount that is owed for automobile #3?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.Automobiles[2].currentAmountOwed" />
+          <input type="number" placeholder="$" ng-model="intake.Automobiles[2].currentAmountOwed" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1215,7 +1217,7 @@
   <ion-slide-page ng-if="hasVehicles(3)">
       <h2 class="slide-question-txt">What is the payment amount for automobile #3?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.Automobiles[2].paymentAmount" />
+          <input type="number" placeholder="$" ng-model="intake.Automobiles[2].paymentAmount" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1236,7 +1238,7 @@
   <ion-slide-page ng-if="hasVehicles(4)">
       <h2 class="slide-question-txt">What is the year of automobile #4?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="year" ng-model="intake.Automobiles[3].year" />
+          <input type="number" placeholder="year" ng-model="intake.Automobiles[3].year" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1296,7 +1298,7 @@
   <ion-slide-page ng-if="hasVehicles(4)">
       <h2 class="slide-question-txt">What is the mileage of automobile #4?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="mileage" ng-model="intake.Automobiles[3].mileage" />
+          <input type="number" placeholder="mileage" ng-model="intake.Automobiles[3].mileage" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1341,7 +1343,7 @@
   <ion-slide-page ng-if="hasVehicles(4)">
       <h2 class="slide-question-txt">What is the current amount that is owed for automobile #4?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.Automobiles[3].currentAmountOwed" />
+          <input type="number" placeholder="$" ng-model="intake.Automobiles[3].currentAmountOwed" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1361,7 +1363,7 @@
   <ion-slide-page ng-if="hasVehicles(4)">
       <h2 class="slide-question-txt">What is the payment amount for automobile #4?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.Automobiles[3].paymentAmount" />
+          <input type="number" placeholder="$" ng-model="intake.Automobiles[3].paymentAmount" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1382,7 +1384,7 @@
   <ion-slide-page ng-if="hasVehicles(5)">
       <h2 class="slide-question-txt">What is the year of automobile #5?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="year" ng-model="intake.Automobiles[4].year" />
+          <input type="number" placeholder="year" ng-model="intake.Automobiles[4].year" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1442,7 +1444,7 @@
   <ion-slide-page ng-if="hasVehicles(5)">
       <h2 class="slide-question-txt">What is the mileage of automobile #5?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="mileage" ng-model="intake.Automobiles[4].mileage" />
+          <input type="number" placeholder="mileage" ng-model="intake.Automobiles[4].mileage" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1487,7 +1489,7 @@
   <ion-slide-page ng-if="hasVehicles(5)">
       <h2 class="slide-question-txt">What is the current amount that is owed for automobile #5?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.Automobiles[4].currentAmountOwed" />
+          <input type="number" placeholder="$" ng-model="intake.Automobiles[4].currentAmountOwed" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1507,7 +1509,7 @@
   <ion-slide-page ng-if="hasVehicles(5)">
       <h2 class="slide-question-txt">What is the payment amount for automobile #5?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.Automobiles[4].paymentAmount" />
+          <input type="number" placeholder="$" ng-model="intake.Automobiles[4].paymentAmount" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1528,7 +1530,7 @@
   <ion-slide-page ng-if="hasVehicles(6)">
       <h2 class="slide-question-txt">What is the year of automobile #6?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="year" ng-model="intake.Automobiles[5].year"/>
+          <input type="number" placeholder="year" ng-model="intake.Automobiles[5].year"/>
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1588,7 +1590,7 @@
   <ion-slide-page ng-if="hasVehicles(6)">
       <h2 class="slide-question-txt">What is the mileage of automobile #6?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="mileage" ng-model="intake.Automobiles[5].mileage" />
+          <input type="number" placeholder="mileage" ng-model="intake.Automobiles[5].mileage" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1633,7 +1635,7 @@
   <ion-slide-page ng-if="hasVehicles(6)">
       <h2 class="slide-question-txt">What is the current amount that is owed for automobile #6?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.Automobiles[5].currentAmountOwed" />
+          <input type="number" placeholder="$" ng-model="intake.Automobiles[5].currentAmountOwed" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1653,7 +1655,7 @@
   <ion-slide-page ng-if="hasVehicles(6)">
       <h2 class="slide-question-txt">What is the payment amount for automobile #6?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.Automobiles[5].paymentAmount" />
+          <input type="number" placeholder="$" ng-model="intake.Automobiles[5].paymentAmount" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1674,7 +1676,7 @@
   <ion-slide-page ng-if="hasVehicles(7)">
       <h2 class="slide-question-txt">What is the year of automobile #7?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="year" ng-model="intake.Automobiles[6].year" />
+          <input type="number" placeholder="year" ng-model="intake.Automobiles[6].year" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1734,7 +1736,7 @@
   <ion-slide-page ng-if="hasVehicles(7)">
       <h2 class="slide-question-txt">What is the mileage of automobile #7?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="mileage" ng-model="intake.Automobiles[6].mileage" />
+          <input type="number" placeholder="mileage" ng-model="intake.Automobiles[6].mileage" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1779,7 +1781,7 @@
   <ion-slide-page ng-if="hasVehicles(7)">
       <h2 class="slide-question-txt">What is the current amount that is owed for automobile #7?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.Automobiles[6].currentAmountOwed" />
+          <input type="number" placeholder="$" ng-model="intake.Automobiles[6].currentAmountOwed" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1799,7 +1801,7 @@
   <ion-slide-page ng-if="hasVehicles(7)">
       <h2 class="slide-question-txt">What is the payment amount for automobile #7?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.Automobiles[6].paymentAmount" />
+          <input type="number" placeholder="$" ng-model="intake.Automobiles[6].paymentAmount" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1821,7 +1823,7 @@
   <ion-slide-page>
     <h2 class="slide-question-txt">How many real estate properties do you own?</h2>
     <div class="row slide-one-textbox-div">
-        <input type="text" ng-model="intake.numberOfProperties" placeholder="$" />
+        <input type="number" ng-model="intake.numberOfProperties" placeholder="$" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -1842,7 +1844,7 @@
   <ion-slide-page ng-if="hasProperties(1)">
     <h2 class="slide-question-txt">What is the total balance of the mortgage for property #1?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.realEstate[0].firstMortgageBalance" />
+      <input type="number" placeholder="$" ng-model="intake.realEstate[0].firstMortgageBalance" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -1862,7 +1864,7 @@
   <ion-slide-page ng-if="hasProperties(1)">
     <h2 class="slide-question-txt">What is the monthly payment for property #1?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.realEstate[0].firstMortgagePayment" />
+      <input type="number" placeholder="$" ng-model="intake.realEstate[0].firstMortgagePayment" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -1883,12 +1885,12 @@
     <h2 class="slide-question-txt">Does property #1 have a second mortgage?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setSecondMortgage(1,true)">
+        <div ng-class="{'slide-select-button': !secondMortgageYesSelected[1], 'slide-selected-button': secondMortgageYesSelected[1]}" ng-click="setSecondMortgage(1,true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setSecondMortgage(1,false)">
+        <div ng-class="{'slide-select-button': !secondMortgageNoSelected[1], 'slide-selected-button': secondMortgageNoSelected[1]}" ng-click="setSecondMortgage(1,false)">
           <p>No</p>
         </div>
       </div>
@@ -1911,7 +1913,7 @@
   <ion-slide-page ng-if="hasProperties(1) && hasSecondMortgage(1)">
     <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #1?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.realEstate[0].secondMortgageBalance" />
+      <input type="number" placeholder="$" ng-model="intake.realEstate[0].secondMortgageBalance" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -1931,7 +1933,7 @@
   <ion-slide-page ng-if="hasProperties(1) && hasSecondMortgage(1)">
     <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #1?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.realEstate[0].secondMortgageMonthlyPayment" />
+      <input type="number" placeholder="$" ng-model="intake.realEstate[0].secondMortgageMonthlyPayment" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -1953,7 +1955,7 @@
   <ion-slide-page ng-if="hasProperties(2)">
       <h2 class="slide-question-txt">What is the total balance of the mortgage for property #2?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[1].firstMortgageBalance" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[1].firstMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1973,7 +1975,7 @@
   <ion-slide-page ng-if="hasProperties(2)">
       <h2 class="slide-question-txt">What is the monthly payment for property #2?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[1].firstMortgagePayment" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[1].firstMortgagePayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1994,12 +1996,12 @@
       <h2 class="slide-question-txt">Does property #2 have a second mortgage?</h2>
       <div class="row slide-two-button-div">
           <div class="col col-50">
-              <div class="slide-select-button" ng-click="setSecondMortgage(2,true)">
+              <div ng-class="{'slide-select-button': !secondMortgageYesSelected[2], 'slide-selected-button': secondMortgageYesSelected[2]}" ng-click="setSecondMortgage(2,true)">
                   <p>Yes</p>
               </div>
           </div>
           <div class="col col-50">
-              <div class="slide-select-button" ng-click="setSecondMortgage(2,false)">
+              <div ng-class="{'slide-select-button': !secondMortgageNoSelected[2], 'slide-selected-button': secondMortgageNoSelected[2]}" ng-click="setSecondMortgage(2,false)">
                   <p>No</p>
               </div>
           </div>
@@ -2022,7 +2024,7 @@
   <ion-slide-page ng-if="hasProperties(2) && hasSecondMortgage(2)">
       <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #2?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[1].secondMortgageBalance" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[1].secondMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2042,7 +2044,7 @@
   <ion-slide-page ng-if="hasProperties(2) && hasSecondMortgage(2)">
       <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #2?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[1].secondMortgageMonthlyPayment" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[1].secondMortgageMonthlyPayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2064,7 +2066,7 @@
   <ion-slide-page ng-if="hasProperties(3)">
       <h2 class="slide-question-txt">What is the total balance of the mortgage for property #3?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[2].firstMortgageBalance" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[2].firstMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2084,7 +2086,7 @@
   <ion-slide-page ng-if="hasProperties(3)">
       <h2 class="slide-question-txt">What is the monthly payment for property #3?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[2].firstMortgagePayment" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[2].firstMortgagePayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2105,12 +2107,12 @@
       <h2 class="slide-question-txt">Does property #3 have a second mortgage?</h2>
       <div class="row slide-two-button-div">
           <div class="col col-50">
-              <div class="slide-select-button" ng-click="setSecondMortgage(3,true)">
+              <div ng-class="{'slide-select-button': !secondMortgageYesSelected[3], 'slide-selected-button': secondMortgageYesSelected[3]}" ng-click="setSecondMortgage(3,true)">
                   <p>Yes</p>
               </div>
           </div>
           <div class="col col-50">
-              <div class="slide-select-button" ng-click="setSecondMortgage(3,false)">
+              <div ng-class="{'slide-select-button': !secondMortgageNoSelected[3], 'slide-selected-button': secondMortgageNoSelected[3]}" ng-click="setSecondMortgage(3,false)">
                   <p>No</p>
               </div>
           </div>
@@ -2133,7 +2135,7 @@
   <ion-slide-page ng-if="hasProperties(3) && hasSecondMortgage(3)">
       <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #3?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[2].secondMortgageBalance" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[2].secondMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2153,7 +2155,7 @@
   <ion-slide-page ng-if="hasProperties(3) && hasSecondMortgage(3)">
       <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #3?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[2].secondMortgageMonthlyPayment"/>
+          <input type="number" placeholder="$" ng-model="intake.realEstate[2].secondMortgageMonthlyPayment"/>
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2175,7 +2177,7 @@
   <ion-slide-page ng-if="hasProperties(4)">
       <h2 class="slide-question-txt">What is the total balance of the mortgage for property #4?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[3].firstMortgageBalance" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[3].firstMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2195,7 +2197,7 @@
   <ion-slide-page ng-if="hasProperties(4)">
       <h2 class="slide-question-txt">What is the monthly payment for property #4?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[3].firstMortgagePayment" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[3].firstMortgagePayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2216,12 +2218,12 @@
       <h2 class="slide-question-txt">Does property #4 have a second mortgage?</h2>
       <div class="row slide-two-button-div">
           <div class="col col-50">
-              <div class="slide-select-button" ng-click="setSecondMortgage(4,true)">
+              <div ng-class="{'slide-select-button': !secondMortgageYesSelected[4], 'slide-selected-button': secondMortgageYesSelected[4]}" ng-click="setSecondMortgage(4,true)">
                   <p>Yes</p>
               </div>
           </div>
           <div class="col col-50">
-              <div class="slide-select-button" ng-click="setSecondMortgage(4,false)">
+              <div ng-class="{'slide-select-button': !secondMortgageNoSelected[4], 'slide-selected-button': secondMortgageNoSelected[4]}" ng-click="setSecondMortgage(4,false)">
                   <p>No</p>
               </div>
           </div>
@@ -2244,7 +2246,7 @@
   <ion-slide-page ng-if="hasProperties(4) && hasSecondMortgage(4)">
       <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #4?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[3].secondMortgageBalance" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[3].secondMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2264,7 +2266,7 @@
   <ion-slide-page ng-if="hasProperties(4) && hasSecondMortgage(4)">
       <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #4?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[3].secondMortgageMonthlyPayment" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[3].secondMortgageMonthlyPayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2286,7 +2288,7 @@
   <ion-slide-page ng-if="hasProperties(5)">
       <h2 class="slide-question-txt">What is the total balance of the mortgage for property #5?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[4].firstMortgageBalance" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[4].firstMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2306,7 +2308,7 @@
   <ion-slide-page ng-if="hasProperties(5)">
       <h2 class="slide-question-txt">What is the monthly payment for property #5?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[4].firstMortgagePayment" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[4].firstMortgagePayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2327,12 +2329,12 @@
       <h2 class="slide-question-txt">Does property #5 have a second mortgage?</h2>
       <div class="row slide-two-button-div">
           <div class="col col-50">
-              <div class="slide-select-button" ng-click="setSecondMortgage(5,true)">
+              <div ng-class="{'slide-select-button': !secondMortgageYesSelected[5], 'slide-selected-button': secondMortgageYesSelected[5]}" ng-click="setSecondMortgage(5,true)">
                   <p>Yes</p>
               </div>
           </div>
           <div class="col col-50">
-              <div class="slide-select-button" ng-click="setSecondMortgage(5,false)">
+              <div ng-class="{'slide-select-button': !secondMortgageNoSelected[5], 'slide-selected-button': secondMortgageNoSelected[5]}" ng-click="setSecondMortgage(5,false)">
                   <p>No</p>
               </div>
           </div>
@@ -2355,7 +2357,7 @@
   <ion-slide-page ng-if="hasProperties(5) && hasSecondMortgage(5)">
       <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #5?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[4].secondMortgageBalance" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[4].secondMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2375,7 +2377,7 @@
   <ion-slide-page ng-if="hasProperties(5) && hasSecondMortgage(5)">
       <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #5?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[4].secondMortgageMonthlyPayment" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[4].secondMortgageMonthlyPayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2397,7 +2399,7 @@
   <ion-slide-page ng-if="hasProperties(6)">
       <h2 class="slide-question-txt">What is the total balance of the mortgage for property #6?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[5].firstMortgageBalance" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[5].firstMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2417,7 +2419,7 @@
   <ion-slide-page ng-if="hasProperties(6)">
       <h2 class="slide-question-txt">What is the monthly payment for property #6?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[5].firstMortgagePayment" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[5].firstMortgagePayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2438,12 +2440,12 @@
       <h2 class="slide-question-txt">Does property #6 have a second mortgage?</h2>
       <div class="row slide-two-button-div">
           <div class="col col-50">
-              <div class="slide-select-button" ng-click="setSecondMortgage(6,true)">
+              <div ng-class="{'slide-select-button': !secondMortgageYesSelected[6], 'slide-selected-button': secondMortgageYesSelected[6]}" ng-click="setSecondMortgage(6,true)">
                   <p>Yes</p>
               </div>
           </div>
           <div class="col col-50">
-              <div class="slide-select-button" ng-click="setSecondMortgage(6,false)">
+              <div ng-class="{'slide-select-button': !secondMortgageNoSelected[6], 'slide-selected-button': secondMortgageNoSelected[6]}" ng-click="setSecondMortgage(6,false)">
                   <p>No</p>
               </div>
           </div>
@@ -2466,7 +2468,7 @@
   <ion-slide-page ng-if="hasProperties(6) && hasSecondMortgage(6)">
       <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #6?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[5].secondMortgageBalance" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[5].secondMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2486,7 +2488,7 @@
   <ion-slide-page ng-if="hasProperties(6) && hasSecondMortgage(6)">
       <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #6?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[5].secondMortgageMonthlyPayment" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[5].secondMortgageMonthlyPayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2508,7 +2510,7 @@
   <ion-slide-page ng-if="hasProperties(7)">
       <h2 class="slide-question-txt">What is the total balance of the mortgage for property #7?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[6].firstMortgageBalance" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[6].firstMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2528,7 +2530,7 @@
   <ion-slide-page ng-if="hasProperties(7)">
       <h2 class="slide-question-txt">What is the monthly payment for property #7?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[6].firstMortgagePayment" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[6].firstMortgagePayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2549,12 +2551,12 @@
       <h2 class="slide-question-txt">Does property #7 have a second mortgage?</h2>
       <div class="row slide-two-button-div">
           <div class="col col-50">
-              <div class="slide-select-button" ng-click="setSecondMortgage(7,true)">
+              <div ng-class="{'slide-select-button': !secondMortgageYesSelected[7], 'slide-selected-button': secondMortgageYesSelected[7]}" ng-click="setSecondMortgage(7,true)">
                   <p>Yes</p>
               </div>
           </div>
           <div class="col col-50">
-              <div class="slide-select-button" ng-click="setSecondMortgage(7,false)">
+              <div ng-class="{'slide-select-button': !secondMortgageNoSelected[7], 'slide-selected-button': secondMortgageNoSelected[7]}" ng-click="setSecondMortgage(7,false)">
                   <p>No</p>
               </div>
           </div>
@@ -2577,7 +2579,7 @@
   <ion-slide-page ng-if="hasProperties(7) && hasSecondMortgage(7)">
       <h2 class="slide-question-txt">What is the total balance of the second mortgage for property #7?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[6].secondMortgageBalance" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[6].secondMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2597,7 +2599,7 @@
   <ion-slide-page ng-if="hasProperties(7) && hasSecondMortgage(7)">
       <h2 class="slide-question-txt">What is the monthly payment of the second mortgage for property #7?</h2>
       <div class="row slide-one-textbox-div">
-          <input type="text" placeholder="$" ng-model="intake.realEstate[6].secondMortgageMonthlyPayment" />
+          <input type="number" placeholder="$" ng-model="intake.realEstate[6].secondMortgageMonthlyPayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2620,12 +2622,12 @@
     <h2 class="slide-question-txt">Are you renting?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setIsRenting(true)">
+        <div ng-class="{'slide-select-button': !rentingYesSelected, 'slide-selected-button': rentingYesSelected}" ng-click="setIsRenting(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setIsRenting(false)">
+        <div ng-class="{'slide-select-button': !rentingNoSelected, 'slide-selected-button': rentingNoSelected}" ng-click="setIsRenting(false)">
           <p>No</p>
         </div>
       </div>
@@ -2645,10 +2647,10 @@
       </div>
     </div>
   </ion-slide-page>
-  <ion-slide-page>
+  <ion-slide-page ng-if="intake.isRenting == true">
     <h2 class="slide-question-txt">How much is your rent?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.rentAmount" />
+      <input type="number" placeholder="$" ng-model="intake.rentAmount" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2669,12 +2671,12 @@
     <h2 class="slide-question-txt">Are you living with friends or family?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setIsLivingWithFamily('yes')">
+        <div ng-class="{'slide-select-button': !livingffYesSelected, 'slide-selected-button': livingffYesSelected}" ng-click="setIsLivingWithFamily('yes')">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setIsLivingWithFamily('no')">
+        <div ng-class="{'slide-select-button': !livingffNoSelected, 'slide-selected-button': livingffNoSelected}" ng-click="setIsLivingWithFamily('no')">
           <p>No</p>
         </div>
       </div>
@@ -2698,12 +2700,12 @@
     <h2 class="slide-question-txt">Do you have any medical debt?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setHasMedicalDebt(true)">
+        <div ng-class="{'slide-select-button': !medicalDebtYesSelected, 'slide-selected-button': medicalDebtYesSelected}"  class="slide-select-button" ng-click="setHasMedicalDebt(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="setHasMedicalDebt(false)">
+        <div ng-class="{'slide-select-button': !medicalDebtNoSelected, 'slide-selected-button': medicalDebtNoSelected}" class="slide-select-button" ng-click="setHasMedicalDebt(false)">
           <p>No</p>
         </div>
       </div>
@@ -2726,7 +2728,7 @@
   <ion-slide-page>
     <h2 class="slide-question-txt">How much $ is in your checking account(s)?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.checkingAccountBalance" />
+      <input type="number" placeholder="$" ng-model="intake.checkingAccountBalance" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2746,7 +2748,7 @@
   <ion-slide-page>
     <h2 class="slide-question-txt">How much $ is in your savings account(s)?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.savingsAccountBalance" />
+      <input type="number" placeholder="$" ng-model="intake.savingsAccountBalance" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2766,7 +2768,7 @@
   <ion-slide-page>
     <h2 class="slide-question-txt">How much $ is in joint bank account(s) with family members?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.jointAccountsWithFamilyBalance" />
+      <input type="number" placeholder="$" ng-model="intake.jointAccountsWithFamilyBalance" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2786,7 +2788,7 @@
   <ion-slide-page>
     <h2 class="slide-question-txt">How much $ in stocks and/or bonds do you own?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.stocksOrBondsValue" />
+      <input type="number" placeholder="$" ng-model="intake.stocksOrBondsValue" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2806,7 +2808,7 @@
   <ion-slide-page>
     <h2 class="slide-question-txt">What is the total value of your 401(k) and/or retirement accounts?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.retirement401kBalance" />
+      <input type="number" placeholder="$" ng-model="intake.retirement401kBalance" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2826,7 +2828,7 @@
   <ion-slide-page>
     <h2 class="slide-question-txt">What is the total value of your household furniture?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.householdFurnitureValue" />
+      <input type="number" placeholder="$" ng-model="intake.householdFurnitureValue" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2846,7 +2848,7 @@
   <ion-slide-page>
     <h2 class="slide-question-txt">What is the total value of tools that you own?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.toolValue" />
+      <input type="number" placeholder="$" ng-model="intake.toolValue" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2866,7 +2868,7 @@
   <ion-slide-page>
     <h2 class="slide-question-txt">What is the total value of collections/jewelry do you own?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.collectionAndJewelryValue" />
+      <input type="number" placeholder="$" ng-model="intake.collectionAndJewelryValue" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2886,7 +2888,7 @@
   <ion-slide-page>
     <h2 class="slide-question-txt">What is the total value of any remaining assets that you own?</h2>
     <div class="row slide-one-textbox-div">
-      <input type="text" placeholder="$" ng-model="intake.otherMajorAssetValue" />
+      <input type="number" placeholder="$" ng-model="intake.otherMajorAssetValue" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2989,12 +2991,12 @@
     <h2 class="slide-question-txt">Were you just served at your house with foreclosure papers?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="servedForeclosurePapers(true)">
+        <div ng-class="{'slide-select-button': !foreclosurePapersYesSelected, 'slide-selected-button': foreclosurePapersYesSelected}"  ng-click="servedForeclosurePapers(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="servedForeclosurePapers(false)">
+        <div ng-class="{'slide-select-button': !foreclosurePapersNoSelected, 'slide-selected-button': foreclosurePapersNoSelected}"  ng-click="servedForeclosurePapers(false)">
           <p>No</p>
         </div>
       </div>
@@ -3018,12 +3020,12 @@
     <h2 class="slide-question-txt">Were you just served at your house with a debt lawsuit?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="servedDebtLawsuit(true)">
+        <div ng-class="{'slide-select-button': !servedDebtYesSelected, 'slide-selected-button': servedDebtYesSelected}"   ng-click="servedDebtLawsuit(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="servedDebtLawsuit(false)">
+        <div ng-class="{'slide-select-button': !servedDebtNoSelected, 'slide-selected-button': servedDebtNoSelected}"   ng-click="servedDebtLawsuit(false)">
           <p>No</p>
         </div>
       </div>
@@ -3068,12 +3070,12 @@
     <h2 class="slide-question-txt">Do you have possession or title to any real or personal property that really belongs to someone else?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasAnothersProperty(true)">
+        <div ng-class="{'slide-select-button': !othersPropertyYesSelected, 'slide-selected-button': othersPropertyYesSelected}" ng-click="hasAnothersProperty(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasAnothersProperty(false)">
+        <div ng-class="{'slide-select-button': !othersPropertyNoSelected, 'slide-selected-button': othersPropertyNoSelected}"  ng-click="hasAnothersProperty(false)">
           <p>No</p>
         </div>
       </div>
@@ -3097,12 +3099,12 @@
     <h2 class="slide-question-txt">Have you <b>sold or transferred</b> any assets in the past 2 years</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasSoldAssets(true)">
+        <div ng-class="{'slide-select-button': !soldAssetsYesSelected, 'slide-selected-button': soldAssetsYesSelected}"  ng-click="hasSoldAssets(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasSoldAssets(false)">
+        <div ng-class="{'slide-select-button': !soldAssetsNoSelected, 'slide-selected-button': soldAssetsNoSelected}"   ng-click="hasSoldAssets(false)">
           <p>No</p>
         </div>
       </div>
@@ -3126,12 +3128,13 @@
     <h2 class="slide-question-txt">Have you paid any family memeber on a debt you owe them in the past year?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasPaidDebtToFamily(true)">
+        <div ng-class="{'slide-select-button': !familyDebtYesSelected, 'slide-selected-button': familyDebtYesSelected}" ng-click="hasPaidDebtToFamily(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasPaidDebtToFamily(false)">
+        <div ng-class="{'slide-select-button': !familyDebtNoSelected, 'slide-selected-button': familyDebtNoSelected}"
+			ng-click="hasPaidDebtToFamily(false)">
           <p>No</p>
         </div>
       </div>
@@ -3155,12 +3158,12 @@
     <h2 class="slide-question-txt">Is any creditor garnishing your wages now?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="isWagesGarnished(true)">
+        <div ng-class="{'slide-select-button': !garnishYesSelected, 'slide-selected-button': garnishYesSelected}"  ng-click="isWagesGarnished(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="isWagesGarnished(false)">
+        <div ng-class="{'slide-select-button': !garnishNoSelected, 'slide-selected-button': garnishNoSelected}"  ng-click="isWagesGarnished(false)">
           <p>No</p>
         </div>
       </div>
@@ -3184,12 +3187,12 @@
     <h2 class="slide-question-txt">Have you filed all of your tax returns?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasFiledTaxReturns(true)">
+        <div ng-class="{'slide-select-button': !filedTaxYesSelected, 'slide-selected-button': filedTaxYesSelected}"   ng-click="hasFiledTaxReturns(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasFiledTaxReturns(false)">
+        <div ng-class="{'slide-select-button': !filedTaxNoSelected, 'slide-selected-button': filedTaxNoSelected}"   ng-click="hasFiledTaxReturns(false)">
           <p>No</p>
         </div>
       </div>
@@ -3213,12 +3216,12 @@
     <h2 class="slide-question-txt">Has your house, car or other asset been foreclosed or repossessed?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasAssetBeenForeclosed(true)">
+        <div ng-class="{'slide-select-button': !repossessYesSelected, 'slide-selected-button': repossessYesSelected}"   ng-click="hasAssetBeenForeclosed(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasAssetBeenForeclosed(false)">
+        <div ng-class="{'slide-select-button': !repossessNoSelected, 'slide-selected-button': repossessNoSelected}"   ng-click="hasAssetBeenForeclosed(false)">
           <p>No</p>
         </div>
       </div>
@@ -3242,12 +3245,12 @@
     <h2 class="slide-question-txt">Are you behind on a car or house payment?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="isBehindOnCarPayment(true)">
+        <div ng-class="{'slide-select-button': !behindCarYesSelected, 'slide-selected-button': behindCarYesSelected}"   ng-click="isBehindOnCarPayment(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="isBehindOnCarPayment(false)">
+        <div ng-class="{'slide-select-button': !behindCarNoSelected, 'slide-selected-button': behindCarNoSelected}"   ng-click="isBehindOnCarPayment(false)">
           <p>No</p>
         </div>
       </div>
@@ -3271,12 +3274,12 @@
     <h2 class="slide-question-txt">Have you made any large purchases in the past 90 days?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasMadeLargePurchase(true)">
+        <div ng-class="{'slide-select-button': !largePurchasesYesSelected, 'slide-selected-button': largePurchasesYesSelected}"   ng-click="hasMadeLargePurchase(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button"ng-click="hasMadeLargePurchase(false)">
+        <div ng-class="{'slide-select-button': !largePurchasesNoSelected, 'slide-selected-button': largePurchasesNoSelected}"  ng-click="hasMadeLargePurchase(false)">
           <p>No</p>
         </div>
       </div>
@@ -3300,12 +3303,12 @@
     <h2 class="slide-question-txt">Have you taken any cash advances from credit cards in the past 90 days?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasTakenCashAdvance(true)">
+        <div ng-class="{'slide-select-button': !takenCashYesSelected, 'slide-selected-button': takenCashYesSelected}"   ng-click="hasTakenCashAdvance(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasTakenCashAdvance(false)">
+        <div ng-class="{'slide-select-button': !takenCashNoSelected, 'slide-selected-button': takenCashNoSelected}"   ng-click="hasTakenCashAdvance(false)">
           <p>No</p>
         </div>
       </div>
@@ -3329,12 +3332,12 @@
     <h2 class="slide-question-txt">Have you paid any other lawyer for advice about your debts or filing bankruptcy in the past year?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasPaidOtherLawyers(true)">
+        <div ng-class="{'slide-select-button': !paidLawyerYesSelected, 'slide-selected-button': paidLawyerYesSelected}"   ng-click="hasPaidOtherLawyers(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasPaidOtherLawyers(false)">
+        <div ng-class="{'slide-select-button': !paidLawyerNoSelected, 'slide-selected-button': paidLawyerNoSelected}"   ng-click="hasPaidOtherLawyers(false)">
           <p>No</p>
         </div>
       </div>
@@ -3358,12 +3361,12 @@
     <h2 class="slide-question-txt">Have you been an officer or partner in a business in the past 6 years?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasBeenOfficerOfCompany(true)">
+        <div ng-class="{'slide-select-button': !officerYesSelected, 'slide-selected-button': officerYesSelected}"   ng-click="hasBeenOfficerOfCompany(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasBeenOfficerOfCompany(false)">
+        <div ng-class="{'slide-select-button': !officerNoSelected, 'slide-selected-button': officerNoSelected}"   ng-click="hasBeenOfficerOfCompany(false)">
           <p>No</p>
         </div>
       </div>
@@ -3387,12 +3390,12 @@
     <h2 class="slide-question-txt">Has anyone died and left you an inheritance that you have not received yet?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasInheritanceNotReceived(true)">
+        <div ng-class="{'slide-select-button': !inheritanceYesSelected, 'slide-selected-button': inheritanceYesSelected}"   ng-click="hasInheritanceNotReceived(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasInheritanceNotReceived(false)">
+        <div ng-class="{'slide-select-button': !inheritanceNoSelected, 'slide-selected-button': inheritanceNoSelected}"  ng-click="hasInheritanceNotReceived(false)">
           <p>No</p>
         </div>
       </div>
@@ -3416,12 +3419,12 @@
     <h2 class="slide-question-txt">Do you owe any money on account of marital settlement agreement or judgment of divorce?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasMaritalAgreement(true)">
+        <div ng-class="{'slide-select-button': !maritalAgreementYesSelected, 'slide-selected-button': maritalAgreementYesSelected}"  ng-click="hasMaritalAgreement(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasMaritalAgreement(false)">
+        <div ng-class="{'slide-select-button': !maritalAgreementNoSelected, 'slide-selected-button': maritalAgreementNoSelected}"   ng-click="hasMaritalAgreement(false)">
           <p>No</p>
         </div>
       </div>
@@ -3445,12 +3448,12 @@
     <h2 class="slide-question-txt">Are you entitled to a tax refund that you haven't received?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasTaxRefundNotReceived(true)">
+        <div ng-class="{'slide-select-button': !taxRefundYesSelected, 'slide-selected-button': taxRefundYesSelected}"   ng-click="hasTaxRefundNotReceived(true)">
           <p>Yes</p>
         </div>
       </div>
-      <div class="col col-50" ng-click="hasTaxRefundNotReceived(false)">
-        <div class="slide-select-button">
+      <div class="col col-50" >
+        <div ng-class="{'slide-select-button': !taxRefundNoSelected, 'slide-selected-button': taxRefundNoSelected}" ng-click="hasTaxRefundNotReceived(false)">
           <p>No</p>
         </div>
       </div>
@@ -3471,15 +3474,15 @@
     </div>
   </ion-slide-page>
   <ion-slide-page>
-    <h2 class="slide-question-txt"> Are you suing anyone? Do you have a claim against anyone, for an accident, injury, debt or employment claim that you might sui on later?</h2>
+    <h2 class="slide-question-txt"> Are you suing anyone? Do you have a claim against anyone, for an accident, injury, debt or employment claim that you might sue on later?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="isSuing(true)">
+        <div ng-class="{'slide-select-button': !suingYesSelected, 'slide-selected-button': suingYesSelected}"   ng-click="isSuing(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="isSuing(false)">
+        <div ng-class="{'slide-select-button': !suingNoSelected, 'slide-selected-button': suingNoSelected}"  ng-click="isSuing(false)">
           <p>No</p>
         </div>
       </div>
@@ -3503,12 +3506,12 @@
     <h2 class="slide-question-txt"> Have you lived in Florida the past two years?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasLivedInFlorida(true)">
+        <div ng-class="{'slide-select-button': !livedInFLYesSelected, 'slide-selected-button': livedInFLYesSelected}"   ng-click="hasLivedInFlorida(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasLivedInFlorida(false)">
+        <div ng-class="{'slide-select-button': !livedInFLNoSelected, 'slide-selected-button': livedInFLNoSelected}"   ng-click="hasLivedInFlorida(false)">
           <p>No</p>
         </div>
       </div>
@@ -3532,12 +3535,12 @@
     <h2 class="slide-question-txt"> Do you bank at a credit union and also owe money to that credit union (loans, credit cards, etc.) or know of any cross-collateralization issues?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasDebtToCreditUnion(true)">
+        <div ng-class="{'slide-select-button': !debtToCreditUnionYesSelected, 'slide-selected-button': debtToCreditUnionYesSelected}"   ng-click="hasDebtToCreditUnion(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasDebtToCreditUnion(false)">
+        <div ng-class="{'slide-select-button': !debtToCreditUnionNoSelected, 'slide-selected-button': debtToCreditUnionNoSelected}"  ng-click="hasDebtToCreditUnion(false)">
           <p>No</p>
         </div>
       </div>
@@ -3561,12 +3564,12 @@
     <h2 class="slide-question-txt"> Have you taken loans or withdrawals from retirement savings in the last 6 months?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasTakenOutLoans(true)">
+        <div ng-class="{'slide-select-button': !loansYesSelected, 'slide-selected-button': loansYesSelected}"   ng-click="hasTakenOutLoans(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasTakenOutLoans(false)">
+        <div ng-class="{'slide-select-button': !loansNoSelected, 'slide-selected-button': loansNoSelected}" ng-click="hasTakenOutLoans(false)">
           <p>No</p>
         </div>
       </div>
@@ -3590,12 +3593,12 @@
     <h2 class="slide-question-txt"> Are you still using credit cards?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="isUsingCreditCards(true)">
+        <div ng-class="{'slide-select-button': !usingCCYesSelected, 'slide-selected-button': usingCCYesSelected}"   ng-click="isUsingCreditCards(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="isUsingCreditCards(false)">
+        <div ng-class="{'slide-select-button': !usingCCNoSelected, 'slide-selected-button': usingCCNoSelected}"   ng-click="isUsingCreditCards(false)">
           <p>No</p>
         </div>
       </div>
@@ -3619,12 +3622,12 @@
     <h2 class="slide-question-txt"> Have you lived in your mortgaged home for less than 4 years?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasLivedInHouse4Years(true)">
+        <div ng-class="{'slide-select-button': !fourYearsHomeYesSelected, 'slide-selected-button': fourYearsHomeYesSelected}"   ng-click="hasLivedInHouse4Years(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="hasLivedInHouse4Years(false)">
+        <div ng-class="{'slide-select-button': !fourYearsHomeNoSelected, 'slide-selected-button': fourYearsHomeNoSelected}"  ng-click="hasLivedInHouse4Years(false)">
           <p>No</p>
         </div>
       </div>
@@ -3648,12 +3651,12 @@
     <h2 class="slide-question-txt"> Are you ready for a fresh start?</h2>
     <div class="row slide-two-button-div">
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="isReadyForFreshStart(true)">
+        <div ng-class="{'slide-select-button': !freshStartYesSelected, 'slide-selected-button': freshStartYesSelected}"   ng-click="isReadyForFreshStart(true)">
           <p>Yes</p>
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-select-button" ng-click="isReadyForFreshStart(false)">
+        <div ng-class="{'slide-select-button': !freshStartNoSelected, 'slide-selected-button': freshStartNoSelected}"   ng-click="isReadyForFreshStart(false)">
           <p>No</p>
         </div>
       </div>

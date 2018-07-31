@@ -28,6 +28,22 @@ ion-slide-page{
     font-weight: 700;
     font-size: 21pt;
 }
+
+.slide-selected-button{
+    border: 4px solid #5392cf;
+    width: 200px;
+    height: 77px;
+    text-align: center;
+    background-color: #5392cf;
+    border-radius: 7px;
+    padding-top: 21px;
+}
+.slide-selected-button p{
+    color: white;
+    font-weight: 700;
+    font-size: 21pt;
+}
+
 .next-prev-button-row{
     margin-top: 30px !important;
     width: 310px;
@@ -90,3 +106,25 @@ ion-slide-page{
 .circle-border-not-selected{
     border:2px solid #C7C7C7;
 }
+
+textarea{
+	border: 3px solid #5392cf;
+	height: 150px;
+	width: 450px;
+	font-size: 21pt;
+	line-height: 50px;
+	padding: 7px;
+	font-weight: 300;
+	color: #7C7C7C;
+}
+
+ion-list{
+	.list{
+		width: 100% !important;
+	}
+}
+
+.list{
+	width: 99% !important;
+}
+

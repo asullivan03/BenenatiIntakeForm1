@@ -23,9 +23,25 @@
 
   function locationController($scope){
 
-    $scope.locationSelect = function(answer) {
-        $scope.$parent.intake.location = answer;
-    };
+     $scope.orlSelected = false;
+     $scope.kissSelected = false;
+ 
+     $scope.locationSelect = function(answer) {
+         //apply variables for ng-class
+         if(answer == 'Orlando')
+         {
+             $scope.orlSelected = true;
+             $scope.kissSelected = false;
+         }
+         else
+         {
+             $scope.orlSelected = false;
+             $scope.kissSelected = true;
+         }
+ 
+         //set intake form data
+         $scope.$parent.intake.location = answer;
+     };
  
      $scope.isDisabled = function(){
         if($scope.$parent.intake.location == null){

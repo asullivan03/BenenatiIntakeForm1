@@ -2,12 +2,12 @@
         <h2 class="slide-question-txt">Which location are you at?</h2>
         <div class="row slide-two-button-div">
             <div class="col col-50">
-                <div class="slide-select-button" ng-click="locationSelect('Orlando')">
+                <div ng-class="{'slide-select-button': !orlSelected, 'slide-selected-button': orlSelected}" ng-click="locationSelect('Orlando')">
                     <p>Orlando</p>
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-select-button" ng-click="locationSelect('Kissimmee')">
+                <div ng-class="{'slide-select-button': !kissSelected, 'slide-selected-button': kissSelected}" ng-click="locationSelect('Kissimmee')">
                     <p>Kissimee</p>
                 </div>
             </div>

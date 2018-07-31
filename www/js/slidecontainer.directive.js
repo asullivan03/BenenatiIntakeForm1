@@ -105,8 +105,107 @@
                 loop: false,
                 speed: 500
             };
+ 
+             $scope.recieveChildSupportYesSelected = false;
+             $scope.recieveChildSupportNoSelected = false;
+ 
+             $scope.spouseYesSelected = false;
+             $scope.spouseNoSelected = false;
 
-            $scope.intake = {
+			 $scope.sameAddressYesSelected = false;
+			 $scope.sameAddressNoSelected = false;
+ 
+			 $scope.filedYesSelected = false;
+			 $scope.filedNoSelected = false;
+ 
+			 $scope.paidFriendsYesSelected = false;
+			 $scope.paidFriendsNoSelected = false;
+ 
+			 $scope.deedYesSelected = false;
+			 $scope.deedNoSelected = false;
+ 
+			 $scope.secondMortgageYesSelected = [false, false, false, false, false, false, false];
+			 $scope.secondMortgageNoSelected = [false, false, false, false, false, false, false];
+ 
+			 $scope.rentingYesSelected = false;
+			 $scope.rentingNoSelected = false;
+ 
+			 $scope.livingffYesSelected = false;
+			 $scope.livingffNoSelected = false;
+ 
+			 $scope.medicalDebtYesSelected = false;
+			 $scope.medicalDebtNoSelected = false;
+ 
+ 			 $scope.foreclosurePapersYesSelected = false;
+			 $scope.foreclosurePapersNoSelected = false;
+ 
+			 $scope.servedDebtYesSelected = false;
+			 $scope.servedDebtNoSelected = false;
+
+			 $scope.othersPropertyYesSelected = false;
+			 $scope.othersPropertyNoSelected = false;
+ 
+			 $scope.soldAssetsYesSelected = false;
+			 $scope.soldAssetsNoSelected = false;
+ 
+			 $scope.familyDebtYesSelected = false;
+			 $scope.familyDebtNoSelected = false;
+ 
+			 $scope.garnishYesSelected = false;
+			 $scope.garnishNoSelected = false;
+ 
+			 $scope.filedTaxYesSelected = false;
+			 $scope.filedTaxNoSelected = false;
+ 
+			 $scope.behindCarYesSelected = false;
+			 $scope.behindCarNoSelected = false;
+ 
+			 $scope.largePurchasesYesSelected = false;
+			 $scope.largePurchasesNoSelected = false;
+ 
+			 $scope.takenCashYesSelected = false;
+			 $scope.takenCashNoSelected = false;
+ 
+			 $scope.paidLawyerYesSelected = false;
+			 $scope.paidLawyerNoSelected = false;
+ 
+			 $scope.officerYesSelected = false;
+			 $scope.officerNoSelected = false;
+ 
+			 $scope.inheritanceYesSelected = false;
+			 $scope.inheritanceNoSelected = false;
+ 
+			 $scope.maritalAgreementYesSelected = false;
+			 $scope.maritalAgreementNoSelected = false;
+ 
+			 $scope.taxRefundYesSelected = false;
+			 $scope.taxRefundNoSelected = false;
+ 
+			 $scope.suingYesSelected = false;
+			 $scope.suingNoSelected = false;
+ 
+			 $scope.livedInFLYesSelected = false;
+			 $scope.livedInFLNoSelected = false;
+ 
+			 $scope.debtToCreditUnionYesSelected = false;
+			 $scope.debtToCreditUnionNoSelected = false;
+ 
+			 $scope.loansYesSelected = false;
+			 $scope.loansNoSelected = false;
+ 
+			 $scope.usingCCYesSelected = false;
+			 $scope.usingCCNoSelected = false;
+ 
+			 $scope.fourYearsHomeYesSelected = false;
+			 $scope.fourYearsHomeNoSelected = false;
+ 
+			 $scope.freshStartYesSelected = false;
+			 $scope.freshStartNoSelected = false;
+ 
+			 $scope.repossessYesSelected = false;
+			 $scope.repossessNoSelected = false;
+ 
+             $scope.intake = {
                 'location': null,
                 'client':{'name':'','phone':'','birthDate':'','address':'','socialSecurityNumber':'','email':'','city':'','state':'','zipCode':'','cellPhone':'','income':'', 'incomeType':'','hasSpouse':null},
                 'receiveChildSupport':null,
@@ -196,7 +295,20 @@
             }
 
             $scope.hasSameAddress = function(val){
-              $scope.intake.spouse.shareAddress = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.sameAddressYesSelected = true;
+					 $scope.sameAddressNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.sameAddressYesSelected = false;
+					 $scope.sameAddressNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	$scope.intake.spouse.shareAddress = val;
 
               if(val){
                 $scope.intake.spouse.address = $scope.intake.client.address;
@@ -207,95 +319,392 @@
             }
 
             $scope.receiveChildSupport = function(val){
-              $scope.intake.receiveChildSupport = val;
+                 //apply variables for ng-class
+                 if(val == 'yes')
+                 {
+                     $scope.recieveChildSupportYesSelected = true;
+                     $scope.recieveChildSupportNoSelected = false;
+                 }
+                 else
+                 {
+                     $scope.recieveChildSupportYesSelected = false;
+                     $scope.recieveChildSupportNoSelected = true;
+                 }
+ 
+                 //set intake form data
+                  $scope.intake.receiveChildSupport = val;
             }
 
             $scope.isReadyForFreshStart = function(val){
-              $scope.intake.isReadyForFreshStart = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.freshStartYesSelected = true;
+					 $scope.freshStartNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.freshStartYesSelected = false;
+					 $scope.freshStartNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.isReadyForFreshStart = val;
             }
 
             $scope.hasLivedInHouse4Years = function(val){
-              $scope.intake.hasLivedInHouse4Years = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.fourYearsHomeYesSelected = true;
+					 $scope.fourYearsHomeNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.fourYearsHomeYesSelected = false;
+					 $scope.fourYearsHomeNoSelected = true;
+				 }
+ 
+				 //set intake form data
+				 $scope.intake.hasLivedInHouse4Years = val;
             }
 
             $scope.isUsingCreditCards = function(val){
-              $scope.intake.isUsingCreditCards = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.usingCCYesSelected = true;
+					 $scope.usingCCNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.usingCCYesSelected = false;
+					 $scope.usingCCNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.isUsingCreditCards = val;
             }
 
             $scope.hasTakenOutLoans = function(val){
-              $scope.intake.hasTakenOutLoans = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.loansYesSelected = true;
+					 $scope.loansNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.loansYesSelected = false;
+					 $scope.loansNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.hasTakenOutLoans = val;
             }
 
             $scope.hasDebtToCreditUnion = function(val){
-              $scope.intake.hasDebtToCreditUnion = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.debtToCreditUnionYesSelected = true;
+					 $scope.debtToCreditUnionNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.debtToCreditUnionYesSelected = false;
+					 $scope.debtToCreditUnionNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.hasDebtToCreditUnion = val;
             }
 
             $scope.hasLivedInFlorida = function(val){
-              $scope.intake.hasLivedInFlorida = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.livedInFLYesSelected = true;
+					 $scope.livedInFLNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.livedInFLYesSelected = false;
+					 $scope.livedInFLNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.hasLivedInFlorida = val;
             }
 
             $scope.isSuing = function(val){
-              $scope.intake.isSuing = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.suingYesSelected = true;
+					 $scope.suingNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.suingYesSelected = false;
+					 $scope.suingNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.isSuing = val;
             }
 
             $scope.hasTaxRefundNotReceived = function(val){
-              $scope.intake.hasTaxRefundNotReceived = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.taxRefundYesSelected = true;
+					 $scope.taxRefundNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.taxRefundYesSelected = false;
+					 $scope.taxRefundNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.hasTaxRefundNotReceived = val;
             }
 
             $scope.hasMaritalAgreement = function(val){
-              $scope.intake.hasMaritalAgreement = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.maritalAgreementYesSelected = true;
+					 $scope.maritalAgreementNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.maritalAgreementYesSelected = false;
+					 $scope.maritalAgreementNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	$scope.intake.hasMaritalAgreement = val;
             }
 
             $scope.hasInheritanceNotReceived = function(val){
-              $scope.intake.hasInheritanceNotReceived = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.inheritanceYesSelected = true;
+					 $scope.inheritanceNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.inheritanceYesSelected = false;
+					 $scope.inheritanceNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.hasInheritanceNotReceived = val;
             }
   
             $scope.hasBeenOfficerOfCompany = function(val){
-              $scope.intake.hasBeenOfficerOfCompany = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.officerYesSelected = true;
+					 $scope.officerNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.officerYesSelected = false;
+					 $scope.officerNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.hasBeenOfficerOfCompany = val;
             }
 
             $scope.hasPaidOtherLawyers = function(val){
-              $scope.intake.hasPaidOtherLawyers = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.paidLawyerYesSelected = true;
+					 $scope.paidLawyerNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.paidLawyerYesSelected = false;
+					 $scope.paidLawyerNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.hasPaidOtherLawyers = val;
             }
 
             $scope.hasTakenCashAdvance = function(val){
-              $scope.intake.hasTakenCashAdvance = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.takenCashYesSelected = true;
+					 $scope.takenCashNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.takenCashYesSelected = false;
+					 $scope.takenCashNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.hasTakenCashAdvance = val;
             }
 
             $scope.hasMadeLargePurchase = function(val){
-              $scope.intake.hasMadeLargePurchase = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.largePurchasesYesSelected = true;
+					 $scope.largePurchasesNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.largePurchasesYesSelected = false;
+					 $scope.largePurchasesNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.hasMadeLargePurchase = val;
             }
 
             $scope.isBehindOnCarPayment = function(val){
-              $scope.intake.isBehindOnCarPayment = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.behindCarYesSelected = true;
+					 $scope.behindCarNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.behindCarYesSelected = false;
+					 $scope.behindCarNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.isBehindOnCarPayment = val;
             }
 
             $scope.hasAssetBeenForeclosed = function(val){
-              $scope.intake.hasAssetBeenForeclosed = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.repossessYesSelected = true;
+					 $scope.repossessNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.repossessYesSelected = false;
+					 $scope.repossessNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.hasAssetBeenForeclosed = val;
             }
 
             $scope.hasFiledTaxReturns = function(val){
-              $scope.intake.hasFiledTaxReturns = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.filedTaxYesSelected = true;
+					 $scope.filedTaxNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.filedTaxYesSelected = false;
+					 $scope.filedTaxNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	$scope.intake.hasFiledTaxReturns = val;
             }
 
             $scope.isWagesGarnished = function(val){
-              $scope.intake.isWagesGarnished = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.garnishYesSelected = true;
+					 $scope.garnishNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.garnishYesSelected = false;
+					 $scope.garnishNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.isWagesGarnished = val;
             }
 
             $scope.hasPaidDebtToFamily = function(val){
-              $scope.intake.hasPaidDebtToFamily = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.familyDebtYesSelected = true;
+					 $scope.familyDebtNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.familyDebtYesSelected = false;
+					 $scope.familyDebtNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	$scope.intake.hasPaidDebtToFamily = val;
             }
 
             $scope.hasSoldAssets = function(val){
-              $scope.intake.hasSoldAssets = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.soldAssetsYesSelected = true;
+					 $scope.soldAssetsNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.soldAssetsYesSelected = false;
+					 $scope.soldAssetsNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	$scope.intake.hasSoldAssets = val;
             }
 
             $scope.hasAnothersProperty = function(val){
-              $scope.intake.hasAnothersProperty = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.othersPropertyYesSelected = true;
+					 $scope.othersPropertyNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.othersPropertyYesSelected = false;
+					 $scope.othersPropertyNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.hasAnothersProperty = val;
             }
 
             $scope.servedForeclosurePapers = function(val){
-              $scope.intake.servedForeclosurePapers = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.foreclosurePapersYesSelected = true;
+					 $scope.foreclosurePapersNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.foreclosurePapersYesSelected = false;
+					 $scope.foreclosurePapersNoSelected = true;
+				 }
+				 $scope.intake.servedForeclosurePapers = val;
             }
 
             $scope.servedDebtLawsuit = function(val){
@@ -475,6 +884,19 @@
             }
 
             $scope.haveSpouse = function(answer){
+				 //apply variables for ng-class
+				 if(answer == 'yes')
+				 {
+					 $scope.spouseYesSelected = true;
+					 $scope.spouseNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.spouseYesSelected = false;
+					 $scope.spouseNoSelected = true;
+				 }
+ 
+ 				//set intake form data
                 $scope.intake.client.hasSpouse = answer;
             }
             
@@ -487,6 +909,19 @@
             }
 
             $scope.setFiledBankruptcy = function(answer){
+			     //apply variables for ng-class
+				 if(answer == true)
+				 {
+					 $scope.filedYesSelected = true;
+					 $scope.filedNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.filedYesSelected = false;
+					 $scope.filedNoSelected = true;
+				 }
+ 
+				 //set intake form data
                 $scope.intake.hasFiledBankruptcy = answer;
             }
             $scope.hasFiledBankruptcy = function(){
@@ -498,7 +933,20 @@
             }
 
             $scope.setHasPaidFriends = function(answer){
-              $scope.intake.hasPaidFriends = answer;
+				 //apply variables for ng-class
+				 if(answer == true)
+				 {
+					 $scope.paidFriendsYesSelected = true;
+					 $scope.paidFriendsNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.paidFriendsYesSelected = false;
+					 $scope.paidFriendsNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.hasPaidFriends = answer;
             }
 
             $scope.hasPaidFriends = function(){
@@ -510,7 +958,20 @@
             }
 
             $scope.setOnThirdPartyDeed = function(answer){
-              $scope.intake.isOnThirdPartyDeed = answer;
+				 //apply variables for ng-class
+				 if(answer == true)
+				 {
+					 $scope.deedYesSelected = true;
+					 $scope.deedNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.deedYesSelected = false;
+					 $scope.deedNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	$scope.intake.isOnThirdPartyDeed = answer;
             }
 
             $scope.isOnThirdPartyDeed = function(){
@@ -538,7 +999,20 @@
             }
 
             $scope.setSecondMortgage = function(idx,val){
-                $scope.intake.realEstate[idx-1].hasSecondMortgage = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.secondMortgageYesSelected[idx] = true;
+					 $scope.secondMortgageNoSelected[idx] = false;
+				 }
+				 else
+				 {
+					 $scope.secondMortgageYesSelected[idx] = false;
+					 $scope.secondMortgageNoSelected[idx] = true;
+				 }
+ 
+				 //set intake form data
+			     $scope.intake.realEstate[idx-1].hasSecondMortgage = val;
             }
 
             $scope.hasSecondMortgage = function(idx){
@@ -549,28 +1023,83 @@
             }
 
             $scope.setIsRenting = function(val){
-              $scope.intake.isRenting = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.rentingYesSelected = true;
+					 $scope.rentingNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.rentingYesSelected = false;
+					 $scope.rentingNoSelected = true;
+				 }
+ 
+ 				//set intake form data
+              	$scope.intake.isRenting = val;
             }
 
             $scope.setIsLivingWithFamily = function(val){
-              $scope.intake.isLivingWithFamily = val;
+				 //apply variables for ng-class
+				 if(val == 'yes')
+				 {
+					 $scope.livingffYesSelected = true;
+					 $scope.livingffNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.livingffYesSelected = false;
+					 $scope.livingffNoSelected = true;
+				 }
+ 
+				 //set intake form data
+				 $scope.intake.isLivingWithFamily = val;
             }
 
             $scope.setHasMedicalDebt = function(val){
-              $scope.intake.hasMedicalDebt = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+				 $scope.medicalDebtYesSelected = true;
+				 $scope.medicalDebtNoSelected = false;
+				 }
+				 else
+				 {
+				 $scope.medicalDebtYesSelected = false;
+				 $scope.medicalDebtNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	 $scope.intake.hasMedicalDebt = val;
             }
 
             $scope.setServedForeclosure =function(val){
-              $scope.intake.servedForeclosurePapers = val;
+ 
+ 
+				 //set intake form data
+              	$scope.intake.servedForeclosurePapers = val;
             }
 
             $scope.setServedDebtLawsuit = function(val){
-              $scope.intake.servedDebtLawsuit = val;
+				 //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.servedDebtYesSelected = true;
+					 $scope.servedDebtNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.servedDebtYesSelected = false;
+					 $scope.servedDebtNoSelected = true;
+				 }
+ 
+				 //set intake form data
+              	$scope.intake.servedDebtLawsuit = val;
             }
             
             $scope.$on("$ionicSlides.sliderInitialized", function(event, data){
-               // data.slider is the instance of Swiper
-               $scope.slider = data.slider;
+				// data.slider is the instance of Swiper
+               	$scope.slider = data.slider;
              });
         }
     }
