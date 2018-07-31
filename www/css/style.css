@@ -118,13 +118,7 @@ textarea{
 	color: #7C7C7C;
 }
 
-ion-list{
-	.list{
-		width: 100% !important;
-	}
-}
-
 .list{
-	width: 99% !important;
+	width: 100% !important;
 }
 
