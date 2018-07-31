@@ -123,3 +123,11 @@ textarea{
 	width: 100% !important;
 }
 
+#hearAboutUs ion-list{
+    width: 615px; 
+}
+
+#hearAboutUs .item-content{
+    padding-right: 10px !important;
+}
+

@@ -16,13 +16,13 @@
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev">
+                <div class="slide-nav-button prev" ng-click="previousSlide(0,0,0)">
                     <p>Prev</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-if="isDisabled()" ng-click="$parent.nextSlide(1,1,0)">
+                <div class="slide-nav-button next" ng-if="intake.language" ng-click="nextSlide(0,1,0)">
                     <p>Next</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -306,10 +306,10 @@
         </div>
         <ion-list ng-model="intake.client.incomeType" class="row slide-two-radio-div">
 			<div class="row">
-				<div class="col col-50">
+				<div class="col col-50" ng-click="changeIncomeType('Hourly')">
 					<ion-radio value="Hourly">Hourly</ion-radio>
 				</div>
-				<div class="col col-50">
+				<div class="col col-50" ng-click="changeIncomeType('Annually')">
 					<ion-radio value="Annually">Annually</ion-radio>	
 				</div>
 			</div>
@@ -594,14 +594,16 @@
     <div class="row slide-one-textbox-div">
       <input type="number" placeholder="$" ng-model="intake.spouse.income" />
     </div>
-    <div class="row slide-two-radio-div">
-      <div class="col col-50">
-        <ion-radio ng-model="intake.spouse.incomeType" ng-value="Hourly">Hourly</ion-radio>
-      </div>
-      <div class="col col-50">
-        <ion-radio ng-model="intake.spouse.incomeType" ng-value="Annually">Annually</ion-radio>
-      </div>
-    </div>
+    <ion-list ng-model="intake.spouse.incomeType" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeSpouseIncomeType('Hourly')">
+                <ion-radio value="Hourly">Hourly</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeSpouseIncomeType('Annually')">
+                <ion-radio value="Annually">Annually</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
     <div class="row next-prev-button-row">
       <div class="col col-50">
         <div class="slide-nav-button prev" ng-click="previousSlide(2,12,4.8)">
@@ -908,14 +910,16 @@
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(1)">
     <h2 class="slide-question-txt">Is automobile #1 financed or leased?</h2>
-    <div class="row slide-two-radio-div">
-      <div class="col col-50">
-        <ion-radio ng-model="intake.Automobiles[0].payType" ng-value="Financed">Financed</ion-radio>
-      </div>
-      <div class="col col-50">
-        <ion-radio ng-model="intake.Automobiles[0].payType" ng-value="Leased">Leased</ion-radio>
-      </div>
-    </div>
+    <ion-list ng-model="intake.Automobiles[0].payType" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeAutoPayType('Financed', 0)">
+                <ion-radio value="Financed">Financed</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeAutoPayType('Leased', 0)">
+                <ion-radio value="Leased">Leased</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
     <div class="row next-prev-button-row">
       <div class="col col-50">
         <div class="slide-nav-button prev" ng-click="previousSlide(3,5,0)">
@@ -1054,14 +1058,16 @@
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(2)">
       <h2 class="slide-question-txt">Is automobile #2 financed or leased?</h2>
-      <div class="row slide-two-radio-div">
-          <div class="col col-50">
-              <ion-radio ng-model="intake.Automobiles[1].payType" ng-value="Financed">Financed</ion-radio>
-          </div>
-          <div class="col col-50">
-              <ion-radio ng-model="intake.Automobiles[1].payType" ng-value="Leased">Leased</ion-radio>
-          </div>
-      </div>
+      <ion-list ng-model="intake.Automobiles[1].payType" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeAutoPayType('Financed', 1)">
+                <ion-radio value="Financed">Financed</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeAutoPayType('Leased', 1)">
+                <ion-radio value="Leased">Leased</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
       <div class="row next-prev-button-row">
           <div class="col col-50">
               <div class="slide-nav-button prev" ng-click="previousSlide(3,12,0)">
@@ -1200,14 +1206,16 @@
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(3)">
       <h2 class="slide-question-txt">Is automobile #3 financed or leased?</h2>
-      <div class="row slide-two-radio-div">
-          <div class="col col-50">
-              <ion-radio ng-model="intake.Automobiles[2].payType" ng-value="Financed">Financed</ion-radio>
-          </div>
-          <div class="col col-50">
-              <ion-radio ng-model="intake.Automobiles[2].payType" ng-value="Leased">Leased</ion-radio>
-          </div>
-      </div>
+      <ion-list ng-model="intake.Automobiles[2].payType" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeAutoPayType('Financed', 2)">
+                <ion-radio value="Financed">Financed</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeAutoPayType('Leased', 2)">
+                <ion-radio value="Leased">Leased</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
       <div class="row next-prev-button-row">
           <div class="col col-50">
               <div class="slide-nav-button prev" ng-click="previousSlide(3,19,0)">
@@ -1346,14 +1354,16 @@
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(4)">
       <h2 class="slide-question-txt">Is automobile #4 financed or leased?</h2>
-      <div class="row slide-two-radio-div">
-          <div class="col col-50">
-              <ion-radio ng-model="intake.Automobiles[3].payType" ng-value="Financed">Financed</ion-radio>
-          </div>
-          <div class="col col-50">
-              <ion-radio ng-model="intake.Automobiles[3].payType" ng-value="Leased">Leased</ion-radio>
-          </div>
-      </div>
+      <ion-list ng-model="intake.Automobiles[3].payType" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeAutoPayType('Financed', 3)">
+                <ion-radio value="Financed">Financed</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeAutoPayType('Leased', 3)">
+                <ion-radio value="Leased">Leased</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
       <div class="row next-prev-button-row">
           <div class="col col-50">
               <div class="slide-nav-button prev" ng-click="previousSlide(3,26,0)">
@@ -1492,14 +1502,16 @@
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(5)">
       <h2 class="slide-question-txt">Is automobile #5 financed or leased?</h2>
-      <div class="row slide-two-radio-div">
-          <div class="col col-50">
-              <ion-radio ng-model="intake.Automobiles[4].payType" ng-value="Financed">Financed</ion-radio>
-          </div>
-          <div class="col col-50">
-              <ion-radio ng-model="intake.Automobiles[4].payType" ng-value="Leased">Leased</ion-radio>
-          </div>
-      </div>
+      <ion-list ng-model="intake.Automobiles[4].payType" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeAutoPayType('Financed', 4)">
+                <ion-radio value="Financed">Financed</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeAutoPayType('Leased', 4)">
+                <ion-radio value="Leased">Leased</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
       <div class="row next-prev-button-row">
           <div class="col col-50">
               <div class="slide-nav-button prev" ng-click="previousSlide(3,33,0)">
@@ -1638,14 +1650,16 @@
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(6)">
       <h2 class="slide-question-txt">Is automobile #6 financed or leased?</h2>
-      <div class="row slide-two-radio-div">
-          <div class="col col-50">
-              <ion-radio ng-model="intake.Automobiles[5].payType" ng-value="Financed">Financed</ion-radio>
-          </div>
-          <div class="col col-50">
-              <ion-radio ng-model="intake.Automobiles[5].payType" ng-value="Leased">Leased</ion-radio>
-          </div>
-      </div>
+      <ion-list ng-model="intake.Automobiles[5].payType" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeAutoPayType('Financed', 5)">
+                <ion-radio value="Financed">Financed</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeAutoPayType('Leased', 5)">
+                <ion-radio value="Leased">Leased</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
       <div class="row next-prev-button-row">
           <div class="col col-50">
               <div class="slide-nav-button prev" ng-click="previousSlide(3,40,0)">
@@ -1784,14 +1798,16 @@
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(7)">
       <h2 class="slide-question-txt">Is automobile #7 financed or leased?</h2>
-      <div class="row slide-two-radio-div">
-          <div class="col col-50">
-              <ion-radio ng-model="intake.Automobiles[6].payType" ng-value="Financed">Financed</ion-radio>
-          </div>
-          <div class="col col-50">
-              <ion-radio ng-model="intake.Automobiles[6].payType" ng-value="Leased">Leased</ion-radio>
-          </div>
-      </div>
+      <ion-list ng-model="intake.Automobiles[6].payType" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeAutoPayType('Financed', 6)">
+                <ion-radio value="Financed">Financed</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeAutoPayType('Leased', 6)">
+                <ion-radio value="Leased">Leased</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
       <div class="row next-prev-button-row">
           <div class="col col-50">
               <div class="slide-nav-button prev" ng-click="previousSlide(3,47,0)">
@@ -2935,72 +2951,88 @@
     </div>
   </ion-slide-page>
   <!--STEP 4 START-->
-  <ion-slide-page>
+  <ion-slide-page id="hearAboutUs">
     <h2 class="slide-question-txt">How did you hear about us?</h2>
-    <div class="row slide-two-radio-div">
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="Orange County Bar Association">Orange County Bar Association</ion-radio>
-      </div>
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="Yellow Pages">Yellow Pages (YP.com)</ion-radio>
-      </div>
-    </div>
-    <div class="row slide-two-radio-div">
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="Facebook">Facebook</ion-radio>
-      </div>
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="Avvo.com">Avvo.com</ion-radio>
-      </div>
-    </div>
-    <div class="row slide-two-radio-div">
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="Business Card">Business Card</ion-radio>
-      </div>
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="Attorney Referral">Attorney Referral</ion-radio>
-      </div>
-    </div>
-    <div class="row slide-two-radio-div">
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="The Florida Bar">The Florida Bar</ion-radio>
-      </div>
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="Internet">Internet - Yahoo/Google</ion-radio>
-      </div>
-    </div>
-    <div class="row slide-two-radio-div">
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="Referral">Referral</ion-radio>
-      </div>
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="Mailed Advertising">Advertising letter mailed to you</ion-radio>
-      </div>
-    </div>
-    <div class="row slide-two-radio-div">
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="Word of Mouth">Word of Mouth</ion-radio>
-      </div>
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="Lynx Bus">Lynx Bus</ion-radio>
-      </div>
-    </div>
-    <div class="row slide-two-radio-div">
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="Radio">Radio</ion-radio>
-      </div>
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="Billboards">Billboards</ion-radio>
-      </div>
-    </div>
-    <div class="row slide-two-radio-div">
-      <div class="col col-50">
-        <ion-radio ng-model="intake.heardFrom" ng-value="TV">TV spot</ion-radio>
-      </div>
-      <div class="col col-50">
-        <!--<ion-radio ng-model="heardFrom" ng-value="Yellow Pages">Yellow Pages (YP.com)</ion-radio>-->
-      </div>
-    </div>
+    <ion-list ng-model="intake.heardFrom" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeHeardFrom('Orange County Bar Association')">
+                <ion-radio value="Orange County Bar Association">Orange County Bar Association</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeHeardFrom('Yellow Pages')">
+                <ion-radio value="Yellow Pages">Yellow Pages (YP.com)</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
+    <ion-list ng-model="intake.heardFrom" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeHeardFrom('Facebook')">
+                <ion-radio value="Facebook">Facebook</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeHeardFrom('Avvo.com')">
+                <ion-radio value="Avvo.com">Avvo.com</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
+    <ion-list ng-model="intake.heardFrom" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeHeardFrom('Business Card')">
+                <ion-radio value="Business Card">Business Card</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeHeardFrom('Attorney Referral')">
+                <ion-radio value="Attorney Referral">Attorney Referral</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
+    <ion-list ng-model="intake.heardFrom" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeHeardFrom('The Florida Bar')">
+                <ion-radio value="The Florida Bar">The Florida Bar</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeHeardFrom('Internet')">
+                <ion-radio value="Internet">Internet</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
+    <ion-list ng-model="intake.heardFrom" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeHeardFrom('Referral')">
+                <ion-radio value="Referral">Referral</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeHeardFrom('Mailed Advertising')">
+                <ion-radio value="Mailed Advertising">Mailed Advertising</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
+    <ion-list ng-model="intake.heardFrom" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeHeardFrom('Word of Mouth')">
+                <ion-radio value="Word of Mouth">Word of Mouth</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeHeardFrom('Lynx Bus')">
+                <ion-radio value="Lynx Bus">Lynx Bus</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
+    <ion-list ng-model="intake.heardFrom" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeHeardFrom('Radio')">
+                <ion-radio value="Radio">Radio</ion-radio>
+            </div>
+            <div class="col col-50" ng-click="changeHeardFrom('Billboards')">
+                <ion-radio value="Billboards">Billboards</ion-radio>	
+            </div>
+        </div>
+    </ion-list>
+    <ion-list ng-model="intake.heardFrom" class="row slide-two-radio-div">
+        <div class="row">
+            <div class="col col-50" ng-click="changeHeardFrom('TV')">
+                <ion-radio value="TV">TV spot</ion-radio>
+            </div>
+            <div class="col col-50">
+                <!-- N/A -->
+            </div>
+        </div>
+    </ion-list>
     <div class="row next-prev-button-row">
       <div class="col col-50">
         <div class="slide-nav-button prev" ng-click="previousSlide(3,99,0)">
