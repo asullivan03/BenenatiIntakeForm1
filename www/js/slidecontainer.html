@@ -1,4 +1,4 @@
-
+<img ng-if="currentSection > 0 && currentSection < 5" src="{{selectedImg}}" style="position:absolute;top: 190px;right: 35px;width: 200px;"/>
 <ion-slides options="options" slider="data.slider" style="padding-top:350px">
     <ion-slide-page><location></location></ion-slide-page>
     <ion-slide-page>
@@ -3672,5 +3672,13 @@
         </div>
       </div>
     </div>
+  </ion-slide-page>
+  <ion-slide-page>
+      <div class="row slide-two-button-div">
+          <img src="img/Done_pic.png" style="position:relative;bottom:65px;margin-left:auto"/>
+      </div>
+      <div class="row next-prev-button-row">
+            <button style="min-height: 60px;width: 300px; position: relative; bottom: 75px;left: 122px;font-size: 12pt;">Click to Restart Form</button>
+      </div>
   </ion-slide-page>
 </ion-slides>

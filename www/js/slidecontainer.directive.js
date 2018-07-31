@@ -105,9 +105,10 @@
                 loop: false,
                 speed: 500
             };
-
+ 
+            $scope.pictures = ['img/Client_Information_pic.png','img/Spouse_Information_pic.png','img/Vehicle_Information_pic.png','img/More_Information_pic.png',''];
             $scope.sectionNames = ['Client Information','Spouse Information','Assets','Client Information'];
-
+            $scope.isSendingXml = true;
             $scope.intake = {
                 'location': null,
                 'client':{'name':'','phone':'','birthDate':'','address':'','socialSecurityNumber':'','email':'','city':'','state':'','zipCode':'','cellPhone':'','income':'', 'incomeType':'','hasSpouse':null},
@@ -330,7 +331,10 @@
                 }
               }
            }
-
+            $scope.selectedImg = '';
+          $scope.changePicture = function(){
+              $scope.selectedImg = $scope.pictures[$scope.currentSection-1];    
+          }
            $scope.nextSlide = function (section,step,val) {
                 if(section == 2 && step == 20 && !$scope.intake.isOnThirdPartyDeed){
                     //set current progress bar
@@ -413,8 +417,11 @@
                   $scope.currentHeight += incrementVal;
                 }
                 /*document.getElementById('main-step-txt').innerHTML = 'Step '+ step;*/
-                document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
+                if($scope.currentSection != 5){
+                  document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
+                }
                 $scope.slider._slideNext();
+                $scope.changePicture();
             }
 
             $scope.previousSlide = function (section,step,val) {
@@ -474,6 +481,7 @@
                 /*document.getElementById('main-step-txt').innerHTML = 'Step '+ step;*/
                 document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
                 $scope.slider._slidePrev();
+                $scope.changePicture();
             }
 
             $scope.showSpouseArea = function () {
