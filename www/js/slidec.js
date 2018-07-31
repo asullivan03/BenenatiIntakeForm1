@@ -4,7 +4,7 @@
   .module('bif.slidecontainer')
   .directive('slidecontainer', slidecontainer);
 
-  slidecontainer.$inject=[];
+  slideContainer.$inject=['$ionicSlideBoxDelegate'];
 
   function slidecontainer(){
     //Usage:
@@ -14,15 +14,45 @@
     link:link,
     restrict:'E',
     templateUrl:'js/slidecontainer.html',
-    controller:slideController
+    controller:controller
   };
 
   return directive;
 
   function link(scope,element, attrs){}
 
-  function slideController($scope){
+  function controller($scope, $ionicSlideBoxDelegate){
 
+$scope.options = {
+    loop: false,
+    speed: 500,
+    };
+    $scope.haveFiledBankruptcy = "No";
+    $scope.showFiledBankruptcyExtra = function (){
+      if($scope.haveFiledBankruptcy == "Yes"){
+          return true;
+      }
+      return true;
+    }
+    
+    $scope.intake={
+    'location':null
+    };
+    
+    $scope.nextSlide = function(){
+      $scope.slider._slideNext();
+    };
+    $scope.previousSlide = function(){
+      $scope.slider._slidePrev();
+    };
+
+
+  $scope.showSpouseArea=function(){
+          if($scope.intake.spouse == true){
+            return false;
+}
+      return true;
+  }
     $scope.locationSelect = function(answer) {
         $scope.$parent.intake.location = answer;
     };

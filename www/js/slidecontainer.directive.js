@@ -142,7 +142,7 @@
 			 $scope.servedDebtYesSelected = false;
 			 $scope.servedDebtNoSelected = false;
 
-<<<<<<< HEAD
+
 			 $scope.othersPropertyYesSelected = false;
 			 $scope.othersPropertyNoSelected = false;
  
@@ -206,12 +206,14 @@
 			 $scope.repossessYesSelected = false;
 			 $scope.repossessNoSelected = false;
  
-             $scope.intake = {
-=======
-            $scope.sectionNames = ['Client Information','Spouse Information','Assets','Client Information'];
 
+
+            $scope.pictures = ['img/Client_Information_pic.png','img/Spouse_Information_pic.png','img/Vehicle_Information_pic.png','img/More_Information_pic.png',''];
+
+            $scope.sectionNames = ['Client Information','Spouse Information','Assets','Client Information'];
+            $scope.isSendingXml = true;
             $scope.intake = {
->>>>>>> 2b680b9f0321d7394465f03f1d15fbee1516c9df
+
                 'location': null,
                 'client':{'name':'','phone':'','birthDate':'','address':'','socialSecurityNumber':'','email':'','city':'','state':'','zipCode':'','cellPhone':'','income':'', 'incomeType':'','hasSpouse':null},
                 'receiveChildSupport':null,
@@ -743,7 +745,10 @@
                 }
               }
            }
-
+            $scope.selectedImg = '';
+          $scope.changePicture = function(){
+              $scope.selectedImg = $scope.pictures[$scope.currentSection-1];    
+          }
            $scope.nextSlide = function (section,step,val) {
                 if(section == 2 && step == 20 && !$scope.intake.isOnThirdPartyDeed){
                     //set current progress bar
@@ -826,8 +831,11 @@
                   $scope.currentHeight += incrementVal;
                 }
                 /*document.getElementById('main-step-txt').innerHTML = 'Step '+ step;*/
-                document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
+                if($scope.currentSection != 5){
+                  document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
+                }
                 $scope.slider._slideNext();
+                $scope.changePicture();
             }
 
             $scope.previousSlide = function (section,step,val) {
@@ -887,6 +895,7 @@
                 /*document.getElementById('main-step-txt').innerHTML = 'Step '+ step;*/
                 document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
                 $scope.slider._slidePrev();
+                $scope.changePicture();
             }
 
             $scope.showSpouseArea = function () {
