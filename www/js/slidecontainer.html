@@ -1,5 +1,34 @@
 <img ng-if="currentSection > 0 && currentSection < 5" src="{{selectedImg}}" style="position:absolute;top: 190px;right: 35px;width: 200px;"/>
 <ion-slides options="options" slider="data.slider" style="padding-top:350px">
+    <ion-slide-page>
+            <h2 class="slide-question-txt">Please choose your language:</h2>
+        <div class="row slide-two-button-div">
+            <div class="col col-50">
+                <div ng-class="{'slide-select-button': !englishSelected, 'slide-selected-button': englishSelected}" ng-click="languageSelect('English')">
+                    <p>English</p>
+                </div>
+            </div>
+            <div class="col col-50">
+                <div ng-class="{'slide-select-button': !spanishSelected, 'slide-selected-button': spanishSelected}" ng-click="languageSelect('Spanish')">
+                    <p>Español</p>
+                </div>
+            </div>
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev">
+                    <p>Prev</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-if="isDisabled()" ng-click="$parent.nextSlide(1,1,0)">
+                    <p>Next</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
     <ion-slide-page><location></location></ion-slide-page>
     <ion-slide-page>
         <h2 class="slide-question-txt">Please enter your Full Name:</h2>
