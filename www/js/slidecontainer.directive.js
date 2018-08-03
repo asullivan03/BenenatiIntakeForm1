@@ -209,6 +209,10 @@
        $scope.englishSelected = false;
        $scope.spanishSelected = false;
 
+       $scope.previousText = "Prev";
+       $scope.nextText = "Next";
+       $scope.yesText = "Yes";
+
             $scope.pictures = ['img/Client_Information_pic.png','img/Spouse_Information_pic.png','img/Vehicle_Information_pic.png','img/More_Information_pic.png',''];
 
             $scope.sectionNames = ['Client Information','Spouse Information','Assets','Client Information'];
@@ -1127,11 +1131,21 @@
           {
             $scope.englishSelected = true;
             $scope.spanishSelected = false;
+
+            //set prev/next button text based on language
+            $scope.previousText = "Prev";
+            $scope.nextText = "Next";
+            $scope.yesText = "Yes";
           }
           else
           {
             $scope.englishSelected = false;
             $scope.spanishSelected = true;
+
+            //set prev/next button text based on language
+            $scope.previousText = "Anterior";
+            $scope.nextText = "Próximo";
+            $scope.yesText = "Sí";
           }
           //set intake form data
           $scope.intake.language = val;
