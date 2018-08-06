@@ -108,11 +108,11 @@
                 speed: 500
             };
  
-             $scope.recieveChildSupportYesSelected = false;
-             $scope.recieveChildSupportNoSelected = false;
- 
-             $scope.spouseYesSelected = false;
-             $scope.spouseNoSelected = false;
+      $scope.recieveChildSupportYesSelected = false;
+      $scope.recieveChildSupportNoSelected = false;
+
+      $scope.spouseYesSelected = false;
+      $scope.spouseNoSelected = false;
 
 			 $scope.sameAddressYesSelected = false;
 			 $scope.sameAddressNoSelected = false;
@@ -208,7 +208,12 @@
 			 $scope.repossessYesSelected = false;
 			 $scope.repossessNoSelected = false;
  
+       $scope.englishSelected = false;
+       $scope.spanishSelected = false;
 
+       $scope.previousText = "Prev";
+       $scope.nextText = "Next";
+       $scope.yesText = "Yes";
 
             $scope.pictures = ['img/Client_Information_pic.png','img/Spouse_Information_pic.png','img/Vehicle_Information_pic.png','img/More_Information_pic.png',''];
 
@@ -1266,7 +1271,54 @@
 				 //set intake form data
               	$scope.intake.servedDebtLawsuit = val;
             }
+
+        //set language
+        $scope.languageSelect = function(val){
+          //apply variables for ng-class
+          if(val == 'English')
+          {
+            $scope.englishSelected = true;
+            $scope.spanishSelected = false;
+
+            //set prev/next button text based on language
+            $scope.previousText = "Prev";
+            $scope.nextText = "Next";
+            $scope.yesText = "Yes";
+          }
+          else
+          {
+            $scope.englishSelected = false;
+            $scope.spanishSelected = true;
+
+            //set prev/next button text based on language
+            $scope.previousText = "Anterior";
+            $scope.nextText = "Próximo";
+            $scope.yesText = "Sí";
+          }
+          //set intake form data
+          $scope.intake.language = val;
+        }
+
+        //set income type
+        $scope.changeIncomeType = function(val){
+            $scope.intake.client.incomeType = val; 
+        }
+
+        //set spouse income type
+        $scope.changeSpouseIncomeType = function(val){
+            $scope.intake.spouse.incomeType = val; 
+        }
+
+        //set auto pay type
+        $scope.changeAutoPayType = function(val, index){
+            $scope.intake.Automobiles[index].payType = val; 
+        }
             
+        //set heard from 
+        $scope.changeHeardFrom = function(val){
+            $scope.intake.heardFrom = val; 
+        }
+
             $scope.$on("$ionicSlides.sliderInitialized", function(event, data){
 				// data.slider is the instance of Swiper
                	$scope.slider = data.slider;

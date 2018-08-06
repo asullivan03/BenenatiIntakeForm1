@@ -1,5 +1,6 @@
 <location-slide>
-        <h2 class="slide-question-txt">Which location are you at?</h2>
+    <h2 ng-if="$parent.englishSelected" class="slide-question-txt">Please choose your location:</h2>
+    <h2 ng-if="$parent.spanishSelected" class="slide-question-txt">Por favor elija su localización:</h2>
         <div class="row slide-two-button-div">
             <div class="col col-50">
                 <div ng-class="{'slide-select-button': !orlSelected, 'slide-selected-button': orlSelected}" ng-click="locationSelect('Orlando')">
@@ -15,13 +16,15 @@
         <div class="row next-prev-button-row">
             <div class="col col-50">
                 <div class="slide-nav-button prev">
-                    <p>Prev</p>
+                    <p ng-if="$parent.englishSelected">Prev</p>
+                    <p ng-if="$parent.spanishSelected">Anterior</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
                 <div class="slide-nav-button next" ng-if="isDisabled()" ng-click="$parent.nextSlide(1,1,0)">
-                    <p>Next</p>
+                    <p ng-if="$parent.englishSelected">Next</p>
+                    <p ng-if="$parent.spanishSelected">Próximo</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
             </div>
