@@ -794,7 +794,7 @@
         </div>
       </div>
     </div>
-  </ion-slide-page>
+  </ion-slide-page> 
   <ion-slide-page>
     <h2 ng-if="englishSelected" class="slide-question-txt">Are you on a deed to a property that belongs to a third party?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Está usted en una escritura a una propiedad que pertenece a una tercera parte?</h2>
@@ -1130,7 +1130,7 @@
               </div>
           </div>
           <div class="col col-50">
-              <div class="slide-nav-button next" ng-click="nextSlide(3,13,0)" ng-if="intake.Automobiles[1].mileage !==''"> 
+              <div class="slide-nav-button next" ng-click="nextSlide(3,13,0)" ng-if="intake.Automobiles[1].mileage !==''">
                   <p>{{nextText}}</p>
                   <img src="img/icons8-right-50.png" />
               </div>
@@ -1902,8 +1902,8 @@
               <div class="slide-nav-button next" ng-click="nextSlide(3,47,0)" ng-if="intake.Automobiles[6].model !== '' ">
                   <p>{{nextText}}</p>
                   <img src="img/icons8-right-50.png" />
+              </div>
           </div>
-      </div>
       </div>
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(7)">
@@ -3954,56 +3954,5 @@
         </div>
       </div>
     </div>
-  </ion-slide-page>
-  <ion-slide-page>
-    <h2 class="slide-question-txt">Are you living with friends or family?</h2>
-    <div class="row slide-two-button-div">
-      <div class="col col-50">
-        <div ng-class="{'slide-select-button': !livingffYesSelected, 'slide-selected-button': livingffYesSelected}" ng-click="setIsLivingWithFamily('yes')">
-          <p>Yes</p>
-        </div>
-      </div>
-      <div class="col col-50">
-        <div ng-class="{'slide-select-button': !livingffNoSelected, 'slide-selected-button': livingffNoSelected}" ng-click="setIsLivingWithFamily('no')">
-          <p>No</p>
-        </div>
-      </div>
-    </div>
-    <div class="row next-prev-button-row">
-      <div class="col col-50">
-        <div class="slide-nav-button prev" ng-click="previousSlide(3,88,0)">
-          <p>Prev</p>
-          <img class="flip-img" src="img/icons8-right-50.png" />
-        </div>
-      </div>
-      <div class="col col-50">
-        <div class="slide-nav-button next" ng-click="nextSlide(3,90,0)" ng-if="intake.setIsLivingWithFamily !== '' ">
-          <p>Next</p>
-          <img src="img/icons8-right-50.png" />
-        </div>
-      </div>
-    </div>
-  </ion-slide-page>
-  <ion-slide-page>
-    <h2 class="slide-question-txt">Do you have any medical debt?</h2>
-    <div class="row slide-two-button-div">
-      <div class="col col-50">
-        <div ng-class="{'slide-select-button': !medicalDebtYesSelected, 'slide-selected-button': medicalDebtYesSelected}"  class="slide-select-button" ng-click="setHasMedicalDebt(true)">
-          <p>Yes</p>
-        </div>
-      </div>
-      <div class="col col-50">
-        <div ng-class="{'slide-select-button': !medicalDebtNoSelected, 'slide-selected-button': medicalDebtNoSelected}" class="slide-select-button" ng-click="setHasMedicalDebt(false)">
-          <p>No</p>
-        </div>
-      </div>
-    </div>
-    <div class="row next-prev-button-row">
-      <div class="col col-50">
-        <div class="slide-nav-button prev" ng-click="previousSlide(3,89,0)">
-          <p>Prev</p>
-          <img class="flip-img" src="img/icons8-right-50.png" />
-        </div>
-      </div>
   </ion-slide-page>
 </ion-slides>
