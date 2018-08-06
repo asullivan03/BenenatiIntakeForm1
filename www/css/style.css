@@ -5,6 +5,9 @@
 ion-slide-page{
     
 }
+.input-cover {
+    position: static;
+}
 .slide-question-txt{
     color: #777777;
     font-weight: 500;

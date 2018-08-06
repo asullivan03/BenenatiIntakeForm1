@@ -102,6 +102,8 @@
 
         function slideController($scope,$ionicSlideBoxDelegate, slideContainerService) {
             $scope.options = {
+                onlyExternal: false,
+                noSwipingClass: 'swiper-no-swiping',
                 loop: false,
                 speed: 500
             };
@@ -218,7 +220,7 @@
                 'client':{'name':'','phone':'','birthDate':'','address':'','socialSecurityNumber':'','email':'','city':'','state':'','zipCode':'','cellPhone':'','income':'', 'incomeType':'','hasSpouse':''},
                 'receiveChildSupport':'',
                 'spouse':{'name':'','phone':'','birthDate':'','address':'','socialSecurityNumber':'','email':'','city':'','state':'','zipCode':'','cellPhone':'','income':'', 'incomeType':'','shareAddress':''},
-                'numberOfChildren':'',
+                'numberOfChildren':0,
                 'numberOfChildrenReceivingSupport':'',
                 'hasFiledBankruptcy':'',
                 'whenWasBankruptcyFiled':'',
@@ -228,7 +230,7 @@
                 'isOnThirdPartyDeed':'',
                 'whoOwnsProperty':'',
                 'howMuchIsPropertyWorth':'',
-                'numberOfVehicles':'',
+                'numberOfVehicles':0,
                 'Automobiles':[
                   {'year':'','make':'', 'model':'', 'mileage':'','payType':'','isPaidOff':'','currentAmountOwed': '','paymentAmount': ''},
                   {'year':'','make':'', 'model':'', 'mileage':'','payType':'','isPaidOff':'','currentAmountOwed': '','paymentAmount': ''},
@@ -238,7 +240,7 @@
                   {'year':'','make':'', 'model':'', 'mileage':'','payType':'','isPaidOff':'','currentAmountOwed': '','paymentAmount': ''},
                   {'year':'','make':'', 'model':'', 'mileage':'','payType':'','isPaidOff':'','currentAmountOwed': '','paymentAmount': ''}
                 ],
-                'numberOfProperties':'',
+                'numberOfProperties':0,
                 'realEstate':[
                   {'hasSecondMortgage': '','firstMortgageBalance':'', 'firstMortgagePayment':'','secondMortgageBalance':'', 'secondMortgageMonthlyPayment':''},
                   {'hasSecondMortgage': '' ,'firstMortgageBalance':'', 'firstMortgagePayment':'','secondMortgageBalance':'', 'secondMortgageMonthlyPayment':''},
@@ -288,18 +290,160 @@
                 'hasLivedInHouse4Years':'',
                 'isReadyForFreshStart':''
             };
+            
+            $scope.checkNumber = function(val){
+              if(Number.isInteger($scope.intake[val])){
+                return true;
+              }
+              else{
+                return false;
+              }
+            }
+            
+            $scope.inputFocusIn = function(){
+              setTimeout(function(){
+              $('input').focus(function(e){
+                  $('#restart-footer').css('opacity',0);
+              });
+              $('input').blur(function(e){
+                $('#restart-footer').animate({'opacity':1});
+            });
+              },.500);
+            }
+
+            $scope.inputFocusIn();
+
             $scope.currentStep = 1;
             $scope.createXMLDocument = function(){
-              var doc = document.implementation.createDocument("","",null);
+              var XML = new XMLWriter('UTF-8');
+              XML.writeStartDocument();
+              XML.writeStartElement('prevail');
+                XML.writeStartElement('matter');
+                  XML.writeElementString('lawtype','bankruptcy');
+                  XML.writeStartElement('additionalInformation');
+                    XML.writeString('Number of Children: ' + $scope.intake.numberOfChildren + '\n');
+                    XML.writeString('Number of Children Receiving Child Support ' + $scope.intake.numberOfChildrenReceivingSupport + '\n');
+                    XML.writeComment('Spouse Information');
+                    XML.writeString('Has Spouse? ' + $scope.intake.client.hasSpouse + '\n');
+                    if($scope.intake.client.hasSpouse == 'yes'){
+                      XML.writeString('Spouse Name: ' + $scope.intake.spouse.name +'\n' );
+                      XML.writeString('Spouse Phone:  ' + $scope.intake.spouse.phone + '\n');
+                      XML.writeString('Spouse birthDate: ' + $scope.intake.spouse.birthDate + '\n');
+                      XML.writeString('Spouse Address: ' + $scope.intake.spouse.address + '\n');
+                      XML.writeString('Spouse Social Security Number: ' + $scope.intake.socialSecurityNumber + '\n');
+                      XML.writeString('Spouse Email: ' + $scope.intake.spouse.email +'\n');
+                      XML.writeString('Spouse City: ' + $scope.intake.spouse.city + '\n');
+                      XML.writeString('Spouse State: ' + $scope.intake.spouse.state + '\n');
+                      XML.writeString('Spouse ZipCode: ' + $scope.intake.spouse.zipCode + '\n');
+                      XML.writeString('Spouse CellPhone: ' + $scope.intake.spouse.cellPhone + '\n');
+                      XML.writeString('Spouse Income: ' + $scope.intake.spouse.income + '\n');
+                      XML.writeString('Spouse Income Type: ' + $scope.intake.spouse.incomeType + '\n');
+                    }
+                    XML.writeString('Has Filed Bankruptcy? ' + $scope.intake.hasFiledBankruptcy + '\n');
+                    if($scope.intake.hasFiledBankruptcy == 'yes'){
+                      XML.writeString('Bankruptcy File Date: ' + $scope.intake.whenWasBankruptcyFiled + '\n');
+                    }
+                    XML.writeString('Has Given money to family or friends? ' + $scope.intake.hasPaidFriends + '\n');
+                    if($scope.intake.hasPaidFriends == 'yes'){
+                      XML.writeString('Who was the money given to? ' + $scope.intake.whoWasMoneyGivenTo + '\n');
+                      XML.writeString('How much money was given? ' + $scope.intake.howMuchMoneyWasGiven + '\n');
+                    }
+                    XML.writeString('Are you on a deed to a third party? ' + $scope.intake.isOnThirdPartyDeed + '\n');
+                    if($scope.intake.isOnThirdPartyDeed == 'yes'){
+                      XML.writeString('Who owns the property? ' + $scope.intake.whoOwnsProperty + '\n');
+                      XML.writeString('How much is the property worth? ' + $scope.intake.howMuchIsPropertyWorth + '\n');
+                    }
+                    XML.writeComment('Automobile Information');
+                    XML.writeString('How many vehicles do you own? ' + $scope.intake.numberOfVehicles + '\n');
+                    for(var i = 0; i < $scope.intake.numberOfVehicles; i++){
+                        XML.writeString('Vehicle #'+ (i+1) + ' year: ' + $scope.intake.Automobiles[i].year);
+                        XML.writeString('Vehicle #'+ (i+1) + ' make: ' + $scope.intake.Automobiles[i].make);
+                        XML.writeString('Vehicle #'+ (i+1) + ' model: ' + $scope.intake.Automobiles[i].model);
+                        XML.writeString('Vehicle #'+ (i+1) + ' mileage: ' + $scope.intake.Automobiles[i].mileage);
+                        XML.writeString('Vehicle #'+ (i+1) + ' payment type: ' + $scope.intake.Automobiles[i].payType);
+                        XML.writeString('Vehicle #'+ (i+1) + ' current amount owed: ' + $scope.intake.Automobiles[i].currentAmountOwed);
+                        XML.writeString('Vehicle #'+ (i+1) + ' payment amount: ' + $scope.intake.Automobiles[i].paymentAmount);
+                    }
+                    XML.writeComment('Real Estate Information');
+                    XML.writeString('How many properties do you own? ' + $scope.intake.numberOfProperties + '\n');
+                    for(var i = 0; i < $scope.intake.numberOfProperties; i++){
+                      XML.writeString('Property #'+ (i+1) + ' first mortgage balance: ' + $scope.intake.realEstate[i].firstMortgageBalance + '\n');
+                      XML.writeString('Property #'+ (i+1) + ' first mortgage payment: ' + $scope.intake.realEstate[i].firstMortgagePayment + '\n');
+                      XML.writeString('Does Property #'+ (i+1) + ' have a second mortgage? ' + $scope.intake.realEstate[i].hasSecondMortgage + '\n');
+                      if($scope.intake.realEstate[i].hasSecondMortgage == 'yes'){
+                        XML.writeString('Property #'+ (i+1) + ' second mortgage balance: ' + $scope.intake.realEstate[i].secondMortgageBalance + '\n');
+                        XML.writeString('Property #'+ (i+1) + ' second mortgage payment: ' + $scope.intake.realEstate[i].secondMortgagePayment + '\n');
+                      }
+                    }
+                    XML.writeString('Renting: '+ $scope.intake.isRenting + '\n');
+                    if($scope.intake.isRenting == 'yes'){
+                      XML.writeString('Rent Amount: ' + $scope.intake.rentAmount + '\n');
+                    }
+                    XML.writeString('Living with friends or family: ' + $scope.intake.isLivingWithFamily + '\n');
+                    XML.writeString('Medical Debt: ' + $scope.intake.hasMedicalDebt + '\n');
+                    XML.writeString('Checking Account Balance: ' + $scope.intake.checkingAccountBalance + '\n');
+                    XML.writeString('Savings Account Balance: ' + $scope.intake.savingsAccountBalance + '\n');
+                    XML.writeString('Joint Accounts with Family Balance: ' + $scope.intake.jointAccountsWithFamilyBalance + '\n');
+                    XML.writeString('Stocks or Bonds Value: ' + $scope.intake.stocksOrBondsValue + '\n');
+                    XML.writeString('Retirement401k Balance: ' + $scope.intake.retirement401kBalance + '\n');
+                    XML.writeString('Household Furniture Value: ' + $scope.intake.householdFurnitureValue + '\n');
+                    XML.writeString('Tool Value: ' + $scope.intake.toolValue + '\n');
+                    XML.writeString('Collections and Jewelry Value: ' + $scope.intake.collectionAndJewelryValue + '\n');
+                    XML.writeString('Other Major Asset Value: ' + $scope.intake.otherMajorAssetValue + '\n');
+                    XML.writeComment('Other Information');
+                    XML.writeString('How did you hear of us? ' + $scope.intake.heardFrom + '\n');
+                    XML.writeString('Served forclosure papers: ' + $scope.intake.servedForeclosurePapers + '\n');
+                    XML.writeString('Served a debt lawsuit: ' + $scope.intake.servedDebtLawsuit + '\n');
+                    XML.writeString('Biggest concern: ' + $scope.intake.biggestConcern + '\n');
+                    XML.writeString('Has possession or title of anothers property: ' + $scope.intake.hasAnothersProperty+ '\n');
+                    XML.writeString('Has sold assets in the past 2 years: '+ $scope.intake.hasSoldAssets + '\n');
+                    XML.writeString('Has paid family on debt owed in the past year: ' + $scope.intake.hasPaidDebtToFamily + '\n');
+                    XML.writeString('Is creditor garnishing wages: ' + $scope.intake.isWagesGarnished + '\n');
+                    XML.writeString('Has filed all tax returns: ' + $scope.intake.hasFiledTaxReturns + '\n');
+                    XML.writeString('House, car or any asset foreclosed or repossessed: ' + $scope.intake.hasAssetBeenForeclosed + '\n');
+                    XML.writeString('Behind on car or house payment: ' + $scope.intake.isBehindOnCarPayment + '\n');
+                    XML.writeString('Any large purchases in that past 90 days: ' + $scope.intake.hasMadeLargePurchase + '\n');
+                    XML.writeString('Has taken cash advances from credit cards in the past 90 days: ' + $scope.intake.hasTakenCashAdvance + '\n');
+                    XML.writeString('Has paid lawyer for advice on debts or bankruptcy: ' + $scope.intake.hasPaidOtherLawyers + '\n'); 
+                    XML.writeString('Has been officer or partner of business in the past 6 years: ' + $scope.intake.hasBeenOfficerOfCompany + '\n');
+                    XML.writeString('Has inheritance not received: ' + $scope.intake.hasInheritanceNotReceived + '\n');
+                    XML.writeString('Owe money for marital agreement or judgment of divorce: ' + $scope.intake.hasMaritalAgreement + '\n');
+                    XML.writeString('Has tax refund that has not been received: ' + $scope.intake.hasTaxRefundNotReceived + '\n');
+                    XML.writeString('Is currently suing someone: ' + $scope.intake.isSuing + '\n');
+                    XML.writeString('Has lived in Florida for past 2 years: ' + $scope.intake.hasLivedInFlorida + '\n' );
+                    XML.writeString('Owes money to credit union: ' + $scope.intake.hasDebtToCreditUnion + '\n');
+                    XML.writeString('Has taken loans from retirement savings in the past 6 months: ' + $scope.hasTakenOutLoans + '\n');
+                    XML.writeString('Still using credit cards: ' + $scope.intake.isUsingCreditCards + '\n');
+                    XML.writeString('Lived in mortgaged home for less than 4 years: ' + $scope.intake.hasLivedInHouse4Years + '\n');
+                    XML.writeString('Ready for fresh start: ' + $scope.intake.isReadyForFreshStart + '\n');
+                  XML.writeEndElement();
+                XML.writeEndElement();
+                XML.writeStartElement('rolodex');
+                  XML.writeElementString('first name', $scope.intake.client.name);
+                  XML.writeElementString('middle name', $scope.intake.client.name);
+                  XML.writeElementString('last name', $scope.intake.client.name);
+                  XML.writeElementString('ss', $scope.intake.client.socialSecurityNumber);
+                  XML.writeElementString('dob', $scope.intake.client.birthDate);
+                  XML.writeElementString('address',$scope.intake.client.address);
+                  XML.writeElementString('city', $scope.intake.client.city);
+                  XML.writeElementString('state', $scope.intake.client.state);
+                  XML.writeElementString('zipcode', $scope.intake.client.zipCode);
+                  XML.writeElementString('phone1', $scope.intake.client.phone);
+                  XML.writeElementString('phone2', $scope.intake.client.cellPhone);
+                  XML.writeElementString('email', $scope.intake.client.email);
+                  XML.writeElementString('referralsource1', $scope.intake.heardFrom);
+                XML.writeEndElement();
+              XML.writeEndElement();
+              /*var doc = document.implementation.createDocument("","",null);
               var nameElem = doc.createElement("fullName");
               nameElem.innerHTML = 'Jacob Jackson';
 
               var addressElem = doc.createElement("address");
               addressElem.innerHTML =  '824 Maumee St';
 
-              nameElem.append(addressElem);
+              nameElem.append(addressElem);*/
  
-                slideContainerService.sendXML(doc);
+                slideContainerService.sendXML(XML);
             }
 
             $scope.hasSameAddress = function(val){
@@ -462,7 +606,7 @@
               	 $scope.intake.isSuing = val;
             }
 
-            $scope.hasTaxRefundNotReceived = function(val){
+        $scope.hasTaxRefundNotReceived = function(val){
 				 //apply variables for ng-class
 				 if(val == true)
 				 {
@@ -745,7 +889,7 @@
                 }
               }
            }
-            $scope.selectedImg = '';
+            $scope.selectedImg = 'img/Client_Information_pic.png';
           $scope.changePicture = function(){
               $scope.selectedImg = $scope.pictures[$scope.currentSection-1];    
           }
@@ -836,6 +980,10 @@
                 }
                 $scope.slider._slideNext();
                 $scope.changePicture();
+
+                if($scope.currentSection == 5){
+                  $scope.createXMLDocument ();
+                }
             }
 
             $scope.previousSlide = function (section,step,val) {
