@@ -215,6 +215,257 @@
        $scope.nextText = "Next";
        $scope.yesText = "Yes";
 
+       $scope.states = [
+        {
+            "name": "Alabama",
+            "abbreviation": "AL"
+        },
+        {
+            "name": "Alaska",
+            "abbreviation": "AK"
+        },
+        {
+            "name": "American Samoa",
+            "abbreviation": "AS"
+        },
+        {
+            "name": "Arizona",
+            "abbreviation": "AZ"
+        },
+        {
+            "name": "Arkansas",
+            "abbreviation": "AR"
+        },
+        {
+            "name": "California",
+            "abbreviation": "CA"
+        },
+        {
+            "name": "Colorado",
+            "abbreviation": "CO"
+        },
+        {
+            "name": "Connecticut",
+            "abbreviation": "CT"
+        },
+        {
+            "name": "Delaware",
+            "abbreviation": "DE"
+        },
+        {
+            "name": "District Of Columbia",
+            "abbreviation": "DC"
+        },
+        {
+            "name": "Federated States Of Micronesia",
+            "abbreviation": "FM"
+        },
+        {
+            "name": "Florida",
+            "abbreviation": "FL"
+        },
+        {
+            "name": "Georgia",
+            "abbreviation": "GA"
+        },
+        {
+            "name": "Guam",
+            "abbreviation": "GU"
+        },
+        {
+            "name": "Hawaii",
+            "abbreviation": "HI"
+        },
+        {
+            "name": "Idaho",
+            "abbreviation": "ID"
+        },
+        {
+            "name": "Illinois",
+            "abbreviation": "IL"
+        },
+        {
+            "name": "Indiana",
+            "abbreviation": "IN"
+        },
+        {
+            "name": "Iowa",
+            "abbreviation": "IA"
+        },
+        {
+            "name": "Kansas",
+            "abbreviation": "KS"
+        },
+        {
+            "name": "Kentucky",
+            "abbreviation": "KY"
+        },
+        {
+            "name": "Louisiana",
+            "abbreviation": "LA"
+        },
+        {
+            "name": "Maine",
+            "abbreviation": "ME"
+        },
+        {
+            "name": "Marshall Islands",
+            "abbreviation": "MH"
+        },
+        {
+            "name": "Maryland",
+            "abbreviation": "MD"
+        },
+        {
+            "name": "Massachusetts",
+            "abbreviation": "MA"
+        },
+        {
+            "name": "Michigan",
+            "abbreviation": "MI"
+        },
+        {
+            "name": "Minnesota",
+            "abbreviation": "MN"
+        },
+        {
+            "name": "Mississippi",
+            "abbreviation": "MS"
+        },
+        {
+            "name": "Missouri",
+            "abbreviation": "MO"
+        },
+        {
+            "name": "Montana",
+            "abbreviation": "MT"
+        },
+        {
+            "name": "Nebraska",
+            "abbreviation": "NE"
+        },
+        {
+            "name": "Nevada",
+            "abbreviation": "NV"
+        },
+        {
+            "name": "New Hampshire",
+            "abbreviation": "NH"
+        },
+        {
+            "name": "New Jersey",
+            "abbreviation": "NJ"
+        },
+        {
+            "name": "New Mexico",
+            "abbreviation": "NM"
+        },
+        {
+            "name": "New York",
+            "abbreviation": "NY"
+        },
+        {
+            "name": "North Carolina",
+            "abbreviation": "NC"
+        },
+        {
+            "name": "North Dakota",
+            "abbreviation": "ND"
+        },
+        {
+            "name": "Northern Mariana Islands",
+            "abbreviation": "MP"
+        },
+        {
+            "name": "Ohio",
+            "abbreviation": "OH"
+        },
+        {
+            "name": "Oklahoma",
+            "abbreviation": "OK"
+        },
+        {
+            "name": "Oregon",
+            "abbreviation": "OR"
+        },
+        {
+            "name": "Palau",
+            "abbreviation": "PW"
+        },
+        {
+            "name": "Pennsylvania",
+            "abbreviation": "PA"
+        },
+        {
+            "name": "Puerto Rico",
+            "abbreviation": "PR"
+        },
+        {
+            "name": "Rhode Island",
+            "abbreviation": "RI"
+        },
+        {
+            "name": "South Carolina",
+            "abbreviation": "SC"
+        },
+        {
+            "name": "South Dakota",
+            "abbreviation": "SD"
+        },
+        {
+            "name": "Tennessee",
+            "abbreviation": "TN"
+        },
+        {
+            "name": "Texas",
+            "abbreviation": "TX"
+        },
+        {
+            "name": "Utah",
+            "abbreviation": "UT"
+        },
+        {
+            "name": "Vermont",
+            "abbreviation": "VT"
+        },
+        {
+            "name": "Virgin Islands",
+            "abbreviation": "VI"
+        },
+        {
+            "name": "Virginia",
+            "abbreviation": "VA"
+        },
+        {
+            "name": "Washington",
+            "abbreviation": "WA"
+        },
+        {
+            "name": "West Virginia",
+            "abbreviation": "WV"
+        },
+        {
+            "name": "Wisconsin",
+            "abbreviation": "WI"
+        },
+        {
+            "name": "Wyoming",
+            "abbreviation": "WY"
+        }
+    ];
+
+    function formatDate(date) {
+      var d = new Date(date),
+          month = '' + (d.getMonth() + 1),
+          day = '' + d.getDate(),
+          year = d.getFullYear();
+  
+      if (month.length < 2) month = '0' + month;
+      if (day.length < 2) day = '0' + day;
+  
+      return [month, day, year].join('/');
+   }
+
             $scope.pictures = ['data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=','img/Client_Information_pic.png','img/Spouse_Information_pic.png','img/Vehicle_Information_pic.png','img/More_Information_pic.png',''];
 
             $scope.sectionNames = ['Welcome','Client Information','Spouse Information','Assets','Client Information'];
@@ -1036,6 +1287,10 @@
               $scope.selectedImg = $scope.pictures[$scope.currentSection];    
           }
            $scope.nextSlide = function (section,step,val) {
+                if(section == 1 && step == 6){
+                    var dateFormatted = formatDate($scope.intake.client.birthDate);
+                    $scope.intake.client.birthDate = dateFormatted;
+                }
                 if(section == 2 && step == 20 && !$scope.intake.isOnThirdPartyDeed){
                     //set current progress bar
                     document.getElementById('progressBar'+$scope.currentSection).style.height = '100px';

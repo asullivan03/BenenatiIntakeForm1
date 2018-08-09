@@ -112,22 +112,19 @@
           <div class="col col-33">
             <div class="row">
               <p style="font-weight: bold;font-size: 34px;padding-right: 5px;position: relative;top: 13px;">(</p>
-              <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.areaCode" />
-              <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.areaCode" />
+              <input type="tel" style="width:68px;" maxlength="3" placeholder="###" ng-model="intake.client.areaCode" />
               <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">)</p>
             </div>
           </div>
           <div class="col col-33">
               <div class="row">
-                <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.phone1" />
-                <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.phone1" />
+                <input type="tel" style="width:68px;" maxlength="3" placeholder="###" ng-model="intake.client.phone1" />
                 <p style="font-weight: bold;font-size: 34px;padding-left: 17px;position: relative;top: 13px;">-</p>
               </div>
           </div>
           <div class="col col-33">
               <div class="row">
-                <input ng-if="englishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.client.phone2" />
-                <input ng-if="spanishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.client.phone2" />
+                <input type="tel" style="width:86px;" maxlength="4" placeholder="####" ng-model="intake.client.phone2" />
               </div>
           </div>
         </div>
@@ -172,8 +169,8 @@
         <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your Address:</h2>
         <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor entre su Dirección:</h2>
         <div class="row slide-one-textbox-div">
-            <textarea ng-if="englishSelected" rows="4" cols="50" placeholder="Address" ng-model="intake.client.address" ></textarea>
-            <textarea ng-if="spanishSelected" rows="4" cols="50" placeholder="Dirección" ng-model="intake.client.address" ></textarea>
+            <textarea ng-if="englishSelected" maxlength="50" rows="4" cols="50" placeholder="Address" ng-model="intake.client.address" ></textarea>
+            <textarea ng-if="spanishSelected" maxlength="50" rows="4" cols="50" placeholder="Dirección" ng-model="intake.client.address" ></textarea>
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
@@ -196,19 +193,19 @@
         <div class="row slide-one-textbox-div" style="width:280px;">
             <div class="col col-33">
               <div class="row">
-                <input type="tel" placeholder="###" style="width:68px;" ng-model="intake.client.socialSecurityNumber1"/>
+                <input type="tel" placeholder="###" maxlength="3" style="width:68px;" ng-model="intake.client.socialSecurityNumber1"/>
                 <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">-</p>
               </div>
             </div>
             <div class="col col-33">
               <div class="row">
-                <input type="tel" placeholder="##" style="width:50px;" ng-model="intake.client.socialSecurityNumber2"/>
+                <input type="tel" placeholder="##" maxlength="2" style="width:50px;" ng-model="intake.client.socialSecurityNumber2"/>
                 <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">-</p>
               </div>
             </div>
             <div class="col col-33">
               <div class="row">
-                <input type="tel" placeholder="####" style="width:86px; position:relative;right:16px;" ng-model="intake.client.socialSecurityNumber3"/>
+                <input type="tel" placeholder="####" maxlength="4" style="width:86px; position:relative;right:16px;" ng-model="intake.client.socialSecurityNumber3"/>
               </div>
             </div>
           </div>
@@ -275,8 +272,11 @@
         <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your State:</h2>
         <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor entre su Estado:</h2>
         <div class="row slide-one-textbox-div">
-            <input ng-if="englishSelected" type="text" placeholder="State" ng-model="intake.client.state" />
-            <input ng-if="spanishSelected" type="text" placeholder="Estado" ng-model="intake.client.state" />
+            
+            <select ng-model="intake.client.state" class="stateDropdown">
+                <option ng-repeat="state in states" value="{{state.abbreviation}}">{{state.name}}</option>
+            </select>
+
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
@@ -322,22 +322,19 @@
             <div class="col col-33">
               <div class="row">
                 <p style="font-weight: bold;font-size: 34px;padding-right: 5px;position: relative;top: 13px;">(</p>
-                <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.cellAreaCode" />
-                <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.cellAreaCode" />
+                <input maxlength="3" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.cellAreaCode" />
                 <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">)</p>
               </div>
             </div>
             <div class="col col-33">
                 <div class="row">
-                  <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.cellPhone1" />
-                  <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.cellPhone1" />
+                  <input maxlength="3" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.cellPhone1" />
                   <p style="font-weight: bold;font-size: 34px;padding-left: 17px;position: relative;top: 13px;">-</p>
                 </div>
             </div>
             <div class="col col-33">
                 <div class="row">
-                  <input ng-if="englishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.client.cellPhone2" />
-                  <input ng-if="spanishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.client.cellPhone2" />
+                  <input maxlength="4" type="tel" style="width:86px;" placeholder="####" ng-model="intake.client.cellPhone2" />
                 </div>
             </div>
           </div>
@@ -523,22 +520,19 @@
           <div class="col col-33">
             <div class="row">
               <p style="font-weight: bold;font-size: 34px;padding-right: 5px;position: relative;top: 13px;">(</p>
-              <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.areaCode" />
-              <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.areaCode" />
+              <input maxlength="3" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.areaCode" />
               <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">)</p>
             </div>
           </div>
           <div class="col col-33">
               <div class="row">
-                <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.phone1" />
-                <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.phone1" />
+                <input maxlength="3" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.phone1" />
                 <p style="font-weight: bold;font-size: 34px;padding-left: 17px;position: relative;top: 13px;">-</p>
               </div>
           </div>
           <div class="col col-33">
               <div class="row">
-                <input ng-if="englishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.spouse.phone2" />
-                <input ng-if="spanishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.spouse.phone2" />
+                <input maxlength="4" type="tel" style="width:86px;" placeholder="####" ng-model="intake.spouse.phone2" />
               </div>
           </div>
       </div>
@@ -637,19 +631,19 @@
     <div class="row slide-one-textbox-div" style="width:375px;">
       <div class="col col-33">
         <div class="row">
-          <input type="tel" placeholder="###" style="width:68px;" ng-model="intake.spouse.socialSecurityNumber1"/>
+          <input type="tel" maxlength="3" placeholder="###" style="width:68px;" ng-model="intake.spouse.socialSecurityNumber1"/>
           <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">-</p>
         </div>
       </div>
       <div class="col col-33">
         <div class="row">
-          <input type="tel" placeholder="##" style="width:50px;" ng-model="intake.spouse.socialSecurityNumber2"/>
+          <input type="tel" maxlength="2" placeholder="##" style="width:50px;" ng-model="intake.spouse.socialSecurityNumber2"/>
           <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">-</p>
         </div>
       </div>
       <div class="col col-33">
         <div class="row">
-          <input type="tel" placeholder="####" style="width:86px;position: relative; right:16px;" ng-model="intake.spouse.socialSecurityNumber3"/>
+          <input type="tel" maxlength="4" placeholder="####" style="width:86px;position: relative; right:16px;" ng-model="intake.spouse.socialSecurityNumber3"/>
         </div>
       </div>
     </div>
@@ -767,22 +761,19 @@
         <div class="col col-33">
           <div class="row">
             <p style="font-weight: bold;font-size: 34px;padding-right: 5px;position: relative;top: 13px;">(</p>
-            <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.cellAreaCode" />
-            <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.cellAreaCode" />
+            <input maxlength="3" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.cellAreaCode" />
             <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">)</p>
           </div>
         </div>
         <div class="col col-33">
             <div class="row">
-              <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.cellPhone1" />
-              <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.cellPhone1" />
+              <input maxlength="3" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.cellPhone1" />
               <p style="font-weight: bold;font-size: 34px;padding-left: 17px;position: relative;top: 13px;">-</p>
             </div>
         </div>
         <div class="col col-33">
             <div class="row">
-              <input ng-if="englishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.spouse.cellPhone2" />
-              <input ng-if="spanishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.spouse.cellPhone2" />
+              <input maxlength="4" type="tel" style="width:86px;" placeholder="####" ng-model="intake.spouse.cellPhone2" />
             </div>
         </div>
     </div>

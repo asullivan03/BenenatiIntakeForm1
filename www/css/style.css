@@ -134,3 +134,20 @@ textarea{
     padding-right: 10px !important;
 }
 
+.item-radio .radio-icon {
+   color: #5392cf;
+}
+
+.item-radio .item-content{
+    border: 1px solid gray;
+}
+
+/* .swiper-container{
+    z-index: 11;
+}  */
+
+.stateDropdown{
+    height: 50px;
+    width: 335px;
+    font-size: 22px;
+}

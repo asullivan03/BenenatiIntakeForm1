@@ -70,7 +70,8 @@
                          console.log("Failed file write: " + e.toString());
                          };
                          
-                         fileWriter.write(dataObj);
+                         var data = new Blob([dataObj], {type: 'text/xml'});
+                         fileWriter.write(data);
                          });
   }
   //write to file- end

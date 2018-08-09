@@ -32,15 +32,16 @@
          {
              $scope.orlSelected = true;
              $scope.kissSelected = false;
+             //set intake form data
+             $scope.$parent.intake.location = "0000001672 - Orlando";
          }
          else
          {
              $scope.orlSelected = false;
              $scope.kissSelected = true;
+             //set intake form data
+             $scope.$parent.intake.location = "pLKlmnVLZW - Kissimmee";
          }
- 
-         //set intake form data
-         $scope.$parent.intake.location = answer;
      };
  
      $scope.isDisabled = function(){
