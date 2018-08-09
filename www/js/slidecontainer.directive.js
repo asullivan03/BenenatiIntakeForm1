@@ -463,14 +463,14 @@
             $scope.createCopyXMLDocument = function(){
               //var XML = new XMLWriter('UTF-8');
               //XML.writeStartDocument();
-              var XML = "<prevail>" +
-                "<matter>" +
-                  "<lawType>" + 'bankruptcy' + "</lawtype>" +
-                  "<additionalInformation>"+
-                    'Number of Children: ' + $scope.intake.numberOfChildren + '\n' +
-                    'Number of Children Receiving Child Support ' + $scope.intake.numberOfChildrenReceivingSupport + '\n' +
-                    'Has Spouse? ' + $scope.intake.client.hasSpouse + '\n' +
-                    "</additionalInformation>\n</matter>\n</prevail>";
+              var XML = "<prevail>\n" +
+                "\t<matter>" +
+                  "\t\t<lawType>" + ' bankruptcy ' + "</lawtype>\n" +
+                  "\t\t<additionalInformation>\n"+
+                    '\t\t\tNumber of Children: ' + $scope.intake.numberOfChildren + '\n' +
+                    '\t\t\tNumber of Children Receiving Child Support ' + $scope.intake.numberOfChildrenReceivingSupport + '\n' +
+                    '\t\t\tHas Spouse? ' + $scope.intake.client.hasSpouse + '\n' +
+                    "\t\t</additionalInformation>\n\t</matter>\n</prevail>";
                     /*if($scope.intake.client.hasSpouse == 'yes'){
                       XML.writeString('Spouse Name: ' + $scope.intake.spouse.name +'\n' );
                       XML.writeString('Spouse Phone:  (' + $scope.intake.spouse.areaCode + ')' + $scope.intake.spouse.phone1 + '-' + $scope.intake.spouse.phone2 + '\n');
