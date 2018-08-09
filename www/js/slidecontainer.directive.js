@@ -215,16 +215,16 @@
        $scope.nextText = "Next";
        $scope.yesText = "Yes";
 
-            $scope.pictures = ['img/Client_Information_pic.png','img/Spouse_Information_pic.png','img/Vehicle_Information_pic.png','img/More_Information_pic.png',''];
+            $scope.pictures = ['data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=','img/Client_Information_pic.png','img/Spouse_Information_pic.png','img/Vehicle_Information_pic.png','img/More_Information_pic.png',''];
 
-            $scope.sectionNames = ['Client Information','Spouse Information','Assets','Client Information'];
+            $scope.sectionNames = ['Welcome','Client Information','Spouse Information','Assets','Client Information'];
             $scope.isSendingXml = true;
             $scope.intake = {
                 'language':'',
                 'location': '',
-                'client':{'name':'','phone':'','birthDate':'','address':'','socialSecurityNumber':'','email':'','city':'','state':'','zipCode':'','cellPhone':'','income':'', 'incomeType':'','hasSpouse':''},
+                'client':{'firstName':'','middleName':'','lastName':'','areaCode':'','phone1':'','phone2':'','birthDate':'','address':'','socialSecurityNumber1':'','socialSecurityNumber2':'','socialSecurityNumber3':'','email':'','city':'','state':'','zipCode':'','cellAreaCode':'','cellPhone1':'','cellPhone2':'','income':'', 'incomeType':'','hasSpouse':''},
                 'receiveChildSupport':'',
-                'spouse':{'name':'','phone':'','birthDate':'','address':'','socialSecurityNumber':'','email':'','city':'','state':'','zipCode':'','cellPhone':'','income':'', 'incomeType':'','shareAddress':''},
+                'spouse':{'name':'','areaCode':'','phone1':'','phone2':'','birthDate':'','address':'','socialSecurityNumber1':'','socialSecurityNumber2':'','socialSecurityNumber3':'','email':'','city':'','state':'','zipCode':'','cellAreaCode':'','cellPhone1':'','cellPhone2':'','income':'', 'incomeType':'','shareAddress':''},
                 'numberOfChildren':0,
                 'numberOfChildrenReceivingSupport':'',
                 'hasFiledBankruptcy':'',
@@ -313,10 +313,19 @@
               $('input').blur(function(e){
                 $('#restart-footer').animate({'opacity':1});
             });
-              },.500);
+
+            document.getElementById('main-header-txt').innerHTML ="Welcome";
+            $('#restart-footer').animate({'opacity':0});
+            $('.progress-area').animate({'opacity':0});
+            $scope.originalIntake = $scope.intake;
+              },1000);
             }
 
             $scope.inputFocusIn();
+            $scope.restartForm = function(){
+              $scope.intake = $scope.originalIntake;
+              $scope.slider._slideTo(0);
+            }
 
             $scope.currentStep = 1;
             $scope.createXMLDocument = function(){
@@ -332,15 +341,15 @@
                     XML.writeString('Has Spouse? ' + $scope.intake.client.hasSpouse + '\n');
                     if($scope.intake.client.hasSpouse == 'yes'){
                       XML.writeString('Spouse Name: ' + $scope.intake.spouse.name +'\n' );
-                      XML.writeString('Spouse Phone:  ' + $scope.intake.spouse.phone + '\n');
+                      XML.writeString('Spouse Phone:  (' + $scope.intake.spouse.areaCode + ')' + $scope.intake.spouse.phone1 + '-' + $scope.intake.spouse.phone2 + '\n');
                       XML.writeString('Spouse birthDate: ' + $scope.intake.spouse.birthDate + '\n');
                       XML.writeString('Spouse Address: ' + $scope.intake.spouse.address + '\n');
-                      XML.writeString('Spouse Social Security Number: ' + $scope.intake.socialSecurityNumber + '\n');
+                      XML.writeString('Spouse Social Security Number: ' + $scope.intake.client.socialSecurityNumber1 + '-' + $scope.intake.client.socialSecurityNumber2 + '-' + $scope.intake.client.socialSecurityNumber3 + '\n');
                       XML.writeString('Spouse Email: ' + $scope.intake.spouse.email +'\n');
                       XML.writeString('Spouse City: ' + $scope.intake.spouse.city + '\n');
                       XML.writeString('Spouse State: ' + $scope.intake.spouse.state + '\n');
                       XML.writeString('Spouse ZipCode: ' + $scope.intake.spouse.zipCode + '\n');
-                      XML.writeString('Spouse CellPhone: ' + $scope.intake.spouse.cellPhone + '\n');
+                      XML.writeString('Spouse CellPhone: (' + $scope.intake.spouse.cellAreaCode + ')' + $scope.intake.spouse.cellPhone1 + '-' + $scope.intake.spouse.cellPhone2 + '\n');
                       XML.writeString('Spouse Income: ' + $scope.intake.spouse.income + '\n');
                       XML.writeString('Spouse Income Type: ' + $scope.intake.spouse.incomeType + '\n');
                     }
@@ -427,14 +436,14 @@
                   XML.writeElementString('first name', $scope.intake.client.name);
                   XML.writeElementString('middle name', $scope.intake.client.name);
                   XML.writeElementString('last name', $scope.intake.client.name);
-                  XML.writeElementString('ss', $scope.intake.client.socialSecurityNumber);
+                  XML.writeElementString('ss', $scope.intake.client.socialSecurityNumber1 + '-' + $scope.intake.client.socialSecurityNumber2 + '-' + $scope.intake.client.socialSecurityNumber3);
                   XML.writeElementString('dob', $scope.intake.client.birthDate);
                   XML.writeElementString('address',$scope.intake.client.address);
                   XML.writeElementString('city', $scope.intake.client.city);
                   XML.writeElementString('state', $scope.intake.client.state);
                   XML.writeElementString('zipcode', $scope.intake.client.zipCode);
-                  XML.writeElementString('phone1', $scope.intake.client.phone);
-                  XML.writeElementString('phone2', $scope.intake.client.cellPhone);
+                  XML.writeElementString('phone1', '(' + $scope.intake.client.areaCode + ')' + $scope.intake.client.phone1 + '-' + $scope.intake.client.phone2);
+                  XML.writeElementString('phone2', '(' + $scope.intake.client.cellAreaCode + ')' + $scope.intake.client.cellPhone1 + '-' + $scope.intake.client.cellPhone2);
                   XML.writeElementString('email', $scope.intake.client.email);
                   XML.writeElementString('referralsource1', $scope.intake.heardFrom);
                 XML.writeEndElement();
@@ -869,13 +878,13 @@
             }
 
             $scope.currentHeight=0;
-            $scope.currentSection = 1;
+            $scope.currentSection = 0;
             $scope.currentStep = 0;
             $scope.calcVal = 0;
             $scope.lastPropertyStep = 0;
             $scope.lastVehicleStep = 0;
            $scope.setSelectedCircle = function(){
-              for(var i = 1; i < 7; i++){
+              for(var i = 1; i < 6; i++){
                 if($scope.currentSection != i){
                   document.getElementById('selected-circle'+i).classList.remove("circle-border-not-selected");
                   document.getElementById('selected-circle'+i).classList.remove("circle-border-selected");
@@ -886,7 +895,7 @@
                   document.getElementById('selected-circle'+i).classList.remove("circle-border-not-selected");
                   document.getElementById('selected-circle'+i).classList.add("circle-border-selected");
                   if(i < 5){
-                    document.getElementById('main-header-txt').innerHTML = $scope.sectionNames[i-1];
+                    document.getElementById('main-header-txt').innerHTML = $scope.sectionNames[i];
                   }
                   else{
                     document.getElementById('main-header-txt').innerHTML = '';
@@ -894,9 +903,9 @@
                 }
               }
            }
-            $scope.selectedImg = 'img/Client_Information_pic.png';
+            $scope.selectedImg = 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
           $scope.changePicture = function(){
-              $scope.selectedImg = $scope.pictures[$scope.currentSection-1];    
+              $scope.selectedImg = $scope.pictures[$scope.currentSection];    
           }
            $scope.nextSlide = function (section,step,val) {
                 if(section == 2 && step == 20 && !$scope.intake.isOnThirdPartyDeed){
@@ -958,12 +967,16 @@
                 }
                 else if(section > $scope.currentSection){
                   //Set current progress bar to full
-                  document.getElementById('progressBar'+$scope.currentSection).style.height = '100px';
+                  if($scope.currentSection > 0){
+                    document.getElementById('progressBar'+$scope.currentSection).style.height = '100px';
+                  }
                   //Switch section
                   $scope.currentSection = section;
                   $scope.currentStep = step;
                   $scope.currentHeight = 0;
                   //todo
+                  $('.progress-area').animate({'opacity':1});
+                  $('#restart-footer').animate({'opacity':1});
                   document.getElementById('selected-num-circle'+$scope.currentSection).style.backgroundColor="#5392cf";
                   $scope.setSelectedCircle();
                 }
@@ -980,7 +993,7 @@
                   $scope.currentHeight += incrementVal;
                 }
                 /*document.getElementById('main-step-txt').innerHTML = 'Step '+ step;*/
-                if($scope.currentSection != 5){
+                if($scope.currentSection != 5 && $scope.currentSection != 0){
                   document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
                 }
                 $scope.slider._slideNext();
@@ -1038,6 +1051,7 @@
                   $scope.currentHeight -= decrementVal;
                 }
                 else if(section < $scope.currentSection){
+
                     document.getElementById('progressBar'+$scope.currentSection).style.height = '0px';
                     $scope.currentHeight =100-val;
                     $scope.currentStep = step;  
@@ -1046,7 +1060,14 @@
                     $scope.setSelectedCircle();
                 }
                 /*document.getElementById('main-step-txt').innerHTML = 'Step '+ step;*/
-                document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
+                if($scope.currentSection > 0){
+                  document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
+                }
+                else{
+                  document.getElementById('main-header-txt').innerHTML ="Welcome";
+                  $('.progress-area').animate({'opacity':0});
+                  $('#restart-footer').animate({'opacity':0});
+                }
                 $scope.slider._slidePrev();
                 $scope.changePicture();
             }

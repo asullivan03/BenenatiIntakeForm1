@@ -1,6 +1,15 @@
 <img ng-if="currentSection > 0 && currentSection < 5" src="{{selectedImg}}" style="position:absolute;top: 190px;right: 35px;width: 200px;"/>
 <ion-slides class="swiper-no-swiping" options="options" slider="data.slider" style="padding-top:350px">
-    <ion-slide-page>
+  <ion-slide-page>
+    <div class="row">
+        <img ng-click="nextSlide(0,1,0)" style="position: relative; bottom:0px; left:-14px; width: 500px;" src="img/restartButton.png"/>
+    </div>
+    <div class="row" style="position:relative;">
+        <img src="img/icons8-up-50.png" style="position: absolute;left: 247px;min-height: 55px;" />
+        <p style="position: relative;top: 70px;font-size: 28px;margin-left: auto;margin-right: auto;right: 48px;">Click the restart button to begin.</p>
+    </div>
+  </ion-slide-page>  
+  <ion-slide-page>
             <h2 class="slide-question-txt">Please choose your language:</h2>
         <div class="row slide-two-button-div">
             <div class="col col-50">
@@ -22,7 +31,7 @@
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-if="intake.language" ng-click="nextSlide(0,1,0)">
+                <div class="slide-nav-button next" ng-if="intake.language" ng-click="nextSlide(0,2,0)">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -31,21 +40,65 @@
     </ion-slide-page>
     <ion-slide-page><location></location></ion-slide-page>
     <ion-slide-page>
-        <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your Full Name:</h2>
-        <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor entre su Nombre Completo:</h2>
+        <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your First Name:</h2>
+        <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor entre su Primer Nombre:</h2>
         <div class="row slide-one-textbox-div">
-            <input ng-if="englishSelected" type="text" placeholder="Full Name" ng-model="intake.client.name" />
-            <input ng-if="spanishSelected" type="text" placeholder="Nombre Completo" ng-model="intake.client.name" />
+            <input ng-if="englishSelected" type="text" placeholder="First Name" ng-model="intake.client.firstName" />
+            <input ng-if="spanishSelected" type="text" placeholder="Primer Nombre" ng-model="intake.client.firstName" />
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev" ng-click="previousSlide(0,1,0)">
+                <div class="slide-nav-button prev" ng-click="previousSlide(0,2,0)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-click="nextSlide(1,2,7.2)" ng-if="intake.client.name.length > 2">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,2,6.25)" ng-if="intake.client.firstName.length > 1">
+                    <p>{{nextText}}</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your Middle Name:</h2>
+        <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor entre su Segundo Nombre:</h2>
+        <div class="row slide-one-textbox-div">
+            <input ng-if="englishSelected" type="text" placeholder="Middle Name" ng-model="intake.client.middleName" />
+            <input ng-if="spanishSelected" type="text" placeholder="Segundo Nombre" ng-model="intake.client.middleName" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,1,6.25)">
+                    <p>{{previousText}}</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,3,6.25)" ng-if="intake.client.middleName.length > -1">
+                    <p>{{nextText}}</p>
+                    <img src="img/icons8-right-50.png" />
+                </div>
+            </div>
+        </div>
+    </ion-slide-page>
+    <ion-slide-page>
+        <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your Last Name:</h2>
+        <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor entre su Apellido:</h2>
+        <div class="row slide-one-textbox-div">
+            <input ng-if="englishSelected" type="text" placeholder="Middle Name" ng-model="intake.client.lastName" />
+            <input ng-if="spanishSelected" type="text" placeholder="Apellido" ng-model="intake.client.lastName" />
+        </div>
+        <div class="row next-prev-button-row">
+            <div class="col col-50">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,2,6.25)">
+                    <p>{{previousText}}</p>
+                    <img class="flip-img" src="img/icons8-right-50.png" />
+                </div>
+            </div>
+            <div class="col col-50">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,4,6.25)" ng-if="intake.client.lastName.length > 1">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -55,19 +108,38 @@
     <ion-slide-page>
         <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your Phone Number:</h2>
         <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor entre su Número de Teléfono:</h2>
-        <div class="row slide-one-textbox-div">
-            <input ng-if="englishSelected" type="tel" placeholder="Phone Number" ng-model="intake.client.phone" />
-            <input ng-if="spanishSelected" type="tel" placeholder="Número de Teléfono" ng-model="intake.client.phone" />
+        <div class="row slide-one-textbox-div" style="width:375px;">
+          <div class="col col-33">
+            <div class="row">
+              <p style="font-weight: bold;font-size: 34px;padding-right: 5px;position: relative;top: 13px;">(</p>
+              <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.areaCode" />
+              <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.areaCode" />
+              <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">)</p>
+            </div>
+          </div>
+          <div class="col col-33">
+              <div class="row">
+                <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.phone1" />
+                <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.phone1" />
+                <p style="font-weight: bold;font-size: 34px;padding-left: 17px;position: relative;top: 13px;">-</p>
+              </div>
+          </div>
+          <div class="col col-33">
+              <div class="row">
+                <input ng-if="englishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.client.phone2" />
+                <input ng-if="spanishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.client.phone2" />
+              </div>
+          </div>
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev" ng-click="previousSlide(1,1,7.2)">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,3,6.25)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-click="nextSlide(1,3,7.2)" ng-if="intake.client.phone.length > 6">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,5,6.25)" ng-if="intake.client.areaCode.length == 3  && intake.client.phone1.length == 3 && intake.client.phone2.length == 4 ">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -83,13 +155,13 @@
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev" ng-click="previousSlide(1,2,7.2)">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,4,6.25)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-click="nextSlide(1,4,7.2)">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,6,6.25)">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -105,13 +177,13 @@
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev" ng-click="previousSlide(1,3,7.2)">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,5,6.25)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-click="nextSlide(1,5,7.2)" ng-if="intake.client.address.length > 5">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,7,6.25)" ng-if="intake.client.address.length > 5">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -121,19 +193,34 @@
     <ion-slide-page>
         <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your Social Security Number:</h2>
         <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor entre su Número de Seguridad Social:</h2>
-        <div class="row slide-one-textbox-div">
-            <input ng-if="englishSelected" type="tel" placeholder="Social Security Number" ng-model="intake.client.socialSecurityNumber" />
-            <input ng-if="spanishSelected" type="tel" placeholder="Número de Seguridad Social" ng-model="intake.client.socialSecurityNumber" />
-        </div>
+        <div class="row slide-one-textbox-div" style="width:280px;">
+            <div class="col col-33">
+              <div class="row">
+                <input type="tel" placeholder="###" style="width:68px;" ng-model="intake.client.socialSecurityNumber1"/>
+                <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">-</p>
+              </div>
+            </div>
+            <div class="col col-33">
+              <div class="row">
+                <input type="tel" placeholder="##" style="width:50px;" ng-model="intake.client.socialSecurityNumber2"/>
+                <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">-</p>
+              </div>
+            </div>
+            <div class="col col-33">
+              <div class="row">
+                <input type="tel" placeholder="####" style="width:86px; position:relative;right:16px;" ng-model="intake.client.socialSecurityNumber3"/>
+              </div>
+            </div>
+          </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev" ng-click="previousSlide(1,4,7.2)">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,6,6.25)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-click="nextSlide(1,6,7.2)" ng-if="intake.client.socialSecurityNumber.length > 8">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,8,6.25)" ng-if="intake.client.socialSecurityNumber1.length == 3 && intake.client.socialSecurityNumber2.length == 2 && intake.client.socialSecurityNumber3.length == 4">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -149,13 +236,13 @@
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev" ng-click="previousSlide(1,5,7.2)">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,7,6.25)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-click="nextSlide(1,7,7.2)" ng-if="intake.client.email.length > 3">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,9,6.25)" ng-if="intake.client.email.length > 3">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -171,13 +258,13 @@
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev"  ng-click="previousSlide(1,6,7.2)">
+                <div class="slide-nav-button prev"  ng-click="previousSlide(1,8,6.25)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-click="nextSlide(1,8,7.2)" ng-if="intake.client.city.length > 2">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,10,6.25)" ng-if="intake.client.city.length > 2">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -193,13 +280,13 @@
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev"  ng-click="previousSlide(1,7,7.2)">
+                <div class="slide-nav-button prev"  ng-click="previousSlide(1,9,6.25)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-click="nextSlide(1,9,7.2)" ng-if="intake.client.state.length  > 1">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,11,6.25)" ng-if="intake.client.state.length  > 1">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -215,13 +302,13 @@
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev" ng-click="previousSlide(1,8,7.2)">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,10,6.25)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-click="nextSlide(1,10,7.2)" ng-if="intake.client.zipCode.length > 4">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,12,6.25)" ng-if="intake.client.zipCode.length > 4">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -231,19 +318,38 @@
     <ion-slide-page>
         <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your Cell Phone Number:</h2>
         <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor entre su Teléfono Celular:</h2>
-        <div class="row slide-one-textbox-div">
-            <input ng-if="englishSelected" type="tel" placeholder="Cell Phone Number" ng-model="intake.client.cellPhone" />
-            <input ng-if="spanishSelected" type="tel" placeholder="Teléfono Celular" ng-model="intake.client.cellPhone" />
-        </div>
+        <div class="row slide-one-textbox-div" style="width:375px;">
+            <div class="col col-33">
+              <div class="row">
+                <p style="font-weight: bold;font-size: 34px;padding-right: 5px;position: relative;top: 13px;">(</p>
+                <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.cellAreaCode" />
+                <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.cellAreaCode" />
+                <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">)</p>
+              </div>
+            </div>
+            <div class="col col-33">
+                <div class="row">
+                  <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.cellPhone1" />
+                  <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.client.cellPhone1" />
+                  <p style="font-weight: bold;font-size: 34px;padding-left: 17px;position: relative;top: 13px;">-</p>
+                </div>
+            </div>
+            <div class="col col-33">
+                <div class="row">
+                  <input ng-if="englishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.client.cellPhone2" />
+                  <input ng-if="spanishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.client.cellPhone2" />
+                </div>
+            </div>
+          </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev" ng-click="previousSlide(1,9,7.2)">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,11,6.25)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-click="nextSlide(1,11,7.2)" ng-if="intake.client.cellPhone.length > 6">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,13,6.25)" ng-if="intake.client.cellAreaCode.length == 3 && intake.client.cellPhone1.length == 3 && intake.client.cellPhone2.length == 4">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -259,13 +365,13 @@
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev" ng-click="previousSlide(1,10,7.2)">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,12,6.25)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-click="nextSlide(1,12,7.2)" ng-if="intake.numberOfChildren !== '' && checkNumber('numberOfChildren')">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,14,6.25)" ng-if="intake.numberOfChildren !== '' && checkNumber('numberOfChildren')">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -289,13 +395,13 @@
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev" ng-click="previousSlide(1,11,7.2)">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,13,6.25)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-click="nextSlide(1,13,7.2)" ng-if="intake.receiveChildSupport !== ''">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,15,6.25)" ng-if="intake.receiveChildSupport !== ''">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -311,13 +417,13 @@
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev" ng-click="previousSlide(1,12,7.2)">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,14,6.25)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
             </div>
             <div class="col col-50">
-                <div class="slide-nav-button next" ng-click="nextSlide(1,14,7.2)" ng-if="intake.numberOfChildrenReceivingSupport !== ''">
+                <div class="slide-nav-button next" ng-click="nextSlide(1,16,6.25)" ng-if="intake.numberOfChildrenReceivingSupport !== ''">
                     <p>{{nextText}}</p>
                     <img src="img/icons8-right-50.png" />
                 </div>
@@ -344,7 +450,7 @@
         </ion-list>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev" ng-click="previousSlide(1,13,7.2)">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,15,6.25)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
@@ -374,7 +480,7 @@
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
-                <div class="slide-nav-button prev" ng-click="previousSlide(1,14,7.2)">
+                <div class="slide-nav-button prev" ng-click="previousSlide(1,16,7.2)">
                     <p>{{previousText}}</p>
                     <img class="flip-img" src="img/icons8-right-50.png" />
                 </div>
@@ -413,10 +519,29 @@
   <ion-slide-page ng-if="showSpouseArea()">
       <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your spouse's phone number:</h2>
       <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor ingrese el número de teléfono de su cónyuge:</h2>
-    <div class="row slide-one-textbox-div">
-      <input ng-if="englishSelected" type="tel" placeholder="Phone number" ng-model="intake.spouse.phoneNumber" />
-      <input ng-if="spanishSelected" type="tel" placeholder="Número de teléfono" ng-model="intake.spouse.phoneNumber" />
-    </div>
+      <div class="row slide-one-textbox-div" style="width:375px;">
+          <div class="col col-33">
+            <div class="row">
+              <p style="font-weight: bold;font-size: 34px;padding-right: 5px;position: relative;top: 13px;">(</p>
+              <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.areaCode" />
+              <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.areaCode" />
+              <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">)</p>
+            </div>
+          </div>
+          <div class="col col-33">
+              <div class="row">
+                <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.phone1" />
+                <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.phone1" />
+                <p style="font-weight: bold;font-size: 34px;padding-left: 17px;position: relative;top: 13px;">-</p>
+              </div>
+          </div>
+          <div class="col col-33">
+              <div class="row">
+                <input ng-if="englishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.spouse.phone2" />
+                <input ng-if="spanishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.spouse.phone2" />
+              </div>
+          </div>
+      </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
         <div class="slide-nav-button prev" ng-click="previousSlide(2,2,4.8)">
@@ -425,7 +550,7 @@
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-nav-button next" ng-click="nextSlide(2,4,4.8)" ng-if="intake.spouse.phoneNumber.length > 7">
+        <div class="slide-nav-button next" ng-click="nextSlide(2,4,4.8)" ng-if="intake.spouse.areaCode.length == 3 && intake.spouse.phoneNumber1.length == 3 && intake.spouse.phoneNumber2.length == 4">
           <p>{{nextText}}</p>
           <img src="img/icons8-right-50.png" />
         </div>
@@ -509,9 +634,24 @@
   <ion-slide-page ng-if="showSpouseArea()">
       <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your spouse's Social Security Number:</h2>
       <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor ingrese el número de seguro social de su cónyuge:</h2>
-    <div class="row slide-one-textbox-div">
-      <input type="tel" placeholder="Social Security Number" ng-model="intake.spouse.socialSecurityNumber"/>
-      <input type="tel" placeholder="Número de seguro social" ng-model="intake.spouse.socialSecurityNumber"/>
+    <div class="row slide-one-textbox-div" style="width:375px;">
+      <div class="col col-33">
+        <div class="row">
+          <input type="tel" placeholder="###" style="width:68px;" ng-model="intake.spouse.socialSecurityNumber1"/>
+          <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">-</p>
+        </div>
+      </div>
+      <div class="col col-33">
+        <div class="row">
+          <input type="tel" placeholder="##" style="width:50px;" ng-model="intake.spouse.socialSecurityNumber2"/>
+          <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">-</p>
+        </div>
+      </div>
+      <div class="col col-33">
+        <div class="row">
+          <input type="tel" placeholder="####" style="width:86px;position: relative; right:16px;" ng-model="intake.spouse.socialSecurityNumber3"/>
+        </div>
+      </div>
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -521,7 +661,7 @@
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-nav-button next" ng-click="nextSlide(2,8,4.8)" ng-if="intake.spouse.socialSecurityNumber.length > 8">
+        <div class="slide-nav-button next" ng-click="nextSlide(2,8,4.8)" ng-if="intake.spouse.socialSecurityNumber1.length == 3 && intake.spouse.socialSecurityNumber2.length == 2 && intake.spouse.socialSecurityNumber3.length == 4">
           <p>{{nextText}}</p>
           <img src="img/icons8-right-50.png" />
         </div>
@@ -623,20 +763,43 @@
       <input ng-if="englishSelected" type="tel" placeholder="Cell Phone" ng-model="intake.spouse.cellPhone" />
       <input ng-if="spanishSelected" type="tel" placeholder="Teléfono celular" ng-model="intake.spouse.cellPhone" />
     </div>
-    <div class="row next-prev-button-row">
-      <div class="col col-50">
-        <div class="slide-nav-button prev" ng-click="previousSlide(2,11,4.8)">
-          <p>{{previousText}}</p>
-          <img class="flip-img" src="img/icons8-right-50.png" />
+    <div class="row slide-one-textbox-div" style="width:375px;">
+        <div class="col col-33">
+          <div class="row">
+            <p style="font-weight: bold;font-size: 34px;padding-right: 5px;position: relative;top: 13px;">(</p>
+            <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.cellAreaCode" />
+            <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.cellAreaCode" />
+            <p style="font-weight: bold;font-size: 34px;padding-left: 5px;position: relative;top: 13px;">)</p>
+          </div>
         </div>
-      </div>
-      <div class="col col-50">
-        <div class="slide-nav-button next" ng-click="nextSlide(2,13,4.8)" ng-if="intake.spouse.cellPhone !== ''">
-          <p>{{nextText}}</p>
-          <img src="img/icons8-right-50.png" />
+        <div class="col col-33">
+            <div class="row">
+              <input ng-if="englishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.cellPhone1" />
+              <input ng-if="spanishSelected" type="tel" style="width:68px;" placeholder="###" ng-model="intake.spouse.cellPhone1" />
+              <p style="font-weight: bold;font-size: 34px;padding-left: 17px;position: relative;top: 13px;">-</p>
+            </div>
         </div>
-      </div>
+        <div class="col col-33">
+            <div class="row">
+              <input ng-if="englishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.spouse.cellPhone2" />
+              <input ng-if="spanishSelected" type="tel" style="width:86px;" placeholder="####" ng-model="intake.spouse.cellPhone2" />
+            </div>
+        </div>
     </div>
+    <div class="row next-prev-button-row">
+        <div class="col col-50">
+          <div class="slide-nav-button prev" ng-click="previousSlide(2,11,4.8)">
+            <p>{{previousText}}</p>
+            <img class="flip-img" src="img/icons8-right-50.png" />
+          </div>
+        </div>
+        <div class="col col-50">
+          <div class="slide-nav-button next" ng-click="nextSlide(2,13,4.8)" ng-if="intake.spouse.cellAreaCode.length > 3 && intake.spouse.cellPhone1.length > 3 && intake.spouse.cellPhone2.length > 4">
+            <p>{{nextText}}</p>
+            <img src="img/icons8-right-50.png" />
+          </div>
+        </div>
+      </div>
   </ion-slide-page>
   <ion-slide-page ng-if="showSpouseArea()">
     <h2 class="slide-question-txt">What is your spouse's income before taxes?</h2>
@@ -2859,7 +3022,7 @@
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-nav-button next" ng-click="nextSlide(3,88,0)" ng-if="intake.isRenting !=== ''">
+        <div class="slide-nav-button next" ng-click="nextSlide(3,88,0)" ng-if="intake.isRenting !== ''">
           <p>{{nextText}}</p>
           <img src="img/icons8-right-50.png" />
         </div>
@@ -2910,7 +3073,7 @@
         </div>
       </div>
       <div class="col col-50">
-        <div class="slide-nav-button next" ng-click="nextSlide(3,90,0)" ng-if="intake.setIsLivingWithFamily !== '' ">
+        <div class="slide-nav-button next" ng-click="nextSlide(3,90,0)" ng-if="intake.isLivingWithFamily !== '' ">
           <p>{{nextText}}</p>
           <img src="img/icons8-right-50.png" />
         </div>
@@ -3955,4 +4118,12 @@
       </div>
     </div>
   </ion-slide-page>
+  <ion-slide-page>
+      <div class="row ">
+        <img style="position: relative;left: 72px;" src="img/Done_pic.png"/>
+      </div>
+      <div class="row ">
+          <button ng-click="restartForm()" style=" width: 250px; border-radius: 25px;background-color: #5392cf;font-weight:bold;color: white;font-size: 17px;position: relative; height: 49px;left: 100px;">Restart Form</button>
+        </div>
+    </ion-slide-page>
 </ion-slides>
