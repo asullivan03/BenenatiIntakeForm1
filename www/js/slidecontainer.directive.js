@@ -497,7 +497,7 @@
 
             $scope.currentStep = 1;
 
-            $scope.creatXMLDocument = function(){
+            $scope.createXMLDocument = function(){
               //var XML = new XMLWriter('UTF-8');
               //XML.writeStartDocument();
               var XML = "<prevail>\n" +
@@ -1080,7 +1080,7 @@
                     var dateFormatted = formatDate($scope.intake.client.birthDate);
                     $scope.intake.client.birthDate = dateFormatted;
                 }
-                if(section == 2 && step == 20 && !$scope.intake.isOnThirdPartyDeed){
+                if(section == 2 && step == 21 && !$scope.intake.isOnThirdPartyDeed){
                     //set current progress bar
                     document.getElementById('progressBar'+$scope.currentSection).style.height = '100px';
                     $scope.currentSection=3;

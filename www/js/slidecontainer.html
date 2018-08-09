@@ -87,7 +87,7 @@
         <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your Last Name:</h2>
         <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor entre su Apellido:</h2>
         <div class="row slide-one-textbox-div">
-            <input ng-if="englishSelected" type="text" placeholder="Middle Name" ng-model="intake.client.lastName" />
+            <input ng-if="englishSelected" type="text" placeholder="Last Name" ng-model="intake.client.lastName" />
             <input ng-if="spanishSelected" type="text" placeholder="Apellido" ng-model="intake.client.lastName" />
         </div>
         <div class="row next-prev-button-row">
@@ -1052,7 +1052,7 @@
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
-        <div class="slide-nav-button prev" ng-click="previousSlide(2,21,4.8)">
+        <div class="slide-nav-button prev" ng-click="previousSlide(2,23,4.8)">
           <p>{{previousText}}</p>
           <img class="flip-img" src="img/icons8-right-50.png" />
         </div>
