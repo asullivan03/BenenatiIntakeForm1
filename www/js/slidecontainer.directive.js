@@ -395,7 +395,8 @@
 
             $scope.sectionNames = ['Welcome','Client Information','Spouse Information','Assets','Client Information'];
             $scope.isSendingXml = true;
-            $scope.intake = {
+            $scope.resetIntake = function(){
+              return{
                 'language':'',
                 'location': '',
                 'client':{'firstName':'','middleName':'','lastName':'','areaCode':'','phone1':'','phone2':'','birthDate':'','address':'','socialSecurityNumber1':'','socialSecurityNumber2':'','socialSecurityNumber3':'','email':'','city':'','state':'','zipCode':'','cellAreaCode':'','cellPhone1':'','cellPhone2':'','income':'', 'incomeType':'','hasSpouse':''},
@@ -470,7 +471,8 @@
                 'isUsingCreditCards':'',
                 'hasLivedInHouse4Years':'',
                 'isReadyForFreshStart':''
-            };
+              };
+            }
             
             $scope.checkNumber = function(val){
               if(Number.isInteger($scope.intake[val])){
@@ -486,12 +488,27 @@
             $('#restart-footer').animate({'opacity':0});
             $('.progress-area').animate({'opacity':0});
             $('#img-main').animate({'opacity':0});
-            $scope.originalIntake = $scope.intake;
+            $scope.intake = $scope.resetIntake();
             }
 
             $scope.Init();
             $scope.restartForm = function(){
-              $scope.intake = $scope.originalIntake;
+              $scope.intake = $scope.resetIntake();;
+              $('#progressBar1').animate({'height':'0px'});
+              $('#progressBar2').animate({'height':'0px'});
+              $('#progressBar3').animate({'height':'0px'});
+              $('#progressBar4').animate({'height':'0px'});
+              $scope.currentSection = 0;
+              $scope.currentStep = 0;
+              $scope.currentHeight = 0;
+              $('#selected-num-circle1').css({'background-color':'#C7C7C7'});
+              $('#selected-num-circle2').css({'background-color':'#C7C7C7'});
+              $('#selected-num-circle3').css({'background-color':'#C7C7C7'});
+              $('#selected-num-circle4').css({'background-color':'#C7C7C7'});
+              $('#selected-num-circle5').css({'background-color':'#C7C7C7'});
+              $('.progress-area').animate({'opacity':0});
+              document.getElementById('selected-circle5').classList.remove("circle-border-selected");
+              document.getElementById('selected-circle5').classList.add("circle-border-not-selected");
               $scope.slider._slideTo(0);
             }
 
@@ -591,7 +608,7 @@
                     '\t\t\tIs currently suing someone: ' + $scope.intake.isSuing + '\n' +
                     '\t\t\tHas lived in Florida for past 2 years: ' + $scope.intake.hasLivedInFlorida + '\n' +
                     '\t\t\tOwes money to credit union: ' + $scope.intake.hasDebtToCreditUnion + '\n' +
-                    '\t\t\tHas taken loans from retirement savings in the past 6 months: ' + $scope.hasTakenOutLoans + '\n' +
+                    '\t\t\tHas taken loans from retirement savings in the past 6 months: ' + $scope.intake.hasTakenOutLoans + '\n' +
                     '\t\t\tStill using credit cards: ' + $scope.intake.isUsingCreditCards + '\n' +
                     '\t\t\tLived in mortgaged home for less than 4 years: ' + $scope.intake.hasLivedInHouse4Years + '\n' +
                     '\t\t\tReady for fresh start: ' + $scope.intake.isReadyForFreshStart + '\n' +
@@ -1072,15 +1089,24 @@
           $scope.changePicture = function(){
               $scope.selectedImg = $scope.pictures[$scope.currentSection];    
           }
-           $scope.nextSlide = function (section,step,val) {
-            if(section == 1 && section != $scope.currentSection){
+          $scope.nextSlide = function (section,step,val) {
+              if(section == 1 && section != $scope.currentSection){
                 $('#img-main').animate({'opacity':1});
               }
-                if(section == 1 && step == 6){
+              
+              if(section == 4 && step == 1){
+                $('#restart-footer').animate({'opacity':0});
+              }
+              else if(section == 4 && step == 2){
+                $('#restart-footer').animate({'opacity':1});
+              }
+                
+              if(section == 1 && step == 6){
                     var dateFormatted = formatDate($scope.intake.client.birthDate);
                     $scope.intake.client.birthDate = dateFormatted;
-                }
-                if(section == 2 && step == 21 && !$scope.intake.isOnThirdPartyDeed){
+              }
+
+              if(section == 2 && step == 21 && !$scope.intake.isOnThirdPartyDeed){
                     //set current progress bar
                     document.getElementById('progressBar'+$scope.currentSection).style.height = '100px';
                     $scope.currentSection=3;
@@ -1148,7 +1174,9 @@
                   $scope.currentHeight = 0;
                   //todo
                   $('.progress-area').animate({'opacity':1});
-                  $('#restart-footer').animate({'opacity':1});
+                  if(section != 4 && step != 2){
+                    $('#restart-footer').animate({'opacity':1});
+                  }
                   document.getElementById('selected-num-circle'+$scope.currentSection).style.backgroundColor="#5392cf";
                   $scope.setSelectedCircle();
                 }
@@ -1168,7 +1196,11 @@
                 if($scope.currentSection != 5 && $scope.currentSection != 0){
                   document.getElementById('progressBar'+$scope.currentSection).style.height = $scope.currentHeight+'px';
                 }
+                
+                $('.swiper-slide-next').css({'opacity':0}).animate({'opacity':1},777);
+
                 $scope.slider._slideNext();
+
                 $scope.changePicture();
 
                 if($scope.currentSection == 5){
@@ -1179,6 +1211,13 @@
             $scope.previousSlide = function (section,step,val) {
               if(section == 0 && section != $scope.currentSection){
                 $('#img-main').animate({'opacity':0});
+              }
+
+              if(section == 4 && step == 1){
+                $('#restart-footer').animate({'opacity':0});
+              }
+              else if(section == 3 && step == 99){
+                $('#restart-footer').animate({'opacity':1});
               }
 
                 if(section == 3 && step ==86){
@@ -1244,6 +1283,7 @@
                   $('.progress-area').animate({'opacity':0});
                   $('#restart-footer').animate({'opacity':0});
                 }
+                $('.swiper-slide-prev').css({'opacity':0}).animate({'opacity':1},777);
                 $scope.slider._slidePrev();
                 $scope.changePicture();
             }

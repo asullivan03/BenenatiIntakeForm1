@@ -527,7 +527,7 @@
       </div>
     </div>
     <div class="col col-50">
-      <div class="slide-nav-button next" ng-click="nextSlide(2,4,0)" ng-if="intake.spouse.middleName.length > 1">
+      <div class="slide-nav-button next" ng-click="nextSlide(2,4,0)">
         <p>{{nextText}}</p>
         <img src="img/icons8-right-50.png" />
       </div>
@@ -3314,9 +3314,9 @@
   </ion-slide-page>
   <!--STEP 4 START-->
   <ion-slide-page id="hearAboutUs">
-    <h2 ng-if="englishSelected" class="slide-question-txt">How did you hear about us?</h2>
-    <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cómo supiste de nosotros?</h2>
-    <ion-list ng-model="intake.heardFrom" class="row slide-two-radio-div">
+    <h2 ng-if="englishSelected" style="position: relative;bottom:4px;" class="slide-question-txt">How did you hear about us?</h2>
+    <h2 ng-if="spanishSelected" style="position: relative;bottom:4px;" class="slide-question-txt">¿Cómo supiste de nosotros?</h2>
+    <ion-list ng-model="intake.heardFrom" style="position: relative; margin-top:-10px;" class="row slide-two-radio-div">
         <div class="row">
             <div class="col col-50" ng-click="changeHeardFrom('Orange County Bar Association')">
                 <ion-radio value="Orange County Bar Association">Orange County Bar Association</ion-radio>
