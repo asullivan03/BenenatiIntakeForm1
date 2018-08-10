@@ -32,113 +32,118 @@
                 loop: false,
                 speed: 500
             };
- 
-      $scope.recieveChildSupportYesSelected = false;
-      $scope.recieveChildSupportNoSelected = false;
 
-      $scope.spouseYesSelected = false;
-      $scope.spouseNoSelected = false;
-
-			 $scope.sameAddressYesSelected = false;
-			 $scope.sameAddressNoSelected = false;
+            function resetButtons(){
+                $scope.recieveChildSupportYesSelected = false;
+                $scope.recieveChildSupportNoSelected = false;
+          
+                $scope.spouseYesSelected = false;
+                $scope.spouseNoSelected = false;
+          
+                       $scope.sameAddressYesSelected = false;
+                       $scope.sameAddressNoSelected = false;
+           
+                       $scope.filedYesSelected = false;
+                       $scope.filedNoSelected = false;
+           
+                       $scope.paidFriendsYesSelected = false;
+                       $scope.paidFriendsNoSelected = false;
+           
+                       $scope.deedYesSelected = false;
+                       $scope.deedNoSelected = false;
+           
+                       $scope.secondMortgageYesSelected = [false, false, false, false, false, false, false];
+                       $scope.secondMortgageNoSelected = [false, false, false, false, false, false, false];
+           
+                       $scope.rentingYesSelected = false;
+                       $scope.rentingNoSelected = false;
+           
+                       $scope.livingffYesSelected = false;
+                       $scope.livingffNoSelected = false;
+           
+                       $scope.medicalDebtYesSelected = false;
+                       $scope.medicalDebtNoSelected = false;
+           
+                        $scope.foreclosurePapersYesSelected = false;
+                       $scope.foreclosurePapersNoSelected = false;
+           
+                       $scope.servedDebtYesSelected = false;
+                       $scope.servedDebtNoSelected = false;
+          
+          
+                       $scope.othersPropertyYesSelected = false;
+                       $scope.othersPropertyNoSelected = false;
+           
+                       $scope.soldAssetsYesSelected = false;
+                       $scope.soldAssetsNoSelected = false;
+           
+                       $scope.familyDebtYesSelected = false;
+                       $scope.familyDebtNoSelected = false;
+           
+                       $scope.garnishYesSelected = false;
+                       $scope.garnishNoSelected = false;
+           
+                       $scope.filedTaxYesSelected = false;
+                       $scope.filedTaxNoSelected = false;
+           
+                       $scope.behindCarYesSelected = false;
+                       $scope.behindCarNoSelected = false;
+           
+                       $scope.largePurchasesYesSelected = false;
+                       $scope.largePurchasesNoSelected = false;
+           
+                       $scope.takenCashYesSelected = false;
+                       $scope.takenCashNoSelected = false;
+           
+                       $scope.paidLawyerYesSelected = false;
+                       $scope.paidLawyerNoSelected = false;
+           
+                       $scope.officerYesSelected = false;
+                       $scope.officerNoSelected = false;
+           
+                       $scope.inheritanceYesSelected = false;
+                       $scope.inheritanceNoSelected = false;
+           
+                       $scope.maritalAgreementYesSelected = false;
+                       $scope.maritalAgreementNoSelected = false;
+           
+                       $scope.taxRefundYesSelected = false;
+                       $scope.taxRefundNoSelected = false;
+           
+                       $scope.suingYesSelected = false;
+                       $scope.suingNoSelected = false;
+           
+                       $scope.livedInFLYesSelected = false;
+                       $scope.livedInFLNoSelected = false;
+           
+                       $scope.debtToCreditUnionYesSelected = false;
+                       $scope.debtToCreditUnionNoSelected = false;
+           
+                       $scope.loansYesSelected = false;
+                       $scope.loansNoSelected = false;
+           
+                       $scope.usingCCYesSelected = false;
+                       $scope.usingCCNoSelected = false;
+           
+                       $scope.fourYearsHomeYesSelected = false;
+                       $scope.fourYearsHomeNoSelected = false;
+           
+                       $scope.freshStartYesSelected = false;
+                       $scope.freshStartNoSelected = false;
+           
+                       $scope.repossessYesSelected = false;
+                       $scope.repossessNoSelected = false;
+           
+                 $scope.englishSelected = false;
+                 $scope.spanishSelected = false;
+          
+                 $scope.previousText = "Prev";
+                 $scope.nextText = "Next";
+                 $scope.yesText = "Yes";
+            }
  
-			 $scope.filedYesSelected = false;
-			 $scope.filedNoSelected = false;
- 
-			 $scope.paidFriendsYesSelected = false;
-			 $scope.paidFriendsNoSelected = false;
- 
-			 $scope.deedYesSelected = false;
-			 $scope.deedNoSelected = false;
- 
-			 $scope.secondMortgageYesSelected = [false, false, false, false, false, false, false];
-			 $scope.secondMortgageNoSelected = [false, false, false, false, false, false, false];
- 
-			 $scope.rentingYesSelected = false;
-			 $scope.rentingNoSelected = false;
- 
-			 $scope.livingffYesSelected = false;
-			 $scope.livingffNoSelected = false;
- 
-			 $scope.medicalDebtYesSelected = false;
-			 $scope.medicalDebtNoSelected = false;
- 
- 			 $scope.foreclosurePapersYesSelected = false;
-			 $scope.foreclosurePapersNoSelected = false;
- 
-			 $scope.servedDebtYesSelected = false;
-			 $scope.servedDebtNoSelected = false;
-
-
-			 $scope.othersPropertyYesSelected = false;
-			 $scope.othersPropertyNoSelected = false;
- 
-			 $scope.soldAssetsYesSelected = false;
-			 $scope.soldAssetsNoSelected = false;
- 
-			 $scope.familyDebtYesSelected = false;
-			 $scope.familyDebtNoSelected = false;
- 
-			 $scope.garnishYesSelected = false;
-			 $scope.garnishNoSelected = false;
- 
-			 $scope.filedTaxYesSelected = false;
-			 $scope.filedTaxNoSelected = false;
- 
-			 $scope.behindCarYesSelected = false;
-			 $scope.behindCarNoSelected = false;
- 
-			 $scope.largePurchasesYesSelected = false;
-			 $scope.largePurchasesNoSelected = false;
- 
-			 $scope.takenCashYesSelected = false;
-			 $scope.takenCashNoSelected = false;
- 
-			 $scope.paidLawyerYesSelected = false;
-			 $scope.paidLawyerNoSelected = false;
- 
-			 $scope.officerYesSelected = false;
-			 $scope.officerNoSelected = false;
- 
-			 $scope.inheritanceYesSelected = false;
-			 $scope.inheritanceNoSelected = false;
- 
-			 $scope.maritalAgreementYesSelected = false;
-			 $scope.maritalAgreementNoSelected = false;
- 
-			 $scope.taxRefundYesSelected = false;
-			 $scope.taxRefundNoSelected = false;
- 
-			 $scope.suingYesSelected = false;
-			 $scope.suingNoSelected = false;
- 
-			 $scope.livedInFLYesSelected = false;
-			 $scope.livedInFLNoSelected = false;
- 
-			 $scope.debtToCreditUnionYesSelected = false;
-			 $scope.debtToCreditUnionNoSelected = false;
- 
-			 $scope.loansYesSelected = false;
-			 $scope.loansNoSelected = false;
- 
-			 $scope.usingCCYesSelected = false;
-			 $scope.usingCCNoSelected = false;
- 
-			 $scope.fourYearsHomeYesSelected = false;
-			 $scope.fourYearsHomeNoSelected = false;
- 
-			 $scope.freshStartYesSelected = false;
-			 $scope.freshStartNoSelected = false;
- 
-			 $scope.repossessYesSelected = false;
-			 $scope.repossessNoSelected = false;
- 
-       $scope.englishSelected = false;
-       $scope.spanishSelected = false;
-
-       $scope.previousText = "Prev";
-       $scope.nextText = "Next";
-       $scope.yesText = "Yes";
+            resetButtons();
+       
 
        $scope.states = [
         {
@@ -493,7 +498,8 @@
 
             $scope.Init();
             $scope.restartForm = function(){
-              $scope.intake = $scope.resetIntake();;
+              $scope.intake = $scope.resetIntake();
+              resetButtons();
               $('#progressBar1').animate({'height':'0px'});
               $('#progressBar2').animate({'height':'0px'});
               $('#progressBar3').animate({'height':'0px'});
@@ -1056,6 +1062,17 @@
             }
 
             $scope.servedDebtLawsuit = function(val){
+                //apply variables for ng-class
+				 if(val == true)
+				 {
+					 $scope.servedDebtYesSelected = true;
+					 $scope.servedDebtNoSelected = false;
+				 }
+				 else
+				 {
+					 $scope.servedDebtYesSelected = false;
+					 $scope.servedDebtNoSelected = true;
+				 }
               $scope.intake.servedDebtLawsuit = val;
             }
 

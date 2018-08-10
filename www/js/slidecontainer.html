@@ -297,8 +297,8 @@
         <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your Zip Code:</h2>
         <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor entre su Código Postal:</h2>
         <div class="row slide-one-textbox-div">
-            <input ng-if="englishSelected" type="tel" placeholder="Zip Code" ng-model="intake.client.zipCode" />
-            <input ng-if="spanishSelected" type="tel" placeholder="Código Postal:" ng-model="intake.client.zipCode" />
+            <input ng-if="englishSelected" maxlength="5" type="tel" placeholder="Zip Code" ng-model="intake.client.zipCode" />
+            <input ng-if="spanishSelected" maxlength="5" type="tel" placeholder="Código Postal:" ng-model="intake.client.zipCode" />
         </div>
         <div class="row next-prev-button-row">
             <div class="col col-50">
@@ -795,10 +795,6 @@
   <ion-slide-page ng-if="showSpouseArea()">
       <h2 ng-if="englishSelected" class="slide-question-txt">Please enter your spouse's Cell Phone Number:</h2>
       <h2 ng-if="spanishSelected" class="slide-question-txt">Por favor ingrese el teléfono celular de su cónyuge:</h2>
-    <div class="row slide-one-textbox-div">
-      <input ng-if="englishSelected" type="tel" placeholder="Cell Phone" ng-model="intake.spouse.cellPhone" />
-      <input ng-if="spanishSelected" type="tel" placeholder="Teléfono celular" ng-model="intake.spouse.cellPhone" />
-    </div>
     <div class="row slide-one-textbox-div" style="width:375px;">
         <div class="col col-33">
           <div class="row">
@@ -827,7 +823,7 @@
           </div>
         </div>
         <div class="col col-50">
-          <div class="slide-nav-button next" ng-click="nextSlide(2,15,4.8)" ng-if="intake.spouse.cellAreaCode.length > 3 && intake.spouse.cellPhone1.length > 3 && intake.spouse.cellPhone2.length > 4">
+          <div class="slide-nav-button next" ng-click="nextSlide(2,15,4.8)" ng-if="intake.spouse.cellAreaCode.length == 3 && intake.spouse.cellPhone1.length == 3 && intake.spouse.cellPhone2.length == 4">
             <p>{{nextText}}</p>
             <img src="img/icons8-right-50.png" />
           </div>
@@ -835,7 +831,6 @@
       </div>
   </ion-slide-page>
   <ion-slide-page ng-if="showSpouseArea()">
-    <h2 class="slide-question-txt">What is your spouse's income before taxes?</h2>
     <h2 ng-if="englishSelected" class="slide-question-txt">What is your spouse's income before taxes?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el ingreso de su cónyuge antes de impuestos?</h2>
     <div class="row slide-one-textbox-div">
@@ -1047,8 +1042,8 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">How many automobiles do you own?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuántos automóviles tiene</h2>
     <div class="row slide-one-textbox-div">
-      <input ng-if="englishSelected" type="number" ng-model="intake.numberOfVehicles" placeholder="# of automobiles" />
-      <input ng-if="spanishSelected" type="number" ng-model="intake.numberOfVehicles" placeholder="# of automóviles" />
+      <input ng-if="englishSelected" type="number" maxlength="1" ng-model="intake.numberOfVehicles" placeholder="# of automobiles" />
+      <input ng-if="spanishSelected" type="number" maxlength="1" ng-model="intake.numberOfVehicles" placeholder="# of automóviles" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -1111,9 +1106,8 @@
     </div>
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(1)">
-    <h2 class="slide-question-txt">What is the model of automobile #1?</h2>
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the model of automobile #1?</h2>
-    <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la marca del automóvile #1?</h2>
+    <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el modelo de automóvile #1?</h2>
     <div class="row slide-one-textbox-div">
       <input type="text" placeholder="model" ng-model="intake.Automobiles[0].model" />
     </div>
@@ -1271,8 +1265,9 @@
       </div>
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(2)">
-      <h2 class="slide-question-txt">What is the model of automobile #2?</h2>
-      <div class="row slide-one-textbox-div">
+    <h2 ng-if="englishSelected" class="slide-question-txt">What is the model of automobile #2?</h2>
+    <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el modelo de automóvile #2?</h2>
+          <div class="row slide-one-textbox-div">
           <input type="text" placeholder="model" ng-model="intake.Automobiles[1].model" />
       </div>
       <div class="row next-prev-button-row">
@@ -1430,7 +1425,8 @@
       </div>
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(3)">
-      <h2 class="slide-question-txt">What is the model of automobile #3?</h2>
+    <h2 ng-if="englishSelected" class="slide-question-txt">What is the model of automobile #3?</h2>
+    <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el modelo de automóvile #3?</h2>
       <div class="row slide-one-textbox-div">
           <input type="text" placeholder="model" ng-model="intake.Automobiles[2].model" />
       </div>
@@ -1588,7 +1584,8 @@
       </div>
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(4)">
-      <h2 class="slide-question-txt">What is the model of automobile #4?</h2>
+    <h2 ng-if="englishSelected" class="slide-question-txt">What is the model of automobile #4?</h2>
+    <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el modelo de automóvile #4?</h2>
       <div class="row slide-one-textbox-div">
           <input type="text" placeholder="model" ng-model="intake.Automobiles[3].model" />
       </div>
@@ -1746,7 +1743,8 @@
       </div>
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(5)">
-      <h2 class="slide-question-txt">What is the model of automobile #5?</h2>
+    <h2 ng-if="englishSelected" class="slide-question-txt">What is the model of automobile #5?</h2>
+    <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el modelo de automóvile #5?</h2>
       <div class="row slide-one-textbox-div">
           <input type="text" placeholder="model" ng-model="intake.Automobiles[4].model" />
       </div>
@@ -1904,7 +1902,8 @@
       </div>
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(6)">
-      <h2 class="slide-question-txt">What is the model of automobile #6?</h2>
+    <h2 ng-if="englishSelected" class="slide-question-txt">What is the model of automobile #6?</h2>
+    <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el modelo de automóvile #6?</h2>
       <div class="row slide-one-textbox-div">
           <input type="text" placeholder="model" ng-model="intake.Automobiles[5].model" />
       </div>
@@ -2062,7 +2061,8 @@
       </div>
   </ion-slide-page>
   <ion-slide-page ng-if="hasVehicles(7)">
-      <h2 class="slide-question-txt">What is the model of automobile #7?</h2>
+    <h2 ng-if="englishSelected" class="slide-question-txt">What is the model of automobile #7?</h2>
+    <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el modelo de automóvile #7?</h2>
       <div class="row slide-one-textbox-div">
           <input type="text" placeholder="model" ng-model="intake.Automobiles[6].model" />
       </div>
@@ -2181,7 +2181,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">How many real estate properties do you own?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuántas propiedades tiene?</h2>
     <div class="row slide-one-textbox-div">
-        <input type="number" ng-model="intake.numberOfProperties" placeholder="#" />
+        <input type="number" maxlength="1" ng-model="intake.numberOfProperties" placeholder="#" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
