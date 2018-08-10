@@ -493,7 +493,7 @@
             $('#restart-footer').animate({'opacity':0});
             $('.progress-area').animate({'opacity':0});
             $('#img-main').animate({'opacity':0});
-            $('#main-col-holder').delay(1000).animate({opacity:1},700);
+            $('#main-col-holder').delay(1500).animate({opacity:1},700);
             $scope.intake = $scope.resetIntake();
             }
 
