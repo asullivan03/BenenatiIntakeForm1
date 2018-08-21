@@ -526,7 +526,7 @@
               //XML.writeStartDocument();
               var XML = "<prevail>\n" +
                 "\t<matter>\n" +
-                  "\t\t<lawType>" + ' bankruptcy ' + "</lawtype>\n" +
+                  "\t\t<lawType>" + ' BKDB ' + "</lawtype>\n" +
                   "\t\t<additionalInformation>\n"+
                     '\t\t\tNumber of Children: ' + $scope.intake.numberOfChildren + '\n' +
                     '\t\t\tNumber of Children Receiving Child Support ' + $scope.intake.numberOfChildrenReceivingSupport + '\n' +
@@ -622,9 +622,10 @@
                   "\t\t</additionalInformation>\n" +
                 "\t</matter>\n"+
                 "\t<rolodex>\n"+
-                  '\t\t<first name> ' + $scope.intake.client.firstName + '</first name>\n' +
-                  '\t\t<middle name>'+ $scope.intake.client.middleName + '</middle name>\n' +
-                  '\t\t<last name>'+ $scope.intake.client.lastName + '</last name>\n' +
+                  '\t\t<type>Bankruptcy Debtor Client</type>\n'+
+                  '\t\t<firstname> ' + $scope.intake.client.firstName + '</firstname>\n' +
+                  '\t\t<middlename>'+ $scope.intake.client.middleName + '</middlename>\n' +
+                  '\t\t<lastname>'+ $scope.intake.client.lastName + '</lastname>\n' +
                   '\t\t<ss>'+ $scope.intake.client.socialSecurityNumber1 + '-' + $scope.intake.client.socialSecurityNumber2 + '-' + $scope.intake.client.socialSecurityNumber3 + '</ss>\n' +
                   '\t\t<dob> '+ $scope.intake.client.birthDate + ' </dob>\n' +
                   '\t\t<address> '+ $scope.intake.client.address + ' </address>\n' +

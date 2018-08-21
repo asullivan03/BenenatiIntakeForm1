@@ -5,7 +5,7 @@
   
   slideContainerService.$inject = [
                                    '$http',
-                                   '$q'
+                                   '$q',
                                    ];
   
   function slideContainerService($http,$q){
@@ -75,10 +75,10 @@
                          });
   }
   //write to file- end
-  
+  $scope.callCount = 0;
   //send -start
   function sendFile(path, fileName){
-  
+    
   window.cordova.plugin.ftp.connect('ftp.prevail.net', 'benenati', 'Q3a1H2d.ek', function(ok) {
                                     
                                     console.info("ftp: connect ok=" + ok);
@@ -95,17 +95,25 @@
                                     
                                     window.cordova.plugin.ftp.upload(path, "/BETAKEY8/" + fileName ,function(percent) {
                                                                      if (percent == 1) {
-                                                                     console.info("ftp: upload finish");
+                                                                        console.info("ftp: upload finish");
+                                                                       
                                                                      } else {
-                                                                     console.debug("ftp: upload percent=" + percent * 100 + "%");
+                                                                        console.debug("ftp: upload percent=" + percent * 100 + "%");
                                                                      }
                                                                      }, function(error) {
-                                                                     console.error("ftp: upload error=" + error);
+                                                                        console.error("ftp: upload error=" + error);
+                                                                        
+                                                                        //if fails, call again up to 3 times
+                                                                        if($scope.callCount < 3){
+                                                                            sendFile(path, fileName);
+                                                                            $scope.callCount++;
+                                                                        }
                                                                      });
                                     
                                     },
                                     function(error) {
                                     console.error("ftp: connect error=" + error);
+                                    
                                     });
   }
   //send -end
