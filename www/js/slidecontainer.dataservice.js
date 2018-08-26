@@ -10,6 +10,7 @@
   
   function slideContainerService($http,$q){
   var service={sendXML:sendXML};
+  var callCount = 0;
   return service;
   
   
@@ -75,16 +76,16 @@
                          });
   }
   //write to file- end
-  $scope.callCount = 0;
+  
   //send -start
   function sendFile(path, fileName){
-    
+  
   window.cordova.plugin.ftp.connect('ftp.prevail.net', 'benenati', 'Q3a1H2d.ek', function(ok) {
                                     
                                     console.info("ftp: connect ok=" + ok);
                                     
                                     // You can do any ftp actions from now on...
-                                    window.cordova.plugin.ftp.ls("/BETAKEY8", function(e){
+                                    window.cordova.plugin.ftp.ls("/RINeHMOqOx", function(e){
                                                                  console.log("ls success", e);
                                                                  
                                                                  }, function(e){
@@ -93,7 +94,7 @@
                                                                  });
                                     
                                     
-                                    window.cordova.plugin.ftp.upload(path, "/BETAKEY8/" + fileName ,function(percent) {
+                                    window.cordova.plugin.ftp.upload(path, "/RINeHMOqOx/" + fileName ,function(percent) {
                                                                      if (percent == 1) {
                                                                         console.info("ftp: upload finish");
                                                                        
@@ -104,9 +105,9 @@
                                                                         console.error("ftp: upload error=" + error);
                                                                         
                                                                         //if fails, call again up to 3 times
-                                                                        if($scope.callCount < 3){
+                                                                        if(callCount < 3){
                                                                             sendFile(path, fileName);
-                                                                            $scope.callCount++;
+                                                                            callCount++;
                                                                         }
                                                                      });
                                     
