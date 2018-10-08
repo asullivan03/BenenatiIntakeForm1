@@ -9,7 +9,10 @@
                                    ];
   
   function slideContainerService($http,$q){
-  var service={sendXML:sendXML};
+  var service={
+      sendXML:sendXML,
+      openConnection: openConnection
+    };
   var callCount = 0;
   return service;
   
@@ -85,7 +88,8 @@
                                     console.info("ftp: connect ok=" + ok);
                                     
                                     // You can do any ftp actions from now on...
-                                    window.cordova.plugin.ftp.ls("/RINeHMOqOx", function(e){
+                                    window.cordova.plugin.ftp.ls("/BETAKEY8", function(e){
+                                    //window.cordova.plugin.ftp.ls("/RINeHMOqOx", function(e){
                                                                  console.log("ls success", e);
                                                                  
                                                                  }, function(e){
@@ -93,8 +97,8 @@
                                                                  
                                                                  });
                                     
-                                    
-                                    window.cordova.plugin.ftp.upload(path, "/RINeHMOqOx/" + fileName ,function(percent) {
+                                     window.cordova.plugin.ftp.upload(path, "/BETAKEY8/" + fileName ,function(percent) {
+                                    //window.cordova.plugin.ftp.upload(path, "/RINeHMOqOx/" + fileName ,function(percent) {
                                                                      if (percent == 1) {
                                                                         console.info("ftp: upload finish");
                                                                        
@@ -118,6 +122,32 @@
                                     });
   }
   //send -end
+
+
+  //open connection to prevail ftp- start
+  function openConnection(){
+  
+    window.cordova.plugin.ftp.connect('ftp.prevail.net', 'benenati', 'Q3a1H2d.ek', function(ok) {
+                                      
+                                      console.info("ftp: connect ok=" + ok);
+
+                                      // You can do any ftp actions from now on...
+                                      window.cordova.plugin.ftp.ls("/BETAKEY8", function(e){
+                                      //window.cordova.plugin.ftp.ls("/RINeHMOqOx", function(e){
+                                        console.log("ls success", e);
+                                        return true;
+                                        
+                                        }, function(e){
+                                        console.log("ls fail",e);
+                                            return false;
+                                        });
+                                      },
+                                      function(error) {
+                                      console.error("ftp: connect error=" + error);
+                                        return false;
+                                      });
+    }
+  //open connection- end
   
   
   }

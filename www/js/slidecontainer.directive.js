@@ -404,7 +404,7 @@
               return{
                 'language':'',
                 'location': '',
-                'client':{'firstName':'','middleName':'','lastName':'','areaCode':'','phone1':'','phone2':'','birthDate':'','address':'','socialSecurityNumber1':'','socialSecurityNumber2':'','socialSecurityNumber3':'','email':'','city':'','state':'','zipCode':'','cellAreaCode':'','cellPhone1':'','cellPhone2':'','income':'', 'incomeType':'','hasSpouse':''},
+                'client':{'firstName':'','middleName':'','lastName':'','areaCode':'','phone1':'','phone2':'','birthDate':'','address':'','socialSecurityNumber1':'','socialSecurityNumber2':'','socialSecurityNumber3':'','email':'','city':'','state':'FL','zipCode':'','cellAreaCode':'','cellPhone1':'','cellPhone2':'','income':'', 'incomeType':'','hasSpouse':''},
                 'receiveChildSupport':'',
                 'spouse':{'firstName':'', 'middleName':'', 'lastName':'','areaCode':'','phone1':'','phone2':'','birthDate':'','address':'','socialSecurityNumber1':'','socialSecurityNumber2':'','socialSecurityNumber3':'','email':'','city':'','state':'','zipCode':'','cellAreaCode':'','cellPhone1':'','cellPhone2':'','income':'', 'incomeType':'','shareAddress':''},
                 'numberOfChildren':0,
@@ -489,12 +489,21 @@
             }
             
             $scope.Init = function(){
-            document.getElementById('main-header-txt').innerHTML ="Welcome";
-            $('#restart-footer').animate({'opacity':0});
-            $('.progress-area').animate({'opacity':0});
-            $('#img-main').animate({'opacity':0});
-            $('#main-col-holder').delay(1500).animate({opacity:1},700);
-            $scope.intake = $scope.resetIntake();
+                document.getElementById('main-header-txt').innerHTML ="Welcome";
+                $('#restart-footer').animate({'opacity':0});
+                $('.progress-area').animate({'opacity':0});
+                $('#img-main').animate({'opacity':0});
+                $('#main-col-holder').delay(1500).animate({opacity:1},700);
+                $scope.intake = $scope.resetIntake();
+
+                //open ftp connection
+                setTimeout(function(){ 
+                    var connection = slideContainerService.openConnection();
+                    if(!connection){
+                        connection = slideContainerService.openConnection();
+                    }
+                 }, 2000);
+                
             }
 
             $scope.Init();
