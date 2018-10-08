@@ -151,3 +151,10 @@ textarea{
     width: 335px;
     font-size: 22px;
 }
+
+.dollarSign{
+    text-align: left;
+    font-size: 40px;
+    padding-top: 13px;
+    color: grey;
+}
