@@ -1153,13 +1153,17 @@
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Es el automóvil #1 financiado o alquilado?</h2>
     <ion-list ng-model="intake.Automobiles[0].payType" class="row slide-two-radio-div">
         <div class="row">
-            <div class="col col-50" ng-click="changeAutoPayType('Financed', 0)">
+            <div class="col col-40" ng-click="changeAutoPayType('Financed', 0)">
                 <ion-radio ng-if="englishSelected" value="Financed">Financed</ion-radio>
                 <ion-radio ng-if="spanishSelected" value="Financed">Financiado</ion-radio>
             </div>
-            <div class="col col-50" ng-click="changeAutoPayType('Leased', 0)">
+            <div class="col col-40" ng-click="changeAutoPayType('Leased', 0)">
                 <ion-radio ng-if="englishSelected" value="Leased">Leased</ion-radio>	
                 <ion-radio ng-if="spanishSelected" value="Leased">Alquilado</ion-radio>
+            </div>
+            <div class="col col-40" ng-click="changeAutoPayType('Paid Off', 0)">
+              <ion-radio ng-if="englishSelected" value="PaidOff">Paid Off</ion-radio>	
+              <ion-radio ng-if="spanishSelected" value="PaidOff">Pagado</ion-radio>
             </div>
         </div>
     </ion-list>
@@ -1312,14 +1316,18 @@
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Es el automóvil #2 financiado o alquilado?</h2>
     <ion-list ng-model="intake.Automobiles[1].payType" class="row slide-two-radio-div">
         <div class="row">
-            <div class="col col-50" ng-click="changeAutoPayType('Financed', 1)">
-                <ion-radio ng-if="englishSelected" value="Financed">Financed</ion-radio>
-                <ion-radio ng-if="spanishSelected" value="Financed">Financiado</ion-radio>
-            </div>
-            <div class="col col-50" ng-click="changeAutoPayType('Leased', 1)">
-                <ion-radio ng-if="englishSelected" value="Leased">Leased</ion-radio>	
-                <ion-radio ng-if="spanishSelected" value="Leased">Alquilado</ion-radio>
-            </div>
+            <div class="col col-40" ng-click="changeAutoPayType('Financed', 1)">
+              <ion-radio ng-if="englishSelected" value="Financed">Financed</ion-radio>
+              <ion-radio ng-if="spanishSelected" value="Financed">Financiado</ion-radio>
+          </div>
+          <div class="col col-40" ng-click="changeAutoPayType('Leased', 1)">
+              <ion-radio ng-if="englishSelected" value="Leased">Leased</ion-radio>	
+              <ion-radio ng-if="spanishSelected" value="Leased">Alquilado</ion-radio>
+          </div>
+          <div class="col col-40" ng-click="changeAutoPayType('Paid Off', 1)">
+            <ion-radio ng-if="englishSelected" value="PaidOff">Paid Off</ion-radio>	
+            <ion-radio ng-if="spanishSelected" value="PaidOff">Pagado</ion-radio>
+          </div>
         </div>
     </ion-list>
       <div class="row next-prev-button-row">
@@ -1472,14 +1480,18 @@
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Es el automóvil #3 financiado o alquilado?</h2>
     <ion-list ng-model="intake.Automobiles[2].payType" class="row slide-two-radio-div">
         <div class="row">
-            <div class="col col-50" ng-click="changeAutoPayType('Financed', 2)">
-                <ion-radio ng-if="englishSelected" value="Financed">Financed</ion-radio>
-                <ion-radio ng-if="spanishSelected" value="Financed">Financiado</ion-radio>
-            </div>
-            <div class="col col-50" ng-click="changeAutoPayType('Leased', 2)">
-                <ion-radio ng-if="englishSelected" value="Leased">Leased</ion-radio>	
-                <ion-radio ng-if="spanishSelected" value="Leased">Alquilado</ion-radio>
-            </div>
+            <div class="col col-40" ng-click="changeAutoPayType('Financed', 2)">
+              <ion-radio ng-if="englishSelected" value="Financed">Financed</ion-radio>
+              <ion-radio ng-if="spanishSelected" value="Financed">Financiado</ion-radio>
+          </div>
+          <div class="col col-40" ng-click="changeAutoPayType('Leased', 2)">
+              <ion-radio ng-if="englishSelected" value="Leased">Leased</ion-radio>	
+              <ion-radio ng-if="spanishSelected" value="Leased">Alquilado</ion-radio>
+          </div>
+          <div class="col col-40" ng-click="changeAutoPayType('Paid Off', 2)">
+            <ion-radio ng-if="englishSelected" value="PaidOff">Paid Off</ion-radio>	
+            <ion-radio ng-if="spanishSelected" value="PaidOff">Pagado</ion-radio>
+          </div>
         </div>
     </ion-list>
       <div class="row next-prev-button-row">
@@ -1631,14 +1643,18 @@
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Es el automóvil #4 financiado o alquilado?</h2>
     <ion-list ng-model="intake.Automobiles[3].payType" class="row slide-two-radio-div">
         <div class="row">
-            <div class="col col-50" ng-click="changeAutoPayType('Financed', 3)">
-                <ion-radio ng-if="englishSelected" value="Financed">Financed</ion-radio>
-                <ion-radio ng-if="spanishSelected" value="Financed">Financiado</ion-radio>
-            </div>
-            <div class="col col-50" ng-click="changeAutoPayType('Leased', 3)">
-                <ion-radio ng-if="englishSelected" value="Leased">Leased</ion-radio>	
-                <ion-radio ng-if="spanishSelected" value="Leased">Alquilado</ion-radio>
-            </div>
+            <div class="col col-40" ng-click="changeAutoPayType('Financed', 3)">
+              <ion-radio ng-if="englishSelected" value="Financed">Financed</ion-radio>
+              <ion-radio ng-if="spanishSelected" value="Financed">Financiado</ion-radio>
+          </div>
+          <div class="col col-40" ng-click="changeAutoPayType('Leased', 3)">
+              <ion-radio ng-if="englishSelected" value="Leased">Leased</ion-radio>	
+              <ion-radio ng-if="spanishSelected" value="Leased">Alquilado</ion-radio>
+          </div>
+          <div class="col col-40" ng-click="changeAutoPayType('Paid Off', 3)">
+            <ion-radio ng-if="englishSelected" value="PaidOff">Paid Off</ion-radio>	
+            <ion-radio ng-if="spanishSelected" value="PaidOff">Pagado</ion-radio>
+          </div>
         </div>
     </ion-list>
       <div class="row next-prev-button-row">
@@ -1790,14 +1806,18 @@
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Es el automóvil #5 financiado o alquilado?</h2>
     <ion-list ng-model="intake.Automobiles[4].payType" class="row slide-two-radio-div">
         <div class="row">
-            <div class="col col-50" ng-click="changeAutoPayType('Financed', 4)">
-                <ion-radio ng-if="englishSelected" value="Financed">Financed</ion-radio>
-                <ion-radio ng-if="spanishSelected" value="Financed">Financiado</ion-radio>
-            </div>
-            <div class="col col-50" ng-click="changeAutoPayType('Leased', 4)">
-                <ion-radio ng-if="englishSelected" value="Leased">Leased</ion-radio>	
-                <ion-radio ng-if="spanishSelected" value="Leased">Alquilado</ion-radio>
-            </div>
+            <div class="col col-40" ng-click="changeAutoPayType('Financed', 4)">
+              <ion-radio ng-if="englishSelected" value="Financed">Financed</ion-radio>
+              <ion-radio ng-if="spanishSelected" value="Financed">Financiado</ion-radio>
+          </div>
+          <div class="col col-40" ng-click="changeAutoPayType('Leased', 4)">
+              <ion-radio ng-if="englishSelected" value="Leased">Leased</ion-radio>	
+              <ion-radio ng-if="spanishSelected" value="Leased">Alquilado</ion-radio>
+          </div>
+          <div class="col col-40" ng-click="changeAutoPayType('Paid Off', 4)">
+            <ion-radio ng-if="englishSelected" value="PaidOff">Paid Off</ion-radio>	
+            <ion-radio ng-if="spanishSelected" value="PaidOff">Pagado</ion-radio>
+          </div>
         </div>
     </ion-list>
       <div class="row next-prev-button-row">
@@ -1949,14 +1969,18 @@
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Es el automóvil #6 financiado o alquilado?</h2>
     <ion-list ng-model="intake.Automobiles[5].payType" class="row slide-two-radio-div">
         <div class="row">
-            <div class="col col-50" ng-click="changeAutoPayType('Financed', 5)">
-                <ion-radio ng-if="englishSelected" value="Financed">Financed</ion-radio>
-                <ion-radio ng-if="spanishSelected" value="Financed">Financiado</ion-radio>
-            </div>
-            <div class="col col-50" ng-click="changeAutoPayType('Leased', 5)">
-                <ion-radio ng-if="englishSelected" value="Leased">Leased</ion-radio>	
-                <ion-radio ng-if="spanishSelected" value="Leased">Alquilado</ion-radio>
-            </div>
+            <div class="col col-40" ng-click="changeAutoPayType('Financed', 5)">
+              <ion-radio ng-if="englishSelected" value="Financed">Financed</ion-radio>
+              <ion-radio ng-if="spanishSelected" value="Financed">Financiado</ion-radio>
+          </div>
+          <div class="col col-40" ng-click="changeAutoPayType('Leased', 5)">
+              <ion-radio ng-if="englishSelected" value="Leased">Leased</ion-radio>	
+              <ion-radio ng-if="spanishSelected" value="Leased">Alquilado</ion-radio>
+          </div>
+          <div class="col col-40" ng-click="changeAutoPayType('Paid Off', 5)">
+            <ion-radio ng-if="englishSelected" value="PaidOff">Paid Off</ion-radio>	
+            <ion-radio ng-if="spanishSelected" value="PaidOff">Pagado</ion-radio>
+          </div>
         </div>
     </ion-list>
       <div class="row next-prev-button-row">
@@ -2108,14 +2132,18 @@
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Es el automóvil #7 financiado o alquilado?</h2>
     <ion-list ng-model="intake.Automobiles[6].payType" class="row slide-two-radio-div">
         <div class="row">
-            <div class="col col-50" ng-click="changeAutoPayType('Financed', 6)">
-                <ion-radio ng-if="englishSelected" value="Financed">Financed</ion-radio>
-                <ion-radio ng-if="spanishSelected" value="Financed">Financiado</ion-radio>
-            </div>
-            <div class="col col-50" ng-click="changeAutoPayType('Leased', 6)">
-                <ion-radio ng-if="englishSelected" value="Leased">Leased</ion-radio>	
-                <ion-radio ng-if="spanishSelected" value="Leased">Alquilado</ion-radio>
-            </div>
+            <div class="col col-40" ng-click="changeAutoPayType('Financed', 6)">
+              <ion-radio ng-if="englishSelected" value="Financed">Financed</ion-radio>
+              <ion-radio ng-if="spanishSelected" value="Financed">Financiado</ion-radio>
+          </div>
+          <div class="col col-40" ng-click="changeAutoPayType('Leased', 6)">
+              <ion-radio ng-if="englishSelected" value="Leased">Leased</ion-radio>	
+              <ion-radio ng-if="spanishSelected" value="Leased">Alquilado</ion-radio>
+          </div>
+          <div class="col col-40" ng-click="changeAutoPayType('Paid Off', 6)">
+            <ion-radio ng-if="englishSelected" value="PaidOff">Paid Off</ion-radio>	
+            <ion-radio ng-if="spanishSelected" value="PaidOff">Pagado</ion-radio>
+          </div>
         </div>
     </ion-list>
       <div class="row next-prev-button-row">
