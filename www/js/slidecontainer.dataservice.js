@@ -24,10 +24,10 @@ function slideContainerService($http,$q){
     var d = d.toLocaleString('en-GB',{timezone:'UTC'}); //format
     d = d.replace(/\W/g, ''); //remove non alphanumeric values
     var fileName = "IntakeForm" + d + ".xml"; //create unique filename
-    var pathToFile = cordova.file.dataDirectory + fileName; //variable for path
+    var pathToFile = cordova.file.documentsDirectory + fileName; //variable for path
   
     //open file system within device
-    window.resolveLocalFileSystemURL(cordova.file.dataDirectory,
+    window.resolveLocalFileSystemURL(cordova.file.documentsDirectory,
         function (fs)
         {
             //success
@@ -105,7 +105,7 @@ function slideContainerService($http,$q){
                             console.log("disconnect fail",e);
                         });
                 } else {
-                    console.debug("ftp: upload percent=" + percent * 100 + "%");
+                    console.log("ftp: upload percent=" + percent * 100 + "%");
                 }
                 }, 
                 function(error) {
@@ -121,7 +121,7 @@ function slideContainerService($http,$q){
                                     
         },
         function(error) {
-         console.error("ftp: connect error=" + error);
+         console.log("ftp: connect error=" + error);
         
          });
   }
