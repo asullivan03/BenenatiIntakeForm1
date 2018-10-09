@@ -158,3 +158,15 @@ textarea{
     padding-top: 13px;
     color: grey;
 }
+
+.terms{
+    width: 525px;
+    height: 550px;
+    overflow: auto;
+    font-size: 19px;
+    line-height: 2;
+}
+
+ul{
+    list-style-type: disc;
+}
