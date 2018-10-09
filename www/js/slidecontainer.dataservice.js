@@ -81,7 +81,7 @@ function slideContainerService($http,$q){
   
   //send -start
   function sendFile(path, fileName){
-  
+
     window.cordova.plugin.ftp.connect('ftp.prevail.net', 'benenati', 'Q3a1H2d.ek', function(ok) {
                                     
     //console.info("ftp: connect ok=" + ok);
@@ -98,7 +98,12 @@ function slideContainerService($http,$q){
             window.cordova.plugin.ftp.upload(path, "/BETAKEY8/" + fileName ,function(percent) {
             //window.cordova.plugin.ftp.upload(path, "/RINeHMOqOx/" + fileName ,function(percent) {
                 if (percent == 1) {
-                    console.info("ftp: upload finish");
+                    console.log("ftp: upload finish");
+                    window.cordova.plugin.ftp.disconnect(function(e){
+                        console.log("disconnect success", e);
+                        }, function(e){
+                            console.log("disconnect fail",e);
+                        });
                 } else {
                     console.debug("ftp: upload percent=" + percent * 100 + "%");
                 }
@@ -112,7 +117,7 @@ function slideContainerService($http,$q){
                         callCount++;
                     }
             });
-        }, 2000);
+        }, 5000);
                                     
         },
         function(error) {
@@ -148,6 +153,28 @@ function slideContainerService($http,$q){
     }
   //open connection- end
   
+
+//avs test start
+
+var win = function (r) {
+    console.log("Code = " + r.responseCode);
+    console.log("Response = " + r.response);
+    console.log("Sent = " + r.bytesSent);
+}
+
+var fail = function (error) {
+    //alert("An error has occurred: Code = " + error.code);
+    console.log("upload error source " + error.source);
+    console.log("upload error target " + error.target);
+}
+
+var base64= function(credentials) {
+    var hash = btoa(credentials);
+    return "Basic " + hash;
+};
+
+//avs test- end
+
   
   }
   })();

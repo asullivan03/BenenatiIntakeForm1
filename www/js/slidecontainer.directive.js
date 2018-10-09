@@ -1274,6 +1274,7 @@
 
                 $scope.changePicture();
 
+                //if($scope.currentSection == 1 && $scope.currentStep ==2){
                 if($scope.currentSection == 5){
                   $scope.createXMLDocument ();
                 }
