@@ -442,7 +442,7 @@
           </div>
           <div class="col col-33">
             <div ng-class="{'slide-select-button': intake.receiveChildSupport != 'not sure'? true : false , 'slide-selected-button': intake.receiveChildSupport == 'not sure' ? true : false}" ng-click="receiveChildSupport('not sure',1,15,6.25)">
-                <p>Not Sure</p>
+                <p>{{notSureText}}</p>
             </div>
           </div>
         </div>
@@ -949,7 +949,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasFiledBankruptcy != 'not sure'? true : false , 'slide-selected-button': intake.hasFiledBankruptcy == 'not sure' ? true : false}" ng-click="setFiledBankruptcy('not sure',2,17,4.8)">
-            <p>Not Sure</p>
+            <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -1059,7 +1059,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.isOnThirdPartyDeed != 'not sure'? true : false , 'slide-selected-button': intake.isOnThirdPartyDeed == 'not sure' ? true : false}" ng-click="setOnThirdPartyDeed('not sure',2,21,4.8)">
-            <p>Not Sure</p>
+            <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -2372,7 +2372,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.realEstate[0].hasSecondMortgage != 'not sure'? true : false , 'slide-selected-button': intake.realEstate[0].hasSecondMortgage == 'not sure' ? true : false}" ng-click="setSecondMortgage(1,'not sure',3,55,0)">
-            <p>Not Sure</p>
+            <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -2493,7 +2493,7 @@
           </div>
           <div class="col col-33">
             <div ng-class="{'slide-select-button': intake.realEstate[1].hasSecondMortgage != 'not sure'? true : false , 'slide-selected-button': intake.realEstate[1].hasSecondMortgage == 'not sure' ? true : false}" ng-click="setSecondMortgage(2,'not sure',3,60,0)">
-                <p>Not Sure</p>
+                <p>{{notSureText}}</p>
             </div>
           </div>
       </div>
@@ -2614,7 +2614,7 @@
     </div>
     <div class="col col-33">
       <div ng-class="{'slide-select-button': intake.realEstate[2].hasSecondMortgage != 'not sure'? true : false , 'slide-selected-button': intake.realEstate[2].hasSecondMortgage == 'not sure' ? true : false}" ng-click="setSecondMortgage(3,'not sure',3,65,0)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
       </div>
     </div>
       </div>
@@ -2735,7 +2735,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.realEstate[3].hasSecondMortgage != 'not sure'? true : false , 'slide-selected-button': intake.realEstate[3].hasSecondMortgage == 'not sure' ? true : false}" ng-click="setSecondMortgage(4,'not sure',3,70,0)">
-            <p>Not Sure</p>
+            <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -2856,7 +2856,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.realEstate[4].hasSecondMortgage != 'not sure'? true : false , 'slide-selected-button': intake.realEstate[4].hasSecondMortgage == 'not sure' ? true : false}" ng-click="setSecondMortgage(5,'not sure',3,75,0)">
-            <p>Not Sure</p>
+            <p>{{notSureText}}</p>
         </div>
       </div>
       </div>
@@ -2977,7 +2977,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.realEstate[5].hasSecondMortgage != 'not sure'? true : false , 'slide-selected-button': intake.realEstate[5].hasSecondMortgage == 'not sure' ? true : false}" ng-click="setSecondMortgage(6,'not sure',3,80,0)">
-            <p>Not Sure</p>
+            <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -3098,7 +3098,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.realEstate[6].hasSecondMortgage != 'not sure'? true : false , 'slide-selected-button': intake.realEstate[6].hasSecondMortgage == 'not sure' ? true : false}" ng-click="setSecondMortgage(7,'not sure',3,85,0)">
-            <p>Not Sure</p>
+            <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -3352,7 +3352,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.retirement401kBalance != 'not sure' ? true : false , 'slide-selected-button': intake.retirement401kBalance == 'not sure' ? true : false}" ng-click="setHas401K('not sure',3,96,0)">
-            <p>Not Sure</p>
+            <p>{{notSureText}}</p>
         </div>
     </div>
   </div>
@@ -3622,7 +3622,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.servedForeclosurePapers != 'not sure' ? true : false , 'slide-selected-button': intake.servedForeclosurePapers == 'not sure' ? true : false}"  ng-click="servedForeclosurePapers('not sure',4,3,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -3657,7 +3657,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.servedDebtLawsuit != 'not sure' ? true : false, 'slide-selected-button': intake.servedDebtLawsuit == 'not sure' ? true : false}"   ng-click="servedDebtLawsuit('not sure',4,4,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -3714,7 +3714,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasAnothersProperty != 'not sure' ? true : false , 'slide-selected-button': intake.hasAnothersProperty == 'not sure' ? true : false }"  ng-click="hasAnothersProperty('not sure',4,6,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -3749,7 +3749,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasSoldAssets != 'not sure' ? true : false, 'slide-selected-button': intake.hasSoldAssets == 'not sure' ? true : false}"   ng-click="hasSoldAssets('not sure',4,7,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -3786,7 +3786,7 @@
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasPaidDebtToFamily != 'not sure' ? true : false , 'slide-selected-button': intake.hasPaidDebtToFamily == 'not sure' ? true : false}"
 			ng-click="hasPaidDebtToFamily('not sure',4,8,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -3821,7 +3821,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.isWagesGarnished != 'not sure' ? true : false , 'slide-selected-button': intake.isWagesGarnished == 'not sure' ? true :false }"  ng-click="isWagesGarnished('not sure',4,9,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -3856,7 +3856,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasFiledTaxReturns != 'not sure' ? true : false , 'slide-selected-button': intake.hasFiledTaxReturns == 'not sure' ? true :false}"   ng-click="hasFiledTaxReturns('not sure',4,10,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -3891,7 +3891,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasAssetBeenForeclosed != 'not sure' ? true : false , 'slide-selected-button': intake.hasAssetBeenForeclosed == 'not sure' ? true :false }"   ng-click="hasAssetBeenForeclosed('not sure',4,11,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -3926,7 +3926,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.isBehindOnCarPayment != 'not sure' ? true : false , 'slide-selected-button': intake.isBehindOnCarPayment == 'not sure' ? true : false}"   ng-click="isBehindOnCarPayment('not sure',4,12,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -3961,7 +3961,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasMadeLargePurchase != 'not sure' ? true : false , 'slide-selected-button': intake.hasMadeLargePurchase == 'not sure' ? true : false }"  ng-click="hasMadeLargePurchase('not sure',4,13,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -3996,7 +3996,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasTakenCashAdvance != 'not sure' ? true : false , 'slide-selected-button': intake.hasTakenCashAdvance == 'not sure' ? true : false }"   ng-click="hasTakenCashAdvance('not sure',4,14,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -4031,7 +4031,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasPaidOtherLawyers != 'not sure' ? true : false , 'slide-selected-button': intake.hasPaidOtherLawyers == 'not sure' ? true : false }"   ng-click="hasPaidOtherLawyers('not sure',4,15,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -4066,7 +4066,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasBeenOfficerOfCompany != 'not sure' ? true : false , 'slide-selected-button': intake.hasBeenOfficerOfCompany == 'not sure' ? true : false }"   ng-click="hasBeenOfficerOfCompany('not sure',4,16,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -4101,7 +4101,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasInheritanceNotReceived != 'not sure' ? true : false , 'slide-selected-button': intake.hasInheritanceNotReceived == 'not sure' ? true : false }"  ng-click="hasInheritanceNotReceived('not sure',4,17,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -4136,7 +4136,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasMaritalAgreement != 'not sure' ? true : false , 'slide-selected-button': intake.hasMaritalAgreement == 'not sure' ? true : false }"   ng-click="hasMaritalAgreement('not sure',4,18,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -4171,7 +4171,7 @@
       </div>
       <div class="col col-33" >
         <div ng-class="{'slide-select-button': intake.hasTaxRefundNotReceived != 'not sure' ? true : false , 'slide-selected-button': intake.hasTaxRefundNotReceived == 'not sure' ? true : false }" ng-click="hasTaxRefundNotReceived('not sure',4,19,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -4206,7 +4206,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.isSuing != 'not sure' ? true : false , 'slide-selected-button': intake.isSuing == 'not sure' ? true : false }"  ng-click="isSuing('not sure',4,20,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -4241,7 +4241,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasLivedInFlorida != 'not sure' ? true : false , 'slide-selected-button': intake.hasLivedInFlorida == 'not sure' ? true : false }"   ng-click="hasLivedInFlorida('not sure',4,21,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -4276,7 +4276,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasDebtToCreditUnion != 'not sure' ? true : false , 'slide-selected-button': intake.hasDebtToCreditUnion == 'not sure' ? true : false }"  ng-click="hasDebtToCreditUnion('not sure',4,22,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -4311,7 +4311,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasTakenOutLoans != 'not sure' ? true : false , 'slide-selected-button': intake.hasTakenOutLoans == 'not sure' ? true : false }" ng-click="hasTakenOutLoans('not sure',4,23,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>
@@ -4376,7 +4376,7 @@
       </div>
       <div class="col col-33">
         <div ng-class="{'slide-select-button': intake.hasLivedInHouse4Years != 'not sure' ? true : false , 'slide-selected-button': intake.hasLivedInHouse4Years == 'not sure' ? true : false }"  ng-click="hasLivedInHouse4Years('not sure',4,25,4)">
-          <p>Not Sure</p>
+          <p>{{notSureText}}</p>
         </div>
       </div>
     </div>

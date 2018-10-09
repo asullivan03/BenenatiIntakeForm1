@@ -140,6 +140,7 @@
                  $scope.previousText = "Prev";
                  $scope.nextText = "Next";
                  $scope.yesText = "Yes";
+                 $scope.notSureText = 'Not Sure';
             }
  
             resetButtons();
@@ -1614,6 +1615,7 @@
             $scope.previousText = "Prev";
             $scope.nextText = "Next";
             $scope.yesText = "Yes";
+            $scope.notSureText = "Not Sure";
           }
           else
           {
@@ -1624,6 +1626,7 @@
             $scope.previousText = "Anterior";
             $scope.nextText = "Próximo";
             $scope.yesText = "Sí";
+            $scope.notSureText = "No Se";
           }
           //set intake form data
           $scope.intake.language = val;
