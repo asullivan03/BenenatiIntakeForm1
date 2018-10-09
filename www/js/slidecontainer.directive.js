@@ -652,9 +652,9 @@
                 slideContainerService.sendXML(XML);
             }
 
-            $scope.hasSameAddress = function(val){
+            $scope.hasSameAddress = function(val, section, step, points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.sameAddressYesSelected = true;
 					 $scope.sameAddressNoSelected = false;
@@ -663,22 +663,24 @@
 				 {
 					 $scope.sameAddressYesSelected = false;
 					 $scope.sameAddressNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
               	$scope.intake.spouse.shareAddress = val;
 
-              if(val){
+              if(val == 'yes'){
                 $scope.intake.spouse.address = $scope.intake.client.address;
                 $scope.intake.spouse.zipCode = $scope.intake.client.zipCode;
                 $scope.intake.spouse.city = $scope.intake.client.city;
                 $scope.intake.spouse.state = $scope.intake.client.state;
               }
+
+              $scope.nextSlide(section,step,points);
             }
 
-            $scope.receiveChildSupport = function(val){
+            $scope.receiveChildSupport = function(val, section, step, points){
                  //apply variables for ng-class
-                 if(val == 'yes')
+                 /*if(val == 'yes')
                  {
                      $scope.recieveChildSupportYesSelected = true;
                      $scope.recieveChildSupportNoSelected = false;
@@ -687,15 +689,17 @@
                  {
                      $scope.recieveChildSupportYesSelected = false;
                      $scope.recieveChildSupportNoSelected = true;
-                 }
+                 }*/
  
                  //set intake form data
                   $scope.intake.receiveChildSupport = val;
+
+                  $scope.nextSlide(section, step, points);
             }
 
-            $scope.isReadyForFreshStart = function(val){
+            $scope.isReadyForFreshStart = function(val, section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.freshStartYesSelected = true;
 					 $scope.freshStartNoSelected = false;
@@ -704,15 +708,17 @@
 				 {
 					 $scope.freshStartYesSelected = false;
 					 $scope.freshStartNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.isReadyForFreshStart = val;
+                   $scope.intake.isReadyForFreshStart = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasLivedInHouse4Years = function(val){
+            $scope.hasLivedInHouse4Years = function(val, section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.fourYearsHomeYesSelected = true;
 					 $scope.fourYearsHomeNoSelected = false;
@@ -721,15 +727,17 @@
 				 {
 					 $scope.fourYearsHomeYesSelected = false;
 					 $scope.fourYearsHomeNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-				 $scope.intake.hasLivedInHouse4Years = val;
+                 $scope.intake.hasLivedInHouse4Years = val;
+                 
+                 $scope.nextSlide(section,step,points);
             }
 
-            $scope.isUsingCreditCards = function(val){
+            $scope.isUsingCreditCards = function(val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.usingCCYesSelected = true;
 					 $scope.usingCCNoSelected = false;
@@ -738,15 +746,17 @@
 				 {
 					 $scope.usingCCYesSelected = false;
 					 $scope.usingCCNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.isUsingCreditCards = val;
+                   $scope.intake.isUsingCreditCards = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasTakenOutLoans = function(val){
+            $scope.hasTakenOutLoans = function(val, section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.loansYesSelected = true;
 					 $scope.loansNoSelected = false;
@@ -755,15 +765,17 @@
 				 {
 					 $scope.loansYesSelected = false;
 					 $scope.loansNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.hasTakenOutLoans = val;
+                   $scope.intake.hasTakenOutLoans = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasDebtToCreditUnion = function(val){
+            $scope.hasDebtToCreditUnion = function(val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.debtToCreditUnionYesSelected = true;
 					 $scope.debtToCreditUnionNoSelected = false;
@@ -772,15 +784,17 @@
 				 {
 					 $scope.debtToCreditUnionYesSelected = false;
 					 $scope.debtToCreditUnionNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.hasDebtToCreditUnion = val;
+                   $scope.intake.hasDebtToCreditUnion = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasLivedInFlorida = function(val){
+            $scope.hasLivedInFlorida = function(val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.livedInFLYesSelected = true;
 					 $scope.livedInFLNoSelected = false;
@@ -789,15 +803,17 @@
 				 {
 					 $scope.livedInFLYesSelected = false;
 					 $scope.livedInFLNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.hasLivedInFlorida = val;
+                   $scope.intake.hasLivedInFlorida = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.isSuing = function(val){
+            $scope.isSuing = function(val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.suingYesSelected = true;
 					 $scope.suingNoSelected = false;
@@ -806,15 +822,17 @@
 				 {
 					 $scope.suingYesSelected = false;
 					 $scope.suingNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.isSuing = val;
+                   $scope.intake.isSuing = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-        $scope.hasTaxRefundNotReceived = function(val){
+        $scope.hasTaxRefundNotReceived = function(val, section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.taxRefundYesSelected = true;
 					 $scope.taxRefundNoSelected = false;
@@ -823,15 +841,17 @@
 				 {
 					 $scope.taxRefundYesSelected = false;
 					 $scope.taxRefundNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.hasTaxRefundNotReceived = val;
+                   $scope.intake.hasTaxRefundNotReceived = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasMaritalAgreement = function(val){
+            $scope.hasMaritalAgreement = function(val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.maritalAgreementYesSelected = true;
 					 $scope.maritalAgreementNoSelected = false;
@@ -840,15 +860,17 @@
 				 {
 					 $scope.maritalAgreementYesSelected = false;
 					 $scope.maritalAgreementNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	$scope.intake.hasMaritalAgreement = val;
+                  $scope.intake.hasMaritalAgreement = val;
+                  
+                  $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasInheritanceNotReceived = function(val){
+            $scope.hasInheritanceNotReceived = function(val, section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.inheritanceYesSelected = true;
 					 $scope.inheritanceNoSelected = false;
@@ -857,15 +879,17 @@
 				 {
 					 $scope.inheritanceYesSelected = false;
 					 $scope.inheritanceNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.hasInheritanceNotReceived = val;
+                   $scope.intake.hasInheritanceNotReceived = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
   
-            $scope.hasBeenOfficerOfCompany = function(val){
+            $scope.hasBeenOfficerOfCompany = function(val, section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.officerYesSelected = true;
 					 $scope.officerNoSelected = false;
@@ -874,15 +898,17 @@
 				 {
 					 $scope.officerYesSelected = false;
 					 $scope.officerNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.hasBeenOfficerOfCompany = val;
+                   $scope.intake.hasBeenOfficerOfCompany = val;
+
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasPaidOtherLawyers = function(val){
+            $scope.hasPaidOtherLawyers = function(val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.paidLawyerYesSelected = true;
 					 $scope.paidLawyerNoSelected = false;
@@ -891,15 +917,17 @@
 				 {
 					 $scope.paidLawyerYesSelected = false;
 					 $scope.paidLawyerNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.hasPaidOtherLawyers = val;
+                   $scope.intake.hasPaidOtherLawyers = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasTakenCashAdvance = function(val){
+            $scope.hasTakenCashAdvance = function(val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.takenCashYesSelected = true;
 					 $scope.takenCashNoSelected = false;
@@ -908,15 +936,17 @@
 				 {
 					 $scope.takenCashYesSelected = false;
 					 $scope.takenCashNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.hasTakenCashAdvance = val;
+                   $scope.intake.hasTakenCashAdvance = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasMadeLargePurchase = function(val){
+            $scope.hasMadeLargePurchase = function(val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.largePurchasesYesSelected = true;
 					 $scope.largePurchasesNoSelected = false;
@@ -925,15 +955,17 @@
 				 {
 					 $scope.largePurchasesYesSelected = false;
 					 $scope.largePurchasesNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.hasMadeLargePurchase = val;
+                   $scope.intake.hasMadeLargePurchase = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.isBehindOnCarPayment = function(val){
+            $scope.isBehindOnCarPayment = function(val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.behindCarYesSelected = true;
 					 $scope.behindCarNoSelected = false;
@@ -942,15 +974,17 @@
 				 {
 					 $scope.behindCarYesSelected = false;
 					 $scope.behindCarNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.isBehindOnCarPayment = val;
+                   $scope.intake.isBehindOnCarPayment = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasAssetBeenForeclosed = function(val){
+            $scope.hasAssetBeenForeclosed = function(val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.repossessYesSelected = true;
 					 $scope.repossessNoSelected = false;
@@ -959,15 +993,17 @@
 				 {
 					 $scope.repossessYesSelected = false;
 					 $scope.repossessNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.hasAssetBeenForeclosed = val;
+                   $scope.intake.hasAssetBeenForeclosed = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasFiledTaxReturns = function(val){
+            $scope.hasFiledTaxReturns = function(val, section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.filedTaxYesSelected = true;
 					 $scope.filedTaxNoSelected = false;
@@ -976,15 +1012,17 @@
 				 {
 					 $scope.filedTaxYesSelected = false;
 					 $scope.filedTaxNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	$scope.intake.hasFiledTaxReturns = val;
+                  $scope.intake.hasFiledTaxReturns = val;
+                  
+                  $scope.nextSlide(section,step,points);
             }
 
-            $scope.isWagesGarnished = function(val){
+            $scope.isWagesGarnished = function(val, section, step, points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.garnishYesSelected = true;
 					 $scope.garnishNoSelected = false;
@@ -993,15 +1031,17 @@
 				 {
 					 $scope.garnishYesSelected = false;
 					 $scope.garnishNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.isWagesGarnished = val;
+                   $scope.intake.isWagesGarnished = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasPaidDebtToFamily = function(val){
+            $scope.hasPaidDebtToFamily = function(val, section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.familyDebtYesSelected = true;
 					 $scope.familyDebtNoSelected = false;
@@ -1010,15 +1050,17 @@
 				 {
 					 $scope.familyDebtYesSelected = false;
 					 $scope.familyDebtNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	$scope.intake.hasPaidDebtToFamily = val;
+                  $scope.intake.hasPaidDebtToFamily = val;
+                  
+                  $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasSoldAssets = function(val){
+            $scope.hasSoldAssets = function(val, section, step, points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.soldAssetsYesSelected = true;
 					 $scope.soldAssetsNoSelected = false;
@@ -1027,15 +1069,17 @@
 				 {
 					 $scope.soldAssetsYesSelected = false;
 					 $scope.soldAssetsNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	$scope.intake.hasSoldAssets = val;
+                  $scope.intake.hasSoldAssets = val;
+                  
+                  $scope.nextSlide(section,step,points);
             }
 
-            $scope.hasAnothersProperty = function(val){
+            $scope.hasAnothersProperty = function(val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				/* if(val == true)
 				 {
 					 $scope.othersPropertyYesSelected = true;
 					 $scope.othersPropertyNoSelected = false;
@@ -1044,15 +1088,17 @@
 				 {
 					 $scope.othersPropertyYesSelected = false;
 					 $scope.othersPropertyNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	 $scope.intake.hasAnothersProperty = val;
+                   $scope.intake.hasAnothersProperty = val;
+                   
+                   $scope.nextSlide(section,step,points);
             }
 
-            $scope.servedForeclosurePapers = function(val){
+            $scope.servedForeclosurePapers = function(val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.foreclosurePapersYesSelected = true;
 					 $scope.foreclosurePapersNoSelected = false;
@@ -1061,13 +1107,15 @@
 				 {
 					 $scope.foreclosurePapersYesSelected = false;
 					 $scope.foreclosurePapersNoSelected = true;
-				 }
-				 $scope.intake.servedForeclosurePapers = val;
+                 }*/
+                 $scope.intake.servedForeclosurePapers = val;
+                 
+                 $scope.nextSlide(section,step,points);
             }
 
-            $scope.servedDebtLawsuit = function(val){
+            $scope.servedDebtLawsuit = function(val, section,step,points){
                 //apply variables for ng-class
-				 if(val == true)
+				/* if(val == true)
 				 {
 					 $scope.servedDebtYesSelected = true;
 					 $scope.servedDebtNoSelected = false;
@@ -1076,8 +1124,10 @@
 				 {
 					 $scope.servedDebtYesSelected = false;
 					 $scope.servedDebtNoSelected = true;
-				 }
+                 }*/
               $scope.intake.servedDebtLawsuit = val;
+
+              $scope.nextSlide(section,step,points);
             }
 
             $scope.currentHeight=0;
@@ -1127,7 +1177,7 @@
                     $scope.intake.client.birthDate = dateFormatted;
               }
 
-              if(section == 2 && step == 21 && !$scope.intake.isOnThirdPartyDeed){
+              if(section == 2 && step == 21 && !$scope.intake.isOnThirdPartyDeed != 'yes'){
                     //set current progress bar
                     document.getElementById('progressBar'+$scope.currentSection).style.height = '100px';
                     $scope.currentSection=3;
@@ -1316,9 +1366,9 @@
                 return false;
             }
 
-            $scope.haveSpouse = function(answer){
+            $scope.haveSpouse = function(answer, section, step, points){
 				 //apply variables for ng-class
-				 if(answer == 'yes')
+				 /*if(answer == 'yes')
 				 {
 					 $scope.spouseYesSelected = true;
 					 $scope.spouseNoSelected = false;
@@ -1327,10 +1377,11 @@
 				 {
 					 $scope.spouseYesSelected = false;
 					 $scope.spouseNoSelected = true;
-				 }
+                 }*/
  
  				//set intake form data
                 $scope.intake.client.hasSpouse = answer;
+                $scope.nextSlide(section,step,points);
             }
             
             $scope.hasChildren = function(){
@@ -1341,9 +1392,9 @@
                 return true;
             }
 
-            $scope.setFiledBankruptcy = function(answer){
+            $scope.setFiledBankruptcy = function(answer, section, step,points){
 			     //apply variables for ng-class
-				 if(answer == true)
+				/* if(answer == true)
 				 {
 					 $scope.filedYesSelected = true;
 					 $scope.filedNoSelected = false;
@@ -1352,22 +1403,23 @@
 				 {
 					 $scope.filedYesSelected = false;
 					 $scope.filedNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
                 $scope.intake.hasFiledBankruptcy = answer;
+                $scope.nextSlide(section,step, points);
             }
             $scope.hasFiledBankruptcy = function(){
-                if(!$scope.intake.hasFiledBankruptcy){
-                  return false;
+                if($scope.intake.hasFiledBankruptcy == 'yes'){
+                  return true;
                 }
 
-                return true;
+                return false;
             }
 
             $scope.setHasPaidFriends = function(answer){
 				 //apply variables for ng-class
-				 if(answer == true)
+				 /*if(answer == true)
 				 {
 					 $scope.paidFriendsYesSelected = true;
 					 $scope.paidFriendsNoSelected = false;
@@ -1376,7 +1428,7 @@
 				 {
 					 $scope.paidFriendsYesSelected = false;
 					 $scope.paidFriendsNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
               	 $scope.intake.hasPaidFriends = answer;
@@ -1390,9 +1442,9 @@
                 return true;
             }
 
-            $scope.setOnThirdPartyDeed = function(answer){
+            $scope.setOnThirdPartyDeed = function(answer, section, step, points){
 				 //apply variables for ng-class
-				 if(answer == true)
+				 /*if(answer == true)
 				 {
 					 $scope.deedYesSelected = true;
 					 $scope.deedNoSelected = false;
@@ -1401,18 +1453,20 @@
 				 {
 					 $scope.deedYesSelected = false;
 					 $scope.deedNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	$scope.intake.isOnThirdPartyDeed = answer;
+                  $scope.intake.isOnThirdPartyDeed = answer;
+                  
+                  $scope.nextSlide(section,step,points);
             }
 
             $scope.isOnThirdPartyDeed = function(){
-                if(!$scope.intake.isOnThirdPartyDeed){
-                  return false;
+                if(!$scope.intake.isOnThirdPartyDeed == 'yes'){
+                  return true;
                 }
 
-              return true;
+              return false;
             }
 
             $scope.hasVehicles = function(val){
@@ -1431,9 +1485,16 @@
                 return true;
             }
 
-            $scope.setSecondMortgage = function(idx,val){
+            $scope.setHas401K = function(val, section,step,points){
+
+                $scope.intake.retirement401kBalance = val;
+
+                $scope.nextSlide(section,step,points);
+            }
+
+            $scope.setSecondMortgage = function(idx,val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.secondMortgageYesSelected[idx] = true;
 					 $scope.secondMortgageNoSelected[idx] = false;
@@ -1442,22 +1503,24 @@
 				 {
 					 $scope.secondMortgageYesSelected[idx] = false;
 					 $scope.secondMortgageNoSelected[idx] = true;
-				 }
+                 }*/
  
 				 //set intake form data
-			     $scope.intake.realEstate[idx-1].hasSecondMortgage = val;
+                 $scope.intake.realEstate[idx-1].hasSecondMortgage = val;
+                 
+                 $scope.nextSlide(section,step,points);
             }
 
             $scope.hasSecondMortgage = function(idx){
-                if($scope.intake.realEstate[idx-1].hasSecondMortgage == false){
-                  return false;
+                if($scope.intake.realEstate[idx-1].hasSecondMortgage == 'yes'){
+                  return true;
                 }
-                return true;
+                return false;
             }
 
-            $scope.setIsRenting = function(val){
+            $scope.setIsRenting = function(val, section, step, points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.rentingYesSelected = true;
 					 $scope.rentingNoSelected = false;
@@ -1466,15 +1529,17 @@
 				 {
 					 $scope.rentingYesSelected = false;
 					 $scope.rentingNoSelected = true;
-				 }
+                 }*/
  
  				//set intake form data
-              	$scope.intake.isRenting = val;
+                $scope.intake.isRenting = val;
+                  
+                $scope.nextSlide(section,step,points);
             }
 
-            $scope.setIsLivingWithFamily = function(val){
+            $scope.setIsLivingWithFamily = function(val, section,step,points){
 				 //apply variables for ng-class
-				 if(val == 'yes')
+				 /*if(val == 'yes')
 				 {
 					 $scope.livingffYesSelected = true;
 					 $scope.livingffNoSelected = false;
@@ -1483,10 +1548,12 @@
 				 {
 					 $scope.livingffYesSelected = false;
 					 $scope.livingffNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-				 $scope.intake.isLivingWithFamily = val;
+                 $scope.intake.isLivingWithFamily = val;
+                 
+                 $scope.nextSlide(section,step,points);
             }
 
             $scope.setHasMedicalDebt = function(val){
@@ -1506,16 +1573,18 @@
               	 $scope.intake.hasMedicalDebt = val;
             }
 
-            $scope.setServedForeclosure =function(val){
+            $scope.setServedForeclosure =function(val, section, step, points){
  
  
 				 //set intake form data
-              	$scope.intake.servedForeclosurePapers = val;
+                  $scope.intake.servedForeclosurePapers = val;
+                  
+                  $scope.nextSlide(section,step,points);
             }
 
-            $scope.setServedDebtLawsuit = function(val){
+            $scope.setServedDebtLawsuit = function(val,section,step,points){
 				 //apply variables for ng-class
-				 if(val == true)
+				 /*if(val == true)
 				 {
 					 $scope.servedDebtYesSelected = true;
 					 $scope.servedDebtNoSelected = false;
@@ -1524,14 +1593,16 @@
 				 {
 					 $scope.servedDebtYesSelected = false;
 					 $scope.servedDebtNoSelected = true;
-				 }
+                 }*/
  
 				 //set intake form data
-              	$scope.intake.servedDebtLawsuit = val;
+                  $scope.intake.servedDebtLawsuit = val;
+                  
+                  $scope.nextSlide(section,step,points);
             }
 
         //set language
-        $scope.languageSelect = function(val){
+        $scope.languageSelect = function(val,section,step, points){
           //apply variables for ng-class
           if(val == 'English')
           {
@@ -1555,6 +1626,7 @@
           }
           //set intake form data
           $scope.intake.language = val;
+          $scope.nextSlide(section,step,points);
         }
 
         //set income type
@@ -1565,6 +1637,294 @@
         //set spouse income type
         $scope.changeSpouseIncomeType = function(val){
             $scope.intake.spouse.incomeType = val; 
+        }
+
+        $scope.previousSS1Length = 0;
+
+        $scope.socialSecurityKeyUp1 = function(e){
+            var keys = e.srcElement.value;
+            if($scope.previousSS1Length < keys.length){
+                if(keys.length == 3){
+                    $('#socialSecurity2').focus();
+                }
+            }
+
+            $scope.previousSS1Length = keys.length;
+        }
+
+        $scope.previousSS2Length = 0;
+
+        $scope.socialSecurityKeyUp2 = function(e){
+            var keys = e.srcElement.value;
+            if($scope.previousSS2Length < keys.length){
+                if(keys.length == 2){
+                    $('#socialSecurity3').focus();
+                }
+            }
+            else{
+                if(keys.length == 0){
+                    $('#socialSecurity1').focus();
+                }
+            }
+
+            $scope.previousSS2Length = keys.length;
+        }
+
+        $scope.previousSS3Length = 0;
+
+        $scope.socialSecurityKeyUp3 = function(e){
+            var keys = e.srcElement.value;
+            if($scope.previousSS3Length < keys.length){
+            }
+            else{
+                if(keys.length == 0){
+                    $('#socialSecurity2').focus();
+                }
+            }
+
+            $scope.previousSS3Length = keys.length;
+        }
+
+        $scope.previousPN1Length = 0;
+
+        $scope.phoneNumberKeyUp1 = function(e){
+            var keys = e.srcElement.value;
+
+            if($scope.previousPN1Length < keys.length){
+                if(keys.length == 3){
+                    $('#phoneNumber2').focus();
+                }
+            }
+
+            $scope.previousPN1Length = keys.length;
+        }
+
+        $scope.previousPN2Length = 0;
+
+        $scope.phoneNumberKeyUp2 = function(e){
+            var keys = e.srcElement.value;
+
+            if($scope.previousPN2Length < keys.length){
+                if(keys.length == 3){
+                    $('#phoneNumber3').focus();
+                }
+            }
+            else{
+                if(keys.length == 0){
+                    $('#phoneNumber1').focus();
+                }
+            }
+
+            $scope.previousPN2Length = keys.length;
+        }
+
+        $scope.previousPN3Length = 0;
+
+        $scope.phoneNumberKeyUp3 = function(e){
+            var keys = e.srcElement.value;
+
+            if($scope.previousPN3Length < keys.length){
+            }
+            else{
+                if(keys.length == 0){
+                    $('#phoneNumber2').focus();
+                }
+            }
+
+            $scope.previousPN3Length = keys.length;
+        }
+
+        $scope.previousCN1Length = 0;
+
+        $scope.cellNumberKeyUp1 = function(e){
+            var keys = e.srcElement.value;
+
+            if($scope.previousCN1Length < keys.length){
+                if(keys.length == 3){
+                    $('#cellNumber2').focus();
+                }
+            }
+
+            $scope.previousCN1Length = keys.length;
+        }
+
+        $scope.previousCN2Length = 0;
+
+        $scope.cellNumberKeyUp2 = function(e){
+            var keys = e.srcElement.value;
+
+            if($scope.previousCN2Length < keys.length){
+                if(keys.length == 3){
+                    $('#cellNumber3').focus();
+                }
+            }
+            else{
+                if(keys.length == 0){
+                    $('#cellNumber1').focus();
+                }
+            }
+
+            $scope.previousCN2Length = keys.length;
+        }
+
+        $scope.previousCN3Length = 0;
+
+        $scope.cellNumberKeyUp3 = function(e){
+            var keys = e.srcElement.value;
+
+            if($scope.previousCN3Length < keys.length){
+            }
+            else{
+                if(keys.length == 0){
+                    $('#cellNumber2').focus();
+                }
+            }
+
+            $scope.previousCN3Length = keys.length;
+        }
+
+        $scope.previousSpouseSS1Length = 0;
+
+        $scope.socialSecuritySpouseKeyUp1 = function(e){
+            var keys = e.srcElement.value;
+            if($scope.previousSpouseSS1Length < keys.length){
+                if(keys.length == 3){
+                    $('#socialSecuritySpouse2').focus();
+                }
+            }
+
+            $scope.previousSpouseSS1Length = keys.length;
+        }
+
+        $scope.previousSpouseSS2Length = 0;
+
+        $scope.socialSecuritySpouseKeyUp2 = function(e){
+            var keys = e.srcElement.value;
+            if($scope.previousSpouseSS2Length < keys.length){
+                if(keys.length == 2){
+                    $('#socialSecuritySpouse3').focus();
+                }
+            }
+            else{
+                if(keys.length == 0){
+                    $('#socialSecuritySpouse1').focus();
+                }
+            }
+
+            $scope.previousSpouseSS2Length = keys.length;
+        }
+
+        $scope.previousSpouseSS3Length = 0;
+
+        $scope.socialSecuritySpouseKeyUp3 = function(e){
+            var keys = e.srcElement.value;
+            if($scope.previousSpouseSS3Length < keys.length){
+            }
+            else{
+                if(keys.length == 0){
+                    $('#socialSecuritySpouse2').focus();
+                }
+            }
+
+            $scope.previousSpouseSS3Length = keys.length;
+        }
+
+        $scope.previousSpousePN1Length = 0;
+
+        $scope.phoneNumberSpouseKeyUp1 = function(e){
+            var keys = e.srcElement.value;
+
+            if($scope.previousSpousePN1Length < keys.length){
+                if(keys.length == 3){
+                    $('#phoneNumberSpouse2').focus();
+                }
+            }
+
+            $scope.previousSpousePN1Length = keys.length;
+        }
+
+        $scope.previousSpousePN2Length = 0;
+
+        $scope.phoneNumberSpouseKeyUp2 = function(e){
+            var keys = e.srcElement.value;
+
+            if($scope.previousSpousePN2Length < keys.length){
+                if(keys.length == 3){
+                    $('#phoneNumberSpouse3').focus();
+                }
+            }
+            else{
+                if(keys.length == 0){
+                    $('#phoneNumberSpouse1').focus();
+                }
+            }
+
+            $scope.previousSpousePN2Length = keys.length;
+        }
+
+        $scope.previousSpousePN3Length = 0;
+
+        $scope.phoneNumberSpouseKeyUp3 = function(e){
+            var keys = e.srcElement.value;
+
+            if($scope.previousSpousePN3Length < keys.length){
+            }
+            else{
+                if(keys.length == 0){
+                    $('#phoneNumberSpouse2').focus();
+                }
+            }
+
+            $scope.previousSpousePN3Length = keys.length;
+        }
+
+        $scope.previousSpouseCN1Length = 0;
+
+        $scope.cellNumberSpouseKeyUp1 = function(e){
+            var keys = e.srcElement.value;
+
+            if($scope.previousSpouseCN1Length < keys.length){
+                if(keys.length == 3){
+                    $('#cellNumberSpouse2').focus();
+                }
+            }
+
+            $scope.previousSpouseCN1Length = keys.length;
+        }
+
+        $scope.previousSpouseCN2Length = 0;
+
+        $scope.cellNumberSpouseKeyUp2 = function(e){
+            var keys = e.srcElement.value;
+
+            if($scope.previousSpouseCN2Length < keys.length){
+                if(keys.length == 3){
+                    $('#cellNumberSpouse3').focus();
+                }
+            }
+            else{
+                if(keys.length == 0){
+                    $('#cellNumberSpouse1').focus();
+                }
+            }
+
+            $scope.previousSpouseCN2Length = keys.length;
+        }
+
+        $scope.previousSpouseCN3Length = 0;
+
+        $scope.cellNumberSpouseKeyUp3 = function(e){
+            var keys = e.srcElement.value;
+
+            if($scope.previousSpouseCN3Length < keys.length){
+            }
+            else{
+                if(keys.length == 0){
+                    $('#cellNumberSpouse2').focus();
+                }
+            }
+
+            $scope.previousSpouseCN3Length = keys.length;
         }
 
         //set auto pay type

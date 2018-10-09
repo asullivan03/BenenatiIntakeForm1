@@ -1,10 +1,4 @@
 /* Empty. Add your own CSS if you like */
-.scroll{
-    /*height:100%;*/
-}
-ion-slide-page{
-    
-}
 .input-cover {
     position: static;
 }
@@ -14,9 +8,15 @@ ion-slide-page{
     font-size: 28pt;
 }
 .slide-two-button-div{
+    width: 650px;
+    padding-top: 27px !important;
+}
+
+.slide-two-button-div-2{
     width: 430px;
     padding-top: 27px !important;
 }
+
 .slide-select-button{
     border: 4px solid #5392cf;
     width: 200px;

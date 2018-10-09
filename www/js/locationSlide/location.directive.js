@@ -26,7 +26,7 @@
      $scope.orlSelected = false;
      $scope.kissSelected = false;
  
-     $scope.locationSelect = function(answer) {
+     $scope.locationSelect = function(answer, section, step, points) {
          //apply variables for ng-class
          if(answer == 'Orlando')
          {
@@ -42,6 +42,8 @@
              //set intake form data
              $scope.$parent.intake.location = "pLKlmnVLZW - Kissimmee";
          }
+
+         $scope.$parent.nextSlide(section,step,points);
      };
  
      $scope.isDisabled = function(){

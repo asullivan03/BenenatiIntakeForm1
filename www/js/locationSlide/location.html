@@ -1,14 +1,14 @@
 <location-slide>
     <h2 ng-if="$parent.englishSelected" class="slide-question-txt">Please choose your location:</h2>
     <h2 ng-if="$parent.spanishSelected" class="slide-question-txt">Por favor elija su localización:</h2>
-        <div class="row slide-two-button-div">
+        <div class="row slide-two-button-div-2">
             <div class="col col-50">
-                <div ng-class="{'slide-select-button': !orlSelected, 'slide-selected-button': orlSelected}" ng-click="locationSelect('Orlando')">
+                <div ng-class="{'slide-select-button': !orlSelected, 'slide-selected-button': orlSelected}" ng-click="locationSelect('Orlando',1,1,0)">
                     <p>Orlando</p>
                 </div>
             </div>
             <div class="col col-50">
-                <div ng-class="{'slide-select-button': !kissSelected, 'slide-selected-button': kissSelected}" ng-click="locationSelect('Kissimmee')">
+                <div ng-class="{'slide-select-button': !kissSelected, 'slide-selected-button': kissSelected}" ng-click="locationSelect('Kissimmee',1,1,0)">
                     <p>Kissimee</p>
                 </div>
             </div>
