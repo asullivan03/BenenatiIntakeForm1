@@ -431,7 +431,7 @@
         <h2 ng-if="englishSelected" class="slide-question-txt">What is your income before taxes?</h2>
         <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es su ingreso antes de impuestos?</h2>
         <div class="row slide-one-textbox-div">
-            <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.client.income" />
+            <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.client.income" />
         </div>
         <ion-list ng-model="intake.client.incomeType" class="row slide-two-radio-div">
 			<div class="row">
@@ -834,7 +834,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is your spouse's income before taxes?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el ingreso de su cónyuge antes de impuestos?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.spouse.income" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.spouse.income" />
     </div>
     <ion-list ng-model="intake.spouse.incomeType" class="row slide-two-radio-div">
         <div class="row">
@@ -948,7 +948,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">How much money was given?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuánto dinero se le dio?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="text" placeholder="$" ng-model="intake.howMuchMoneyWasGiven" />
+      <span class="dollarSign">$</span><input type="text" placeholder="" ng-model="intake.howMuchMoneyWasGiven" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -1021,7 +1021,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">How much is the property worth?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuánto vale la propiedad</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.howMuchIsPropertyWorth" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.howMuchIsPropertyWorth" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -1182,11 +1182,11 @@
       </div>
     </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(1)">
+  <ion-slide-page ng-if="hasVehicles(1) && intake.Automobiles[0].payType != 'Paid Off' ">
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the current amount that is owed for automobile #1?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad que se debe para automóvil #1?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[0].currentAmountOwed" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[0].currentAmountOwed" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -1203,11 +1203,11 @@
       </div>
     </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(1)">
+  <ion-slide-page ng-if="hasVehicles(1) && intake.Automobiles[0].payType != 'Paid Off'">
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the payment amount for automobile #1?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad de pago para automóvil #1?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[0].paymentAmount" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[0].paymentAmount" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -1345,11 +1345,11 @@
           </div>
       </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(2)">
+  <ion-slide-page ng-if="hasVehicles(2) && intake.Automobiles[1].payType != 'Paid Off' ">
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the current amount that is owed for automobile #2?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad que se debe para automóvil #2?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[1].currentAmountOwed" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[1].currentAmountOwed" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1366,11 +1366,11 @@
           </div>
       </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(2)">
+  <ion-slide-page ng-if="hasVehicles(2) && intake.Automobiles[1].payType != 'Paid Off' ">
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the payment amount for automobile #2?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad de pago para automóvil #2?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[1].paymentAmount" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[1].paymentAmount" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1509,11 +1509,11 @@
           </div>
       </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(3)">
+  <ion-slide-page ng-if="hasVehicles(3) && intake.Automobiles[2].payType != 'Paid Off' ">
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the current amount that is owed for automobile #3?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad que se debe para automóvil #3?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[2].currentAmountOwed" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[2].currentAmountOwed" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1530,11 +1530,11 @@
           </div>
       </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(3)">
+  <ion-slide-page ng-if="hasVehicles(3) && intake.Automobiles[2].payType != 'Paid Off' ">
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the payment amount for automobile #3?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad de pago para automóvil #3?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[2].paymentAmount" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[2].paymentAmount" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1672,11 +1672,11 @@
           </div>
       </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(4)">
+  <ion-slide-page ng-if="hasVehicles(4) && intake.Automobiles[3].payType != 'Paid Off' ">
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the current amount that is owed for automobile #4?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad que se debe para automóvil #4?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[3].currentAmountOwed" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[3].currentAmountOwed" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1693,11 +1693,11 @@
           </div>
       </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(4)">
+  <ion-slide-page ng-if="hasVehicles(4) && intake.Automobiles[3].payType != 'Paid Off' ">
       <h2 ng-if="englishSelected" class="slide-question-txt">What is the payment amount for automobile #4?</h2>
       <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad de pago para automóvil #4?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[3].paymentAmount" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[3].paymentAmount" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1835,11 +1835,11 @@
           </div>
       </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(5)">
+  <ion-slide-page ng-if="hasVehicles(5)  && intake.Automobiles[4].payType != 'Paid Off' ">
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the current amount that is owed for automobile #5?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad que se debe para automóvil #5?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[4].currentAmountOwed" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[4].currentAmountOwed" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1856,11 +1856,11 @@
           </div>
       </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(5)">
+  <ion-slide-page ng-if="hasVehicles(5) && intake.Automobiles[4].payType != 'Paid Off' ">
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the payment amount for automobile #5?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad de pago para automóvil #5?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[4].paymentAmount" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[4].paymentAmount" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -1998,11 +1998,11 @@
           </div>
       </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(6)">
+  <ion-slide-page ng-if="hasVehicles(6) && intake.Automobiles[5].payType != 'Paid Off' ">
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the current amount that is owed for automobile #6?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad que se debe para automóvil #6?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[5].currentAmountOwed" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[5].currentAmountOwed" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2019,11 +2019,11 @@
           </div>
       </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(6)">
+  <ion-slide-page ng-if="hasVehicles(6) && intake.Automobiles[5].payType != 'Paid Off' ">
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the payment amount for automobile #6?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad de pago para automóvil #6?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[5].paymentAmount" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[5].paymentAmount" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2161,11 +2161,11 @@
           </div>
       </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(7)">
+  <ion-slide-page ng-if="hasVehicles(7) && intake.Automobiles[6].payType != 'Paid Off' ">
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the current amount that is owed for automobile #7?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad que se debe para automóvil #7?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[6].currentAmountOwed" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[6].currentAmountOwed" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2182,11 +2182,11 @@
           </div>
       </div>
   </ion-slide-page>
-  <ion-slide-page ng-if="hasVehicles(7)">
+  <ion-slide-page ng-if="hasVehicles(7) && intake.Automobiles[6].payType != 'Paid Off' ">
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the payment amount for automobile #7?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es la cantidad de pago para automóvil #7?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.Automobiles[6].paymentAmount" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.Automobiles[6].paymentAmount" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2231,7 +2231,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the mortgage for property #1?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la hipoteca para propiedad #1?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[0].firstMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[0].firstMortgageBalance" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2252,7 +2252,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment for property #1?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de propiedad #1?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[0].firstMortgagePayment" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[0].firstMortgagePayment" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2303,7 +2303,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the second mortgage for property #1?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la segunda hipoteca para la propiedad #1?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[0].secondMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[0].secondMortgageBalance" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2324,7 +2324,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment of the second mortgage for property #1?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de la segunda hipoteca por propiedad #1?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[0].secondMortgageMonthlyPayment" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[0].secondMortgageMonthlyPayment" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -2347,7 +2347,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the mortgage for property #2?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la hipoteca para propiedad #2?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[1].firstMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[1].firstMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2368,7 +2368,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment for property #2?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de propiedad #2?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[1].firstMortgagePayment" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[1].firstMortgagePayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2419,7 +2419,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the second mortgage for property #2?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la segunda hipoteca para la propiedad #2?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[1].secondMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[1].secondMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2440,7 +2440,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment of the second mortgage for property #2?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de la segunda hipoteca por propiedad #2?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[1].secondMortgageMonthlyPayment" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[1].secondMortgageMonthlyPayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2463,7 +2463,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the mortgage for property #3?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la hipoteca para propiedad #3?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[2].firstMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[2].firstMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2484,7 +2484,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment for property #3?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de propiedad #3?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[2].firstMortgagePayment" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[2].firstMortgagePayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2535,7 +2535,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the second mortgage for property #3?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la segunda hipoteca para la propiedad #3?</h2>      
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[2].secondMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[2].secondMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2556,7 +2556,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment of the second mortgage for property #3?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de la segunda hipoteca por propiedad #3?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[2].secondMortgageMonthlyPayment"/>
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[2].secondMortgageMonthlyPayment"/>
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2579,7 +2579,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the mortgage for property #4?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la hipoteca para propiedad #4?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[3].firstMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[3].firstMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2600,7 +2600,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment for property #4?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de propiedad #4?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[3].firstMortgagePayment" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[3].firstMortgagePayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2651,7 +2651,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the second mortgage for property #4?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la segunda hipoteca para la propiedad #4?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[3].secondMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[3].secondMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2672,7 +2672,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment of the second mortgage for property #4?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de la segunda hipoteca por propiedad #4?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[3].secondMortgageMonthlyPayment" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[3].secondMortgageMonthlyPayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2695,7 +2695,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the mortgage for property #5?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la hipoteca para propiedad #5?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[4].firstMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[4].firstMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2716,7 +2716,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment for property #5?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de propiedad #5?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[4].firstMortgagePayment" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[4].firstMortgagePayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2767,7 +2767,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the second mortgage for property #5?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la segunda hipoteca para la propiedad #5?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[4].secondMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[4].secondMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2788,7 +2788,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment of the second mortgage for property #5?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de la segunda hipoteca por propiedad #5?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[4].secondMortgageMonthlyPayment" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[4].secondMortgageMonthlyPayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2811,7 +2811,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the mortgage for property #6?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la hipoteca para propiedad #6?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[5].firstMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[5].firstMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2832,7 +2832,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment for property #6?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de propiedad #6?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[5].firstMortgagePayment" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[5].firstMortgagePayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2883,7 +2883,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the second mortgage for property #6?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la segunda hipoteca para la propiedad #6?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[5].secondMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[5].secondMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2904,7 +2904,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment of the second mortgage for property #6?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de la segunda hipoteca por propiedad #6?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[5].secondMortgageMonthlyPayment" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[5].secondMortgageMonthlyPayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2927,7 +2927,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the mortgage for property #7?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la hipoteca para propiedad #7?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[6].firstMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[6].firstMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2948,7 +2948,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment for property #7?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de propiedad #7?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[6].firstMortgagePayment" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[6].firstMortgagePayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -2999,7 +2999,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total balance of the second mortgage for property #7?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el saldo total de la segunda hipoteca para la propiedad #7?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[6].secondMortgageBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[6].secondMortgageBalance" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -3020,7 +3020,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the monthly payment of the second mortgage for property #7?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el pago mensual de la segunda hipoteca por propiedad #7?</h2>
       <div class="row slide-one-textbox-div">
-        <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.realEstate[6].secondMortgageMonthlyPayment" />
+        <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.realEstate[6].secondMortgageMonthlyPayment" />
       </div>
       <div class="row next-prev-button-row">
           <div class="col col-50">
@@ -3073,7 +3073,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">How much is your rent?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuánto cuesta tu alquiler?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.rentAmount" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.rentAmount" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -3154,7 +3154,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">How much $ is in your checking account(s)?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuánto $ está en su cuenta(s) de cheques?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.checkingAccountBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.checkingAccountBalance" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -3175,7 +3175,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">How much $ is in your savings account(s)?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuánto $ está en su cuenta(s) de ahorros?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.savingsAccountBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.savingsAccountBalance" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -3196,7 +3196,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">How much $ is in joint bank account(s) with family members?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuánto $ es en cuenta (s) bancaria conjunta con miembros de la familia?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.jointAccountsWithFamilyBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.jointAccountsWithFamilyBalance" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -3218,7 +3218,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">How much $ in stocks and/or bonds do you own?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuánto $ en acciones y/o bonos?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.stocksOrBondsValue" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.stocksOrBondsValue" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -3239,7 +3239,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total value of your 401(k) and/or retirement accounts?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el valor total de sus cuentas 401(k) y/o de retiro?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.retirement401kBalance" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.retirement401kBalance" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -3260,7 +3260,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total value of your household furniture?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el valor total de los muebles de su hogar?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.householdFurnitureValue" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.householdFurnitureValue" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -3281,7 +3281,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total value of tools that you own?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el valor total de sus herramientas?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.toolValue" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.toolValue" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -3302,7 +3302,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total value of collections/jewelry do you own?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el valor total de sus colecciones/joyas?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.collectionAndJewelryValue" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.collectionAndJewelryValue" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
@@ -3323,7 +3323,7 @@
     <h2 ng-if="englishSelected" class="slide-question-txt">What is the total value of any remaining assets that you own?</h2>
     <h2 ng-if="spanishSelected" class="slide-question-txt">¿Cuál es el valor total de sus activos restantes?</h2>
     <div class="row slide-one-textbox-div">
-      <span class="dollarSign">$</span><input type="number" placeholder="$" ng-model="intake.otherMajorAssetValue" />
+      <span class="dollarSign">$</span><input type="number" placeholder="" ng-model="intake.otherMajorAssetValue" />
     </div>
     <div class="row next-prev-button-row">
       <div class="col col-50">
