@@ -496,13 +496,6 @@
                 $('#main-col-holder').delay(1500).animate({opacity:1},700);
                 $scope.intake = $scope.resetIntake();
 
-                //open ftp connection
-                setTimeout(function(){ 
-                    var connection = slideContainerService.openConnection();
-                    if(!connection){
-                        connection = slideContainerService.openConnection();
-                    }
-                 }, 2000);
                 
             }
 
